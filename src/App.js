@@ -1,8 +1,8 @@
-import React from 'react'
+import CounterList from "./componenets/CounterList"
 
 const App = () => {
   return (
-    <div>App</div>
+    <div><CounterList/></div>
   )
 }
 
