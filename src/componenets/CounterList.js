@@ -5,6 +5,8 @@ import { useEffect, useState } from "react"
 const CounterList = () => {
   const[values,setValues] = useState({})
   const[total,setTotal] = useState(0)
+  const[array,setArray] = useState([1,2,3])
+  const[reset,setReset] = useState(true)
 
   const handleResult = (id, x) => {  
     setValues(prev => {
@@ -12,18 +14,32 @@ const CounterList = () => {
     
       const sum = Object.values(updated).reduce((acc, val) => acc + val, 0)
       setTotal(sum)
-      return updated        
-    })    
+      return updated              
+    })       
+  }
+
+  const handleReset = () => {
+      setReset(prev => !prev)
+      setValues({})
+      setTotal(0)
+  }
+
+  const handleAdd = () => {
+    setArray(prev => {
+      const last = prev[prev.length -1]
+      return [...prev,last + 1]
+    })
   }
 
   return (
     <div className="counter-list">
-      <Counter id={1} handleResult={handleResult}/>
-      <Counter id={2} handleResult={handleResult}/>
-      <Counter id={3} handleResult={handleResult}/>
-      <div className="counter-bot">
+      {array.map(id => (
+        <Counter key={id} id={id} handleResult={handleResult} reset={reset}/>
+      ))}
+      <div className="info-bar">
+        <button onClick={handleAdd}>Add</button>
         <p>Total: {total}</p>
-        <button onClick={()=> {setValues({}); setTotal(0)}}>Reset</button>
+        <button onClick={handleReset}>Reset</button>
       </div>
     </div>
   )
