@@ -1,7 +1,7 @@
 import "./Counter.css"
 import { useState, useEffect } from "react"
 
-const Counter = ({ id, handleResult, reset }) => {
+const Counter = ({ id, handleResult, handleRemove, reset }) => {
   const[sum,setSum] = useState(0)
 
   const handleIncrease = () => setSum(prev => prev + 1)
@@ -26,8 +26,7 @@ const Counter = ({ id, handleResult, reset }) => {
     <p>{sum}</p>
     <button onClick={handleIncrease}>Increase</button>
     <button onClick={handleDecrease}>Decrease</button>
-    <button>Remove</button>
-      {/* next step */}
+    <button onClick={()=>{handleRemove(id)}}>Remove</button>
   </div>
   
 }

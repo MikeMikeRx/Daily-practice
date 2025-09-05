@@ -31,10 +31,19 @@ const CounterList = () => {
     })
   }
 
+  const handleRemove = (id) => {
+    const filteredArray = array.filter(a => {
+      return a !== id
+    })
+    setArray(filteredArray)
+  }
+
+  // next step 7 - Save your results (and list of counters) in localStorage.
+
   return (
     <div className="counter-list">
       {array.map(id => (
-        <Counter key={id} id={id} handleResult={handleResult} reset={reset}/>
+        <Counter key={id} id={id} handleResult={handleResult} handleRemove={handleRemove} reset={reset}/>
       ))}
       <div className="info-bar">
         <button onClick={handleAdd}>Add</button>
