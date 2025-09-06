@@ -14,8 +14,15 @@ const Counter = ({ id, handleResult, handleRemove, reset }) => {
     }
   }
 
-  useEffect(()=>{
-    handleResult(id, sum)        
+  useEffect(() => {
+    handleResult(id, sum)
+    const number = sum
+    const idX = id
+    const sumJSON = JSON.stringify(number)
+    const idJSON = JSON.stringify(idX)
+    const sumToSave = localStorage.setItem(`${idJSON}`,`${sumJSON}`)
+    console.log(idJSON);
+    
   },[sum])
 
   useEffect(() => {

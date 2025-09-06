@@ -38,7 +38,6 @@ const CounterList = () => {
     setArray(filteredArray)
   }
 
-  // next step 7 - Save your results (and list of counters) in localStorage.
 
   return (
     <div className="counter-list">
