@@ -2,7 +2,11 @@ import "./Counter.css"
 import { useState, useEffect } from "react"
 
 const Counter = ({ id, handleResult, handleRemove, reset }) => {
-  const[sum,setSum] = useState(0)
+  const[sum,setSum] = useState(()=>{
+    return JSON.parse(localStorage.getItem(`${id}`)) || 0
+  })
+
+  // XXXXXX
 
   const handleIncrease = () => setSum(prev => prev + 1)
 
@@ -16,13 +20,7 @@ const Counter = ({ id, handleResult, handleRemove, reset }) => {
 
   useEffect(() => {
     handleResult(id, sum)
-    const number = sum
-    const idX = id
-    const sumJSON = JSON.stringify(number)
-    const idJSON = JSON.stringify(idX)
-    const sumToSave = localStorage.setItem(`${idJSON}`,`${sumJSON}`)
-    console.log(idJSON);
-    
+    localStorage.setItem(JSON.stringify(id), JSON.stringify(sum))
   },[sum])
 
   useEffect(() => {
