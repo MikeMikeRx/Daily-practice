@@ -1,56 +1,47 @@
 import "./CounterList.css"
 import Counter from "./Counter"
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 
 const CounterList = () => {
-  const[values,setValues] = useState({})
-  const[total,setTotal] = useState(0)
-  const[array,setArray] = useState([1,2,3])
-  const[reset,setReset] = useState(true)
+    const[counters, setCounters] = useState([1])
+    const[results, setResults] = useState([])
 
-  const handleResult = (id, x) => {  
-    setValues(prev => {
-      const updated = { ...prev, [id]: x}
-    
-      const sum = Object.values(updated).reduce((acc, val) => acc + val, 0)
-      setTotal(sum)
-      return updated              
-    })       
-  }
+    const handleAdd = () => {
+        const lastOne = counters.length
+        setCounters(prev => [...prev, lastOne + 1])       
+    }
 
-  const handleReset = () => {
-      setReset(prev => !prev)
-      setValues({})
-      setTotal(0)
-  }
+    const handleRemove = (id) => {
+        setCounters(counters.filter(a => a !== id))
+    }
 
-  const handleAdd = () => {
-    setArray(prev => {
-      const last = prev[prev.length -1]
-      return [...prev,last + 1]
-    })
-  }
+    const handleResults = (id, x) => {
+        let oneResult = {id, x}
+        if(results = []) {
+           setResults([oneResult]) 
+        } else {
+            setResults(prev => [...prev, oneResult])
+        }
+        console.log(results);        
+    }
 
-  const handleRemove = (id) => {
-    const filteredArray = array.filter(a => {
-      return a !== id
-    })
-    setArray(filteredArray)
-  }
+    // fix xxxxxxxxxxx
 
 
-  return (
-    <div className="counter-list">
-      {array.map(id => (
-        <Counter key={id} id={id} handleResult={handleResult} handleRemove={handleRemove} reset={reset}/>
-      ))}
-      <div className="info-bar">
-        <button onClick={handleAdd}>Add</button>
-        <p>Total: {total}</p>
-        <button onClick={handleReset}>Reset</button>
-      </div>
+  return <div className="cl-container">
+    <div className="counter-top">
+    <p>Total Sum: 00</p>
+    <button onClick={handleAdd}>Add</button>
+    <button>Reset</button>
     </div>
-  )
+    
+    <div className="counter-list">
+        {counters.map(id => (
+            <Counter key={id} id={id} handleRemove={handleRemove} handleResults={handleResults}/>
+        ))}
+    </div>
+  </div>
+  
 }
 
 export default CounterList

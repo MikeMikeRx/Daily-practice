@@ -1,23 +1,32 @@
-.counter-box {
-    border: 5px solid red;
-    border-radius: 8px;
-    background-color: chocolate;
-    font-size: 35px;
+.counter-container {
     display: flex;
     flex-direction: column;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    margin: 0px auto;
+    width: 110px;
+    margin: 20px 25px;
+    padding: 20px 30px;
+    color: white;
+    background-color: rgb(36, 36, 36);
+    border: 5px solid gold;
+    border-radius: 8px;
+    box-shadow: 2px 3px 5px 10px rgba(41, 41, 41, 0.521);
+    font-size: 25px;
 }
 
-.counter-box button {
-    margin: 5px 0px;
-    padding: 5px;
-    border: none;
+.counter-container p {
+    padding: 0px 0px;
+}
+
+.counter-container button {
+    padding: 10px;
     border-radius: 8px;
-    color: aliceblue;
-    background-color: black;
-    margin-left: 5px;
+    color: white;
+    border: 2px solid gold;
+    background-color: rgb(36, 36, 36);
+    margin-top: 5px;
+}
+
+.counter-container button:hover {
+    background-color: rgb(53, 52, 52);
     cursor: pointer;
 }
