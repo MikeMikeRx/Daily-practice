@@ -13,8 +13,8 @@ const CounterList = () => {
     }
 
     const handleRemove = (id) => {
-        counters.filter((a) => a !== id)
-        console.log(id);
+        setCounters(counters.filter((a) => a !== id))
+        // console.log(id);
         
     }
 
