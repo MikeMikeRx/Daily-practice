@@ -3,8 +3,9 @@ import Counter from "./Counter"
 import { useState } from "react"
 
 const CounterList = () => {
-    const[counters,setCounters] = useState([1,2,3])
-    const[results,setResults] = useState({})
+    const[counters, setCounters] = useState([1,2,3])
+    const[results, setResults] = useState({})
+    const[reset, setReset] = useState(true)
 
     const handleAdd = () => {
         const lastOne = counters.length
@@ -12,14 +13,15 @@ const CounterList = () => {
     }
 
     const handleResults = (id,x) => {
-        setResults(prev => ({ ...prev, [id]: x}))
-               
+        setResults(prev => ({ ...prev, [id]: x}))               
+    }
+
+    const handleReset = () => {
+        setReset(prev => !prev)
     }
 
     const total = Object.values(results).reduce((acc, r) => acc + r,0)
-    console.log(total);
     
-
   return <div className="cl-container">
     <div className="counter-top">
         <h2>Total Sum: {total}</h2>
@@ -28,7 +30,7 @@ const CounterList = () => {
     </div>
     <div className="counter-list">
         {counters.map(id =>(
-            <Counter key={id} id={id} handleResults={handleResults}/>
+            <Counter key={id} id={id} handleResults={handleResults} handleReset={reset}/>
         ))}
     </div>
   </div>  
