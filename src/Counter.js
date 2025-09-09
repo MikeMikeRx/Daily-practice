@@ -28,7 +28,7 @@ const Counter = ({ id, handleResults, handleRemove , reset }) => {
     <h3>Result {sum}</h3>
     <button onClick={handleIncrease}>Plus</button>
     <button onClick={handleDecrease}>Minus</button>
-    <button onClick={handleRemove(id)}>Remove</button>
+    <button onClick={()=>handleRemove(id)}>Remove</button>
     </div>  
 }
 
