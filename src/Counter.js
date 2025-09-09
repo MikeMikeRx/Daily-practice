@@ -1,7 +1,7 @@
 import "./Counter.css"
 import { useState, useEffect } from "react"
 
-const Counter = ({ id, handleResults }) => {
+const Counter = ({ id, handleResults, reset }) => {
     const[sum,setSum] = useState(0)
 
     const handleIncrease = () => {
@@ -19,6 +19,10 @@ const Counter = ({ id, handleResults }) => {
     useEffect(() => {
         handleResults(id, sum)
     },[sum])
+
+    useEffect(() => {
+        setSum(0)
+    },[reset])
 
   return <div className="counter-container">
     <h3>Result {sum}</h3>
