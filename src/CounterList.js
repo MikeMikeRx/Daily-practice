@@ -13,13 +13,12 @@ const CounterList = () => {
     }
 
     const handleResults = (id,x) => {
-        setResults(prev => ({ ...prev, [id]: x}))               
+        setResults(prev => ({ ...prev, [id]: x}))
+        localStorage.setItem((JSON.stringify(id)),(JSON.stringify(x)))                                      
     }
 
     const handleReset = () => {
-        setReset(prev => !prev)
-        console.log(reset);
-        
+        setReset(prev => !prev)        
     }
 
     const total = Object.values(results).reduce((acc, r) => acc + r,0)
