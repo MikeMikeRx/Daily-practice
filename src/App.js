@@ -1,4 +1,4 @@
-import CounterList from "./componenets/CounterList"
+import CounterList from "./CounterList"
 
 const App = () => {
   return (
