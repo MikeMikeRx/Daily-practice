@@ -4,11 +4,21 @@ import { useState } from "react"
 
 const CounterList = () => {
     const[counters,setCounters] = useState([1,2,3])
+    const[results,setResults] = useState([])
 
     const handleAdd = () => {
         const lastOne = counters.length
         setCounters(prev => [...prev, lastOne + 1])
     }
+
+    const handleResults = (id,x) =>{
+        if(results = []){
+            setResults([{id,x}])
+        }        
+        console.log(results);        
+    }
+
+
 
   return <div className="cl-container">
     <div className="counter-top">
@@ -18,7 +28,7 @@ const CounterList = () => {
     </div>
     <div className="counter-list">
         {counters.map(id =>(
-            <Counter key={id} id={id}/>
+            <Counter key={id} id={id} handleResults={results}/>
         ))}
     </div>
   </div>  
