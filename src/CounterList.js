@@ -26,6 +26,7 @@ const CounterList = () => {
     const handleReset = () => {
         setReset(prev => !prev)
         setResults({})
+        localStorage.clear()
         setCounters([1,2,3])        
     }
 
