@@ -3,7 +3,7 @@ import Counter from "./Counter"
 import { useState } from "react"
 
 const CounterList = () => {
-    const[counters,setCounters] = useState([1,2,3,4,5,6,7,8])
+    const[counters,setCounters] = useState([1,2,3])
 
   return <div className="cl-container">
     <div className="counter-top">
