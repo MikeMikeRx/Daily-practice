@@ -4,17 +4,15 @@ import { useState } from "react"
 
 const CounterList = () => {
     const[counters,setCounters] = useState([1,2,3])
-    const[results,setResults] = useState([])
+    const[results,setResults] = useState({})
 
     const handleAdd = () => {
         const lastOne = counters.length
         setCounters(prev => [...prev, lastOne + 1])
     }
 
-    const handleResults = (id,x) =>{
-        if(results = []){
-            setResults([{id,x}])
-        }        
+    const handleResults = (id,x) => {
+        setResults(prev => ({ ...prev, [id]: x}))
         console.log(results);        
     }
 
@@ -28,7 +26,7 @@ const CounterList = () => {
     </div>
     <div className="counter-list">
         {counters.map(id =>(
-            <Counter key={id} id={id} handleResults={results}/>
+            <Counter key={id} id={id} handleResults={handleResults}/>
         ))}
     </div>
   </div>  
