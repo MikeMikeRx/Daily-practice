@@ -8,14 +8,14 @@ const CounterList = () => {
     const[reset, setReset] = useState(true)
 
     const handleAdd = () => {
-        const lastOne = counters.length
-        setCounters(prev => [...prev, lastOne + 1])
+        const newOne = counters.length
+        setCounters(prev => [...prev, newOne + 1])
     }
 
     const handleRemove = (id) => {
         setCounters(counters.filter((a) => a !== id))
         localStorage.removeItem(id)
-        // console.log(id);
+        console.log(counters);
         
     }
 
