@@ -13,14 +13,16 @@ const CounterList = () => {
 
     const handleResults = (id,x) => {
         setResults(prev => ({ ...prev, [id]: x}))
-        console.log(results);        
+               
     }
 
-
+    const total = Object.values(results).reduce((acc, r) => acc + r,0)
+    console.log(total);
+    
 
   return <div className="cl-container">
     <div className="counter-top">
-        <h2>Total Sum: 00</h2>
+        <h2>Total Sum: {total}</h2>
         <button onClick={handleAdd}>Add</button>
         <button>Reset</button>
     </div>
