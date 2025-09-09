@@ -16,7 +16,9 @@ const Counter = ({ id, handleResults }) => {
         }
     }
 
-
+    useEffect(() => {
+        handleResults(id, sum)
+    },[sum])
 
   return <div className="counter-container">
     <h3>Result {sum}</h3>
