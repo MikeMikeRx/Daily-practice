@@ -12,8 +12,10 @@ const CounterList = () => {
         setCounters(prev => [...prev, lastOne + 1])
     }
 
-    const handleRemove = () => {
-        counters.filter((a) => a !== a.id )
+    const handleRemove = (id) => {
+        counters.filter((a) => a !== id)
+        console.log(id);
+        
     }
 
     const handleResults = (id,x) => {
