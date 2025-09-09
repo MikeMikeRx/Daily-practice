@@ -12,6 +12,10 @@ const CounterList = () => {
         setCounters(prev => [...prev, lastOne + 1])
     }
 
+    const handleRemove = () => {
+        counters.filter((a) => a !== a.id )
+    }
+
     const handleResults = (id,x) => {
         setResults(prev => ({ ...prev, [id]: x}))
         localStorage.setItem((JSON.stringify(id)),(JSON.stringify(x)))                                      
