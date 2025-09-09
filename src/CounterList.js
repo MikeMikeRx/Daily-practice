@@ -14,6 +14,7 @@ const CounterList = () => {
 
     const handleRemove = (id) => {
         setCounters(counters.filter((a) => a !== id))
+        localStorage.removeItem(id)
         // console.log(id);
         
     }
