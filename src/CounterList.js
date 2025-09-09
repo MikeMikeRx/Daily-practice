@@ -25,6 +25,7 @@ const CounterList = () => {
 
     const handleReset = () => {
         setReset(prev => !prev)
+        setResults({})
         setCounters([1,2,3])        
     }
 
