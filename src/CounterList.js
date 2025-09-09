@@ -18,6 +18,8 @@ const CounterList = () => {
 
     const handleReset = () => {
         setReset(prev => !prev)
+        console.log(reset);
+        
     }
 
     const total = Object.values(results).reduce((acc, r) => acc + r,0)
@@ -26,11 +28,11 @@ const CounterList = () => {
     <div className="counter-top">
         <h2>Total Sum: {total}</h2>
         <button onClick={handleAdd}>Add</button>
-        <button>Reset</button>
+        <button onClick={handleReset}>Reset</button>
     </div>
     <div className="counter-list">
         {counters.map(id =>(
-            <Counter key={id} id={id} handleResults={handleResults} handleReset={reset}/>
+            <Counter key={id} id={id} handleResults={handleResults} reset={reset}/>
         ))}
     </div>
   </div>  
