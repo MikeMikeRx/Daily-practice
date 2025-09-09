@@ -8,8 +8,8 @@ const CounterList = () => {
     const[reset, setReset] = useState(true)
 
     const handleAdd = () => {
-        const newOne = counters.length
-        setCounters(prev => [...prev, newOne + 1])
+        const newOne = counters.length + 1
+        setCounters(prev => [...prev, newOne ])
     }
 
     const handleRemove = (id) => {
