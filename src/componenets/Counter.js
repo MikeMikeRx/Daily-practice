@@ -1,7 +1,7 @@
 import "./Counter.css"
 import { useState } from "react"
 
-const Counter = () => {
+const Counter = ({id}) => {
     const[sum, setSum] = useState(0)
 
     const handleIncrease = () => {
@@ -15,7 +15,7 @@ const Counter = () => {
     }
 
   return <div className="counter-container">
-    <h4>Id: X</h4>
+    <h4> *{id}*</h4>
     <h3>Result: {sum}</h3>
     <div className="plus-minus">
         <button onClick={handleIncrease}>Plus</button>
