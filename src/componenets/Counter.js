@@ -9,7 +9,9 @@ const Counter = () => {
     }
 
     const handleDecrease = () => {
-        setSum(prev => prev -1)
+        if(sum <= 0){
+            setSum(0)
+        } else setSum(prev => prev -1)        
     }
 
   return <div>
