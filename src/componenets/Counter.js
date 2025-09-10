@@ -2,6 +2,8 @@ import "./Counter.css"
 import { useState } from "react"
 
 const Counter = () => {
+    const[sum, setSum] = useState(0)
+
   return <div>
     <h3>Id:X</h3>
     <h3>Result:{}</h3>
