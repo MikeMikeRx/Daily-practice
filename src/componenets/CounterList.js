@@ -10,17 +10,13 @@ const CounterList = () => {
         const newCounter = counters.length + 1
         setCounters(prev => [...prev,newCounter])
     }
-    
-    
+        
     const handleResults = (id,x) => {
         setResults(prev => ({...prev, [id]:x}))
         console.log(results);        
     }
 
-
-    const total = Object.values(results).reduce((acc,r) => acc + r, 0)
-    console.log(total);
-    
+    const total = Object.values(results).reduce((acc,r) => acc + r, 0)    
 
   return <div className="counter-list-container">
     <div className="top-bar">
