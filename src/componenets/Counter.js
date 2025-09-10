@@ -14,7 +14,7 @@ const Counter = () => {
         } else setSum(prev => prev -1)        
     }
 
-  return <div>
+  return <div className="counter-container">
     <h3>Id:X</h3>
     <h3>Result:{sum}</h3>
     <button onClick={handleIncrease}>Plus</button>
