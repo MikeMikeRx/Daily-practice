@@ -11,6 +11,10 @@
     margin: 12px;
 }
 
+.counter-container h3 {
+    font-size: 25px;
+}
+
 .plus-minus{
     margin: 10px;
     display: flex;
@@ -27,7 +31,7 @@
     border-radius: 8px;
     box-shadow: 0px 0px 3px 2px white;
     padding: 3px;
-    background-color: purple;
+    background-color: transparent;
     font-weight: bold;
     cursor: pointer;
 }
