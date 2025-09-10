@@ -2,7 +2,7 @@ import Counter from "./Counter"
 import "./CounterList.css"
 
 const CounterList = () => {
-  return <div>
+  return <div className="counter-list">
     <Counter/>
     </div>
   
