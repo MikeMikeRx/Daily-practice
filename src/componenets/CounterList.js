@@ -1,4 +1,4 @@
-
+import Counter from "./Counter"
 
 const CounterList = () => {
   return (
