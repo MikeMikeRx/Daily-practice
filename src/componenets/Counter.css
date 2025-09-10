@@ -37,6 +37,6 @@
 }
 
 .counter-container button:hover{
-    background-color: rgb(97, 0, 97);
+    background-color: #011386;
     transform: scale(1.1);
 }
