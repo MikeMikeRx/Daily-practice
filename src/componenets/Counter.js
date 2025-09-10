@@ -15,7 +15,7 @@ const Counter = () => {
     }
 
   return <div className="counter-container">
-    <h3>Id: X</h3>
+    <h4>Id: X</h4>
     <h3>Result: {sum}</h3>
     <div className="plus-minus">
         <button onClick={handleIncrease}>Plus</button>
