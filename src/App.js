@@ -1,8 +1,7 @@
-import CounterList from "./CounterList"
 
 const App = () => {
   return (
-    <div><CounterList/></div>
+    <div>app</div>
   )
 }
 
