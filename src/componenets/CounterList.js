@@ -18,6 +18,7 @@ const CounterList = () => {
 
     const handleReset = () => {
         setReset(prev => !prev)
+        setCounters([1,2,3,4])
     }
 
     const total = Object.values(results).reduce((acc,r) => acc + r, 0)    
