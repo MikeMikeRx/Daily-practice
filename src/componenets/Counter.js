@@ -8,11 +8,15 @@ const Counter = () => {
         setSum(prev => prev + 1)
     }
 
+    const handleDecrease = () => {
+        setSum(prev => prev -1)
+    }
+
   return <div>
     <h3>Id:X</h3>
     <h3>Result:{sum}</h3>
     <button onClick={handleIncrease}>Plus</button>
-    <button>Minus</button>
+    <button onClick={handleDecrease}>Minus</button>
     <button>Remove</button>
   </div>
   
