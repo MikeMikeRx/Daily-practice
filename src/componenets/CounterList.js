@@ -6,10 +6,17 @@ const CounterList = () => {
     const[counters, setCounters] = useState([1,2,3,4])
     const[results, setResults] = useState({})
 
+    const handleAdd = () => {
+        const newCounter = counters.length + 1
+        setCounters(prev => [...prev,newCounter])
+    }
+    
+    
     const handleResults = (id,x) => {
         setResults(prev => ({...prev, [id]:x}))
         console.log(results);        
     }
+
 
     const total = Object.values(results).reduce((acc,r) => acc + r, 0)
     console.log(total);
