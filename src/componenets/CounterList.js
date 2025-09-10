@@ -25,7 +25,7 @@ const CounterList = () => {
   return <div className="counter-list-container">
     <div className="top-bar">
         <h2>Total Sum: {total}</h2>
-        <button>Add</button>
+        <button onClick={handleAdd}>Add</button>
         <button>Reset</button>
     </div>
     <div className="counter-list">
