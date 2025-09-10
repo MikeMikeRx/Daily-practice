@@ -2,9 +2,10 @@ import Counter from "./Counter"
 import "./CounterList.css"
 
 const CounterList = () => {
-  return (
-    <div>CounterList</div>
-  )
+  return <div>
+    <Counter/>
+    </div>
+  
 }
 
 export default CounterList
