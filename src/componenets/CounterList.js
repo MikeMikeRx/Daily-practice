@@ -17,7 +17,8 @@ const CounterList = () => {
     }
         
     const handleResults = (id,x) => {
-        setResults(prev => ({...prev, [id]:x}))      
+        setResults(prev => ({...prev, [id]:x}))
+        localStorage.setItem("Results", (JSON.stringify(results)))      
     }
 
     const handleReset = () => {
