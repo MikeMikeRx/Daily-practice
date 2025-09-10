@@ -5,6 +5,7 @@ import { useState } from "react"
 const CounterList = () => {
     const[counters, setCounters] = useState([1,2,3,4])
     const[results, setResults] = useState({})
+    const[reset, setReset] = useState(true)
 
     const handleAdd = () => {
         const newCounter = counters.length + 1
@@ -12,8 +13,7 @@ const CounterList = () => {
     }
         
     const handleResults = (id,x) => {
-        setResults(prev => ({...prev, [id]:x}))
-        console.log(results);        
+        setResults(prev => ({...prev, [id]:x}))      
     }
 
     const total = Object.values(results).reduce((acc,r) => acc + r, 0)    
