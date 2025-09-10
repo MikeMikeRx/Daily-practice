@@ -8,7 +8,12 @@ const CounterList = () => {
 
     const handleResults = (id,x) => {
         setResults(prev => ({...prev, [id]:x}))
+        console.log(results);        
     }
+
+    const total = Object.values(results).reduce((acc,r) => acc + r, 0)
+    console.log(total);
+    
 
   return <div className="counter-list-container">
     <div className="top-bar">
