@@ -1,5 +1,5 @@
 import "./Counter.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const Counter = ({id, handleResult}) => {
     const[sum, setSum] = useState(0)
