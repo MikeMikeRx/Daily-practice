@@ -1,9 +1,10 @@
 import CounterList from "./componenets/CounterList"
 
 const App = () => {
-  return (
-    <div>app</div>
-  )
+  return <div>
+    <CounterList/>
+    </div>
+  
 }
 
 export default App
