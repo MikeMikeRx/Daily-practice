@@ -6,6 +6,10 @@ const CounterList = () => {
     const[counters, setCounters] = useState([1,2,3,4])
     const[results, setResults] = useState({})
 
+    const handleResults = (id,x) => {
+        setResults(prev => ({...prev, [id]:x}))
+    }
+
   return <div className="counter-list-container">
     <div className="top-bar">
         <h2>Total Sum: XX</h2>
