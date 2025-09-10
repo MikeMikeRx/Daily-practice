@@ -4,6 +4,7 @@ import { useState } from "react"
 
 const CounterList = () => {
     const[counters, setCounters] = useState([1,2,3,4])
+    const[results, setResults] = useState({})
 
   return <div className="counter-list-container">
     <div className="top-bar">
