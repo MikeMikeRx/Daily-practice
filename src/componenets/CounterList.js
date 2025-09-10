@@ -6,6 +6,9 @@ const CounterList = () => {
     const[counters, setCounters] = useState([1,2,3])
 
   return <div className="counter-list-container">
+    <div className="top-bar">
+        
+    </div>
     <div className="counter-list">
         {counters.map(id => (
             <Counter key={id} id={id}/> 
