@@ -4,10 +4,14 @@ import { useState } from "react"
 const Counter = () => {
     const[sum, setSum] = useState(0)
 
+    const handleIncrease = () => {
+        setSum(prev => prev + 1)
+    }
+
   return <div>
     <h3>Id:X</h3>
-    <h3>Result:{}</h3>
-    <button>Plus</button>
+    <h3>Result:{sum}</h3>
+    <button onClick={handleIncrease}>Plus</button>
     <button>Minus</button>
     <button>Remove</button>
   </div>
