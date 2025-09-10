@@ -3,7 +3,7 @@ import "./CounterList.css"
 import { useState } from "react"
 
 const CounterList = () => {
-    const[counters, setCounters] = useState([1,2,3])
+    const[counters, setCounters] = useState([1,2,3,4])
 
   return <div className="counter-list-container">
     <div className="top-bar">
