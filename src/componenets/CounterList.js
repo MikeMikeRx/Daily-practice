@@ -6,7 +6,9 @@ const CounterList = () => {
     const[counters, setCounters] = useState([1,2,3])
 
   return <div className="counter-list">
-    <Counter/>
+    {counters.map(id => (
+        <Counter key={id} id={id}/> 
+    ))}
     </div>
   
 }
