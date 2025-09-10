@@ -16,6 +16,10 @@ const CounterList = () => {
         setResults(prev => ({...prev, [id]:x}))      
     }
 
+    const handleReset = () => {
+        setReset(prev => !prev)
+    }
+
     const total = Object.values(results).reduce((acc,r) => acc + r, 0)    
 
   return <div className="counter-list-container">
