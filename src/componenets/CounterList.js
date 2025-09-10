@@ -26,7 +26,7 @@ const CounterList = () => {
     <div className="top-bar">
         <h2>Total Sum: {total}</h2>
         <button onClick={handleAdd}>Add</button>
-        <button>Reset</button>
+        <button onClick={handleReset}>Reset</button>
     </div>
     <div className="counter-list">
         {counters.map(id => (

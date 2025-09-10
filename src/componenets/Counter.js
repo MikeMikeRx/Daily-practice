@@ -18,7 +18,7 @@ const Counter = ({ id, reset, handleResults }) => {
         handleResults(id, sum)
     },[sum])
 
-    useEffect(()=>{
+    useEffect(() => {
         setSum(0)
     },[reset])
 
