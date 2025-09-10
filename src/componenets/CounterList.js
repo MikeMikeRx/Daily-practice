@@ -18,7 +18,7 @@ const CounterList = () => {
     </div>
     <div className="counter-list">
         {counters.map(id => (
-            <Counter key={id} id={id}/> 
+            <Counter key={id} id={id} handleResults={handleResults}/> 
         ))}
     </div>
   </div>
