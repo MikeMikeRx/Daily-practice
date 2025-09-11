@@ -23,7 +23,7 @@ const ToDoList = () => {
 
   return <div className="container">
     <div className="add-form">
-        <form>
+        <form onSubmit={formSubmit}>
             <input type="text" name="taskToDo" placeholder="Task to do..." onChange={formChange}/>
             <input type="submit" />
         </form>        
