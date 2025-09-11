@@ -1,10 +1,10 @@
 import React from 'react'
 
-const OneTask = ({ text, handleDelete, key }) => {
+const OneTask = ({ text, handleDelete, id }) => {
   return <div>
     <h3>{text}</h3>
     <input type="checkbox" />
-    <button onClick={() => {handleDelete(key)}}>X</button>
+    <button onClick={() => {handleDelete(id)}}>X</button>
   </div>
   
 }
