@@ -1,8 +1,8 @@
-import React from 'react'
+import OneTask from "./OneTask"
 
 const ToDoList = () => {
   return (
-    <div>ToDoList</div>
+    <div><OneTask/></div>
   )
 }
 
