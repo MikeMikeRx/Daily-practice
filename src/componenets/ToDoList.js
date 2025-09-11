@@ -11,6 +11,16 @@ const ToDoList = () => {
         setToDo(task)               
     }
 
+    const formSubmit = (e) => {
+        e.preventDefault()
+        const newToDo = {...toDo, id: new Date().getTime()}
+        setAllToDos( (allToDos) => {
+            return [...allToDos, newToDo]
+        })               
+    }
+
+    console.log(allToDos);
+
   return <div className="container">
     <div className="add-form">
         <form>
