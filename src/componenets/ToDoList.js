@@ -20,11 +20,10 @@ const ToDoList = () => {
 
     const handleDelete = (id) => {
         setAllToDos( (allToDos) => {
-            return allToDos.filter(a => a !== a.id)
+            return allToDos.filter(a => a.id !== id)
         })        
     }
     
-    console.log(allToDos);
 
   return <div className="container">
     <div className="add-form">
