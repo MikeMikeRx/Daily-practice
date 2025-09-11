@@ -5,6 +5,13 @@ const ToDoList = () => {
     const[toDo, setToDo] = useState({})
     const[allToDos, setAllToDos] = useState([])
 
+    const formChange = (e) => {
+        e.preventDefault()
+        const task = e.target.value
+        console.log(task);
+         
+    }
+
   return <div className="container">
     <div className="add-form">
         <form>
