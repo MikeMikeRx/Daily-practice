@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OneTask = () => {
+const OneTask = ({ text }) => {
   return (
     <div>OneTask</div>
   )
