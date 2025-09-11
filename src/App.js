@@ -1,10 +1,9 @@
-import CounterList from "./componenets/CounterList"
+import React from 'react'
 
 const App = () => {
-  return <div>
-    <CounterList/>
-    </div>
-  
+  return (
+    <div>App</div>
+  )
 }
 
 export default App
