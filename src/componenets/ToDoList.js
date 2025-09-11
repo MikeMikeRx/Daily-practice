@@ -2,23 +2,22 @@ import OneTask from "./OneTask"
 import { useState } from "react"
 
 const ToDoList = () => {
-    const[toDo, setToDo] = useState({})
+    const[toDo, setToDo] = useState({text: ""})
     const[allToDos, setAllToDos] = useState([])
 
     const formChange = (e) => {
-        e.preventDefault()
         const task = e.target.value
-        setToDo(task)               
+        setToDo({text: task})                       
     }
 
     const formSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault()        
         const newToDo = {...toDo, id: new Date().getTime()}
         setAllToDos( (allToDos) => {
             return [...allToDos, newToDo]
         })               
     }
-
+    
     console.log(allToDos);
 
   return <div className="container">
