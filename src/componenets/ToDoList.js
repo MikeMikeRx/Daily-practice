@@ -15,7 +15,9 @@ const ToDoList = () => {
         const newToDo = {...toDo, id: new Date().getTime()}
         setAllToDos( (allToDos) => {
             return [...allToDos, newToDo]
-        })               
+        })
+        
+        setToDo({text:""})
     }
 
     const handleDelete = (id) => {
@@ -24,7 +26,6 @@ const ToDoList = () => {
         })        
     }
     
-
   return <div className="container">
     <div className="add-form">
         <form onSubmit={formSubmit}>
