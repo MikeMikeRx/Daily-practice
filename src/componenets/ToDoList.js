@@ -36,7 +36,7 @@ const ToDoList = () => {
     <div className="toDo-list">
         <ul>
             {allToDos.map(item => (
-              <li><OneTask key={item.id} text={item.text}/></li>
+              <li><OneTask key={item.id} text={item.text} handleDelete={handleDelete}/></li>
             ))}
         </ul>        
     </div>
