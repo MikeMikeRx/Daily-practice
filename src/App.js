@@ -1,7 +1,8 @@
+import ToDoList from "./componenets/ToDoList"
 
 const App = () => {
   return (
-    <div>App</div>
+    <div><ToDoList/></div>
   )
 }
 
