@@ -8,8 +8,7 @@ const ToDoList = () => {
     const formChange = (e) => {
         e.preventDefault()
         const task = e.target.value
-        console.log(task);
-         
+        setToDo(task)               
     }
 
   return <div className="container">
