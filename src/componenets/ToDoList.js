@@ -2,8 +2,8 @@ import OneTask from "./OneTask"
 import { useState } from "react"
 
 const ToDoList = () => {
-    const[Task, setTask] = useState({})
-    const[allTasks, setAllTasks] = useState([])
+    const[toDo, setToDo] = useState({})
+    const[allToDos, setAllToDos] = useState([])
 
   return <div className="container">
     <div className="add-form">
