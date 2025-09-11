@@ -2,6 +2,8 @@ import OneTask from "./OneTask"
 import { useState } from "react"
 
 const ToDoList = () => {
+    const[Task,setTask] = useState({})
+
   return <div className="container">
     <div className="add-form">
         <form>
@@ -10,7 +12,8 @@ const ToDoList = () => {
         </form>        
     </div> 
     <div className="toDo-list">
-        <OneTask/></div>
+        <OneTask/>
+    </div>
   </div>
   
 }
