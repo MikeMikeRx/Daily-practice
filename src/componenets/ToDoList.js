@@ -28,7 +28,11 @@ const ToDoList = () => {
         </form>        
     </div> 
     <div className="toDo-list">
-        <OneTask/>
+        <ul>
+            {allToDos.map(item => (
+              <li><OneTask key={item.id} text={item.text}/></li>
+            ))}
+        </ul>        
     </div>
   </div>
   
