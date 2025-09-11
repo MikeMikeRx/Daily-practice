@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OneTask = ({ text }) => {
+const OneTask = ({ text, handleDelete }) => {
   return <div>
     <h3>{text}</h3>
     <input type="checkbox" />
