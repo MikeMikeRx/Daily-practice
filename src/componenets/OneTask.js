@@ -4,7 +4,7 @@ const OneTask = ({ text }) => {
   return <div>
     <h3>{text}</h3>
     <input type="checkbox" />
-    <button></button>
+    <button>X</button>
   </div>
   
 }

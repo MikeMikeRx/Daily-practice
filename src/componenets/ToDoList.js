@@ -17,6 +17,12 @@ const ToDoList = () => {
             return [...allToDos, newToDo]
         })               
     }
+
+    const handleDelete = (id) => {
+        setAllToDos( (allToDos) => {
+            return allToDos.filter(a => a !== a.id)
+        })        
+    }
     
     console.log(allToDos);
 
