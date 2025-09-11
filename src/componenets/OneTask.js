@@ -4,7 +4,7 @@ const OneTask = ({ text, handleDelete, key }) => {
   return <div>
     <h3>{text}</h3>
     <input type="checkbox" />
-    <button>X</button>
+    <button onClick={() => {handleDelete(key)}}>X</button>
   </div>
   
 }
