@@ -35,6 +35,7 @@ const App = () => {
 const OneToDo = () => {
   return <>
   <h3></h3>
+  <button>Delete</button>
   </>
 }
 
