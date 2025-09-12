@@ -14,15 +14,15 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setAllToDos([...allToDos, {toDo, id: new Date.getTime()}])
-    console.log(allToDos);    
+    const newTask = {toDo, id: new Date().getTime()}
+    console.log(newTask);    
   }
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} value={toDo.text}/>
-        <input type="submit" />
+        <input type="submit"/>
       </form>
     </div>
   )
