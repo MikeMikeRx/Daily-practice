@@ -49,7 +49,7 @@ const App = () => {
   )
 }
 
-const OneToDo = ({ id, text ,handleDelete, handleDone }) => {
+const OneToDo = ({ id, text , done, handleDelete, handleDone }) => {
 
   return <>
   <h3>{text}</h3>
