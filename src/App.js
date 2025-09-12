@@ -40,11 +40,11 @@ const App = () => {
   )
 }
 
-const OneToDo = ({text ,handleDelete}) => {
+const OneToDo = ({ id, text ,handleDelete }) => {
   return <>
   <h3>{text}</h3>
   <input type="checkbox"/>
-  <button onClick={()=>{handleDelete()}}>Delete</button>
+  <button onClick={()=>{handleDelete(id)}}>Delete</button>
   </>
 }
 
