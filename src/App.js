@@ -22,8 +22,8 @@ const App = () => {
     // console.log(allToDos);  
   }
 
-  const handleDelete = () => {
-    
+  const handleDelete = (id) => {
+    setAllToDos( allToDos.filter(a => a.id !== id))
   }
 
   return (
