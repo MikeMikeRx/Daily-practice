@@ -15,7 +15,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const newToDo = {text: toDo, id: new Date().getTime()}    
+    const newToDo = {id: new Date().getTime(),text: toDo, done: false}    
     setAllToDos( (allToDos) => {
       return [...allToDos, newToDo]
     })
