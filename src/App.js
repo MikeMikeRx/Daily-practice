@@ -4,6 +4,7 @@ const App = () => {
   return (
     <div>
       <input type="text" />
+      <input type="submit" />
 
 
 
