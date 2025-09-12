@@ -36,7 +36,7 @@ const App = () => {
   )
 }
 
-const OneToDo = () => {
+const OneToDo = ({text}) => {
   return <>
   <h3></h3>
   <input type="checkbox"/>
