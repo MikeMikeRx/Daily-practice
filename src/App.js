@@ -25,7 +25,7 @@ const App = () => {
 
   const handleDone = (id) => {
     setAllToDos(prev =>
-      prev.map(task =>
+      prev.map(toDo =>
         toDo.id === id ? { ...toDo, done: !toDo.done } : toDo
       )
     )
