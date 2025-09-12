@@ -23,9 +23,14 @@ const App = () => {
     // console.log(allToDos);  
   }
 
-  const handleDone = () => {
-    setDone(prev => !prev)
+  const handleDone = (id) => {
+    setAllToDos(prev =>
+      prev.map(task =>
+        toDo.id === id ? { ...toDo, done: !toDo.done } : toDo
+      )
+    )
   }
+
 
 
   const handleDelete = (id) => {
@@ -51,7 +56,7 @@ const OneToDo = ({ id, text ,handleDelete }) => {
 
   return <>
   <h3>{text}</h3>
-  <input type="checkbox"/> {/* ADD State done/undone */}
+  <input type="checkbox" checked={done}/> {/* ADD State done/undone */}
   <button onClick={()=>{handleDelete(id)}}>Delete</button>
   </>
 }
