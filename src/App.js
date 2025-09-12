@@ -50,7 +50,6 @@ const App = () => {
 }
 
 const OneToDo = ({ id, text ,handleDelete, handleDone }) => {
-  const[done, setDone] = useState(true)
 
   return <>
   <h3>{text}</h3>
