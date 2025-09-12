@@ -23,6 +23,11 @@ const App = () => {
     // console.log(allToDos);  
   }
 
+  const handleDone = () => {
+    setDone(prev => !prev)
+  }
+
+
   const handleDelete = (id) => {
     setAllToDos( allToDos.filter(a => a.id !== id))
   }
