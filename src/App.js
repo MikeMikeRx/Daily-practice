@@ -40,7 +40,7 @@ const App = () => {
   )
 }
 
-const OneToDo = ({text}) => {
+const OneToDo = ({text ,handleDelete}) => {
   return <>
   <h3>{text}</h3>
   <input type="checkbox"/>
