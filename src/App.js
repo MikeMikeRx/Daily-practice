@@ -31,8 +31,6 @@ const App = () => {
     )
   }
 
-
-
   const handleDelete = (id) => {
     setAllToDos( allToDos.filter(a => a.id !== id))
   }
@@ -51,12 +49,12 @@ const App = () => {
   )
 }
 
-const OneToDo = ({ id, text ,handleDelete }) => {
+const OneToDo = ({ id, text ,handleDelete, handleDone }) => {
   const[done, setDone] = useState(true)
 
   return <>
   <h3>{text}</h3>
-  <input type="checkbox" checked={done}/> {/* ADD State done/undone */}
+  <input type="checkbox" checked={done}/> 
   <button onClick={()=>{handleDelete(id)}}>Delete</button>
   </>
 }
