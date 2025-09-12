@@ -4,6 +4,7 @@ import { useState } from 'react'
 const App = () => {
   const[toDo, setToDo] = useState("")
   const[allToDos, setAllToDos] = useState([])
+  const[done, setDone] = useState(true)
   
   const handleChange = (e) => {
     // e.preventDefault()
@@ -43,7 +44,7 @@ const App = () => {
 const OneToDo = ({ id, text ,handleDelete }) => {
   return <>
   <h3>{text}</h3>
-  <input type="checkbox"/>
+  <input type="checkbox"/> {/* ADD State done/undone */}
   <button onClick={()=>{handleDelete(id)}}>Delete</button>
   </>
 }
