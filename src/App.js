@@ -2,24 +2,24 @@ import React from 'react'
 import { useState } from 'react'
 
 const App = () => {
-  const[toDo, setToDo] = useState({text:""})
+  const[toDo, setToDo] = useState("")
   const[allToDos, setAllToDos] = useState([])
   
   const handleChange = (e) => {
     // e.preventDefault()
     const task = e.target.value
-    setToDo({text: task})
+    setToDo(task)
     // console.log(toDo);    
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const newToDo = {toDo, id: new Date().getTime()}    
+    const newToDo = {text: toDo, id: new Date().getTime()}    
     setAllToDos( (allToDos) => {
       return [...allToDos, newToDo]
     })
     console.log(newToDo)  
-    console.log(allToDos);  
+    // console.log(allToDos);  
   }
 
   return (
