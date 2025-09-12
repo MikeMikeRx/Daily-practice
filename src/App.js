@@ -38,7 +38,7 @@ const App = () => {
 
 const OneToDo = ({text}) => {
   return <>
-  <h3></h3>
+  <h3>{text}</h3>
   <input type="checkbox"/>
   <button>Delete</button>
   </>
