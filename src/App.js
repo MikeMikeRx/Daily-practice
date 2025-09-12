@@ -22,6 +22,10 @@ const App = () => {
     // console.log(allToDos);  
   }
 
+  const handleDelete = () => {
+    
+  }
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
