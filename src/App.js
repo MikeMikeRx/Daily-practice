@@ -44,7 +44,7 @@ const OneToDo = ({text ,handleDelete}) => {
   return <>
   <h3>{text}</h3>
   <input type="checkbox"/>
-  <button>Delete</button>
+  <button onClick={()=>{handleDelete()}}>Delete</button>
   </>
 }
 
