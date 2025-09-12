@@ -34,7 +34,7 @@ const App = () => {
       </form>
 
       {allToDos.map(item => (
-        <OneToDo key={item.id} text={item.text}/>
+        <OneToDo key={item.id} text={item.text} handleDelete={handleDelete}/>
       ))}
     </div>
   )
