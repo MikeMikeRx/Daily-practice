@@ -4,8 +4,8 @@ const App = () => {
   const[toDo, setToDo] = useState({text:""})
   const[allToDos, setAllToDos] = useState([])
 
-  const handleChange = () => {
-    
+  const handleChange = (e) => {
+    setToDo({text: e.target.value})
   }
 
   return <div>
