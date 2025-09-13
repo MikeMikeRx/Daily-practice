@@ -10,11 +10,12 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setAllToDos([...allToDos,{...toDo, id: new Date().getTime()}])    
   }
 
   return <div>
     <form>
-      <input type="text" onChange={handleChange}/>
+      <input type="text" />
       <input type="submit" />
     </form>
 
