@@ -20,7 +20,7 @@ const App = () => {
     </form>
 
     {allToDos.map((item => (
-      <ToDo key={item.id} />
+      <ToDo key={item.id} id={item.id}/>
     )))}
 
   </div>
