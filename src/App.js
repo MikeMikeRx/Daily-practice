@@ -6,11 +6,13 @@ const App = () => {
 
   const handleChange = (e) => {
     setToDo({text: e.target.value})
+    console.log(toDo);
+    
   }
 
   return <div>
     <form>
-      <input type="text" />
+      <input type="text" onChange={handleChange}/>
       <input type="submit" />
     </form>
 
