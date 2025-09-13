@@ -5,8 +5,10 @@ const App = () => {
   const[allToDos, setAllToDos] = useState([])
 
   const handleChange = (e) => {
-    setToDo({text: e.target.value})
-    console.log(toDo);
+    setToDo({text: e.target.value}) 
+  }
+
+  const handleSubmit = (e) => {
     
   }
 
