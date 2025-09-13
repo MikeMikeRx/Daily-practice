@@ -33,7 +33,7 @@ const App = () => {
   
 }
 
-const ToDo = ({ id, text }) => {
+const ToDo = ({ id, text, handleRemove }) => {
   return <div>
     <h3>{text}</h3>
     <input type="checkbox" />
