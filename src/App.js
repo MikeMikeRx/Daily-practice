@@ -13,6 +13,10 @@ const App = () => {
     setAllToDos([...allToDos,{...toDo, id: new Date().getTime()}])    
   }
 
+  const handleRemove = () => {
+    
+  }
+
   return <div>
     <form onSubmit={handleSubmit}>
       <input type="text" onChange={handleChange}/>
