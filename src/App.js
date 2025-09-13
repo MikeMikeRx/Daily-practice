@@ -14,6 +14,7 @@ const ToDo = () => {
   return <div>
     <h3>TEXT</h3>
     <input type="checkbox" />
+    <button>Remove</button>
   </div>
 }
 
