@@ -19,6 +19,10 @@ const App = () => {
       <input type="submit" />
     </form>
 
+    {allToDos.map((item => (
+      <ToDo key={item.id} />
+    )))}
+
   </div>
   
 }
