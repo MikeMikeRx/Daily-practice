@@ -13,6 +13,7 @@ const App = () => {
 const ToDo = () => {
   return <div>
     <h3>TEXT</h3>
+    <input type="checkbox" />
   </div>
 }
 
