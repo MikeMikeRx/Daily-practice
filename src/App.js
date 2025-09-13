@@ -37,7 +37,7 @@ const ToDo = ({ id, text, handleRemove }) => {
   return <div>
     <h3>{text}</h3>
     <input type="checkbox" />
-    <button>Remove</button>
+    <button onClick={()=>{handleRemove(id)}}>Remove</button>
   </div>
 }
 
