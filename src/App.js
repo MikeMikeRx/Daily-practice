@@ -9,7 +9,7 @@ const App = () => {
   }
 
   const handleSubmit = (e) => {
-    
+    e.preventDefault()
   }
 
   return <div>
