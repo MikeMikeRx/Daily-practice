@@ -27,9 +27,9 @@ const App = () => {
   
 }
 
-const ToDo = ({ id, text}) => {
+const ToDo = ({ id, text }) => {
   return <div>
-    <h3>TEXT</h3>
+    <h3>{text}</h3>
     <input type="checkbox" />
     <button>Remove</button>
   </div>
