@@ -20,14 +20,14 @@ const App = () => {
     </form>
 
     {allToDos.map((item => (
-      <ToDo key={item.id} id={item.id}/>
+      <ToDo key={item.id} id={item.id} text={item.text}/>
     )))}
 
   </div>
   
 }
 
-const ToDo = ({ id,}) => {
+const ToDo = ({ id, text}) => {
   return <div>
     <h3>TEXT</h3>
     <input type="checkbox" />
