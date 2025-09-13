@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { use, useState } from "react"
 
 const App = () => {
   const[toDo, setToDo] = useState({text:""})
+  const[allToDos, setAllToDos] = useState([])
 
 
   return <div>
