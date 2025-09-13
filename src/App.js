@@ -13,8 +13,10 @@ const App = () => {
     setAllToDos([...allToDos,{...toDo, id: new Date().getTime()}])    
   }
 
-  const handleRemove = () => {
-    
+  const handleRemove = (id) => {
+    setAllToDos((allToDos) => {
+      return (allToDos.filter(a => a.id !== id) )
+    })
   }
 
   return <div>
@@ -24,7 +26,7 @@ const App = () => {
     </form>
 
     {allToDos.map((item => (
-      <ToDo key={item.id} id={item.id} text={item.text}/>
+      <ToDo key={item.id} id={item.id} text={item.text} />
     )))}
 
   </div>
