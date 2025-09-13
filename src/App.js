@@ -27,7 +27,7 @@ const App = () => {
   
 }
 
-const ToDo = () => {
+const ToDo = ({ id,}) => {
   return <div>
     <h3>TEXT</h3>
     <input type="checkbox" />
