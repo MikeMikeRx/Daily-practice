@@ -6,7 +6,7 @@ const App = () => {
   const[allTasks, setAllTasks] = useState([])
 
   const handleChange = (e) => {
-    setToDo(e.target.value)
+    setToDo({text: e.target.value})
     console.log(toDo);    
   }
 
