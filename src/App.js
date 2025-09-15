@@ -32,6 +32,10 @@ const App = () => {
 
 
   return <div>
+    <h1>Total:</h1>
+    <h1>Tasks to do:</h1>
+    <h1>Tasks done:</h1>
+
     <form onSubmit={handleSubmit}>
       <input type="text" onChange={handleChange} value={toDo.text}/>
       <input type="submit" />
