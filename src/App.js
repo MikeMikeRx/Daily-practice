@@ -30,9 +30,10 @@ const App = () => {
     setAllTasks(allTasks.filter(a => a.id !== id))
   }
 
+  const total = allTasks.length
 
   return <div>
-    <h1>Total:</h1>
+    <h1>Total:{total}</h1>
     <h1>Tasks to do:</h1>
     <h1>Tasks done:</h1>
 
