@@ -16,7 +16,7 @@ const App = () => {
       text: toDo.text, 
       id: new Date().getTime()
     }
-    
+
     setAllTasks([...allTasks, newTask])
   }
 
@@ -26,6 +26,10 @@ const App = () => {
       <input type="text" onChange={handleChange} value={toDo.text}/>
       <input type="submit" />
     </form>
+
+    {allTasks.map((item) => (
+      <ToDoList key={item.id} id={item.id} text={item.text}/>
+    ))}
   </div>
   
 }
