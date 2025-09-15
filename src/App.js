@@ -40,9 +40,9 @@ const App = () => {
   
 }
 
-const ToDoList = (id, text, done, handleToggle) => {
+const ToDoList = ({ id, text, done, handleToggle }) => {
   return <div>
-    <h2>TEXT</h2>
+    <h2>{text}</h2>
     <input type="checkbox" />
     <button>REMOVE</button>
   </div>
