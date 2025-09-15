@@ -12,7 +12,9 @@ const App = () => {
 }
 
 const ToDoList = () => {
-  return <div></div>
+  return <div>
+    <h2>TEXT</h2>
+  </div>
 }
 
 export default App
