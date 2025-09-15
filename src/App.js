@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 const App = () => {
   const[toDo, setToDo] = useState({text:""})
+  const[allTasks, setAllTasks] = useState([])
 
 
   return <div>
