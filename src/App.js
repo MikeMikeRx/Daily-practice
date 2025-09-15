@@ -26,6 +26,10 @@ const App = () => {
     setAllTasks(updatedDone)      
   }
 
+  const handleRemove = (id) => {
+    setAllTasks(allTasks.filter(a => a.id !== id))
+  }
+
 
   return <div>
     <form onSubmit={handleSubmit}>
