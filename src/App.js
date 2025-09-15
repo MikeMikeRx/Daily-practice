@@ -40,7 +40,7 @@ const App = () => {
   
 }
 
-const ToDoList = () => {
+const ToDoList = (id, text, done, handleToggle) => {
   return <div>
     <h2>TEXT</h2>
     <input type="checkbox" />
