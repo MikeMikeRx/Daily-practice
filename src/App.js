@@ -16,9 +16,14 @@ const App = () => {
       text: toDo.text, 
       id: new Date().getTime(),
       done: false
-    }
-
+    }      
+    
     setAllTasks([...allTasks, newTask])
+  }
+
+  const handleToggle = (id) =>{
+    const updatedDone = allTasks.map(item => item.id === id ? {...item, done: !item.done} : item)
+    setAllTasks(updatedDone)      
   }
 
 
