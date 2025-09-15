@@ -2,6 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 
 const App = () => {
+  const[toDo, setToDo] = useState({text:""})
+
+
   return <div>
     <form>
       <input type="text" />
