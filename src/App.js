@@ -16,8 +16,6 @@ const App = () => {
       text: toDo.text, 
       id: new Date().getTime()
     }
-
-    console.log(newTask);
     
     setAllTasks([...allTasks, newTask])
   }
