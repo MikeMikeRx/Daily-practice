@@ -43,7 +43,7 @@ const App = () => {
 const ToDoList = ({ id, text, done, handleToggle }) => {
   return <div>
     <h2>{text}</h2>
-    <input type="checkbox" onChange={()=>handleToggle(id)}/>
+    <input type="checkbox" onChange={()=>handleToggle(id)} value={done}/>
     <button>REMOVE</button>
   </div>
 }
