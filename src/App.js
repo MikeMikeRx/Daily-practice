@@ -6,8 +6,20 @@ const App = () => {
   const[allTasks, setAllTasks] = useState([])
 
   const handleChange = (e) => {
-    setToDo({text: e.target.value})
-    console.log(toDo);    
+    setToDo({text: e.target.value})   
+  }
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+
+    const newTask = {
+      text: toDo.text, 
+      id: new Date.getTime()
+    }
+
+    console.log(newTask);
+    
+    setAllTasks([...allTasks, newTask])
   }
 
 
