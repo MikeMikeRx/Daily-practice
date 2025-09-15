@@ -31,10 +31,12 @@ const App = () => {
   }
 
   const total = allTasks.length
+  const unDone = allTasks.filter(item => !item.done).length  
+
 
   return <div>
     <h1>Total:{total}</h1>
-    <h1>Tasks to do:</h1>
+    <h1>Tasks to do:{unDone}</h1>
     <h1>Tasks done:</h1>
 
     <form onSubmit={handleSubmit}>
