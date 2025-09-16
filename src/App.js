@@ -50,7 +50,7 @@ const App = () => {
     <h2>Tasks: {total}</h2>
     <h3>Done: {done}</h3>
     <h3>To Do: {unDone}</h3>
-    
+
     <div className="listed">
       {allTasks.map((item) => (
         <ListTasks key={item.id} id={item.id} text={item.text} done={item.done} handleToggle={handleToggle} handleRemove={handleRemove}/>
@@ -60,7 +60,7 @@ const App = () => {
 }
 
 const ListTasks = ({id, text, done, handleToggle, handleRemove}) =>{
-  return <div key={id}>
+  return <div key={id} className='one-task'>
     <h2>{text}</h2>
     <input type="checkbox" onChange={()=>handleToggle(id)} checked={done}/>
     <button onClick={()=>handleRemove(id)}>Remove</button>
