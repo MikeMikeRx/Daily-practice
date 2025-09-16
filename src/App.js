@@ -7,7 +7,13 @@ const App = () => {
 
   const handleChange = (e) =>{
     setTodo(e.target.value)
-  } 
+  }
+  
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+
+    
+  }
 
   return <div>
     <form action="">
