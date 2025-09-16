@@ -42,7 +42,7 @@ const App = () => {
   },[allTasks])
 
   return <div className='container'>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='form'>
       <input type="text" onChange={handleChange} value={toDo.text}/>
       <input type="submit" />
     </form>
