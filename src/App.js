@@ -44,7 +44,7 @@ const App = () => {
   return <div className='container'>
     <form onSubmit={handleSubmit} className='form'>
       <input type="text" onChange={handleChange} value={toDo.text}/>
-      <input type="submit" />
+      <input type="submit" value='Add Task'/>
     </form>
 
     <h2>Tasks: {total}</h2>
