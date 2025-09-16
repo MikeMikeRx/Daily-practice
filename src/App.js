@@ -5,6 +5,10 @@ const App = () => {
   const[toDo, setTodo] = useState({text:""})
   const[allTasks, setAllTasks] = useState([])
 
+  const handleChange = (e) =>{
+    setTodo(e.target.value)
+  } 
+
   return <div>
     <form action="">
       <input type="text" />
