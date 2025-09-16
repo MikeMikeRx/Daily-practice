@@ -25,6 +25,10 @@ const App = () => {
       <input type="text" onChange={handleChange} value={toDo.text}/>
       <input type="submit" />
     </form>
+
+    {allTasks.map((item) => (
+      <ListTasks key={item.id} id={item.id} text={item.text} done={item.done}/>
+    ))}
   </div>  
 }
 
