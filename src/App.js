@@ -35,7 +35,7 @@ const App = () => {
     </form>
 
     {allTasks.map((item) => (
-      <ListTasks key={item.id} id={item.id} text={item.text} done={item.done} handleToggle={handleToggle}/>
+      <ListTasks key={item.id} id={item.id} text={item.text} done={item.done} handleToggle={handleToggle} handleRemove={handleRemove}/>
     ))}
   </div>  
 }
