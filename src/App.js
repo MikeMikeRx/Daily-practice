@@ -28,6 +28,8 @@ const App = () => {
     setAllTasks(prev => prev.filter(item => item.id !== id))
   }
 
+  const total = allTasks.length  
+
   return <div>
     <form onSubmit={handleSubmit}>
       <input type="text" onChange={handleChange} value={toDo.text}/>
