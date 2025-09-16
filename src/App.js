@@ -41,7 +41,7 @@ const App = () => {
       localStorage.setItem("AllTasks", (JSON.stringify(allTasks))) 
   },[allTasks])
 
-  return <div>
+  return <div className='container'>
     <form onSubmit={handleSubmit}>
       <input type="text" onChange={handleChange} value={toDo.text}/>
       <input type="submit" />
