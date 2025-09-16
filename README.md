@@ -1,15 +1,21 @@
-# React Daily Practice 📝
+# React To-Do App
 
-This repository is for my **daily React practice**.  
-Each branch contains a finished mini project or exercise focused on components, state management, and coding on my own.
+A simple to-do list built with React for daily practice.  
+Features include:  
+- Add new tasks  
+- Mark tasks as done/undone  
+- Remove tasks  
+- Task counters (total, done, undone)  
+- LocalStorage persistence  
 
----
+## Purpose
+Practice React basics: components, state, props, event handling, conditional rendering, and local storage.
 
-## Structure
-- `main` → Base setup and general notes  
-- Other branches → Finished Daily tasks  
+## Usage
+1. Type a task and press **Enter** or click **Submit**.  
+2. Toggle the checkbox to mark as done.  
+3. Remove tasks with the delete button.  
+4. Tasks are saved automatically in your browser.
 
----
-
-## Goal 🎯
-Practice React every day on a mini project until I can complete it on the first try. Then, upload finished projects to a separate branch. The goal is to build discipline and improve problem-solving through coding.
+## Screenshots
+![shot-1](./src/screenshots/Shot-1.png)
