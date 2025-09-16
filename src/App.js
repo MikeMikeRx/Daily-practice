@@ -2,21 +2,26 @@ import React from 'react'
 import { useState } from 'react'
 
 const App = () => {
-  const[toDo, setTodo] = useState({text:""})
+  const[toDo, setToDo] = useState({text:""})
   const[allTasks, setAllTasks] = useState([])
 
   const handleChange = (e) =>{
-    setTodo({text: e.target.value})    
+    setToDo({text: e.target.value})    
   }
   
   const handleSubmit = (e) =>{
     e.preventDefault()
 
-    const newTask = {...toDo, id: new Date().getTime(), done: false}
+    const newTask = {
+      ...toDo, 
+      id: new Date().getTime(), 
+      done: false}
+
+    setAllTasks([...allTasks, newTask])      
   }
 
   return <div>
-    <form action="">
+    <form>
       <input type="text" onChange={handleChange}/>
       <input type="submit" />
     </form>
