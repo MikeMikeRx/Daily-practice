@@ -2,9 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
+  return <div>
+    <input type="text" />
+  </div>
+  
 }
 
 export default App
