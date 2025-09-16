@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react'
 
 const App = () => {
   const[toDo, setToDo] = useState({text:""})
-  const[allTasks, setAllTasks] = useState([])
-
+  const[allTasks, setAllTasks] = useState(()=>{
+    const saved = localStorage.getItem("AllTasks")
+    return saved ? JSON.parse(saved) : []
+  })
+  
   const handleChange = (e) =>{
     setToDo({text: e.target.value})    
   }
