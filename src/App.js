@@ -21,7 +21,7 @@ const App = () => {
   }
 
   return <div>
-    <form>
+    <form onSubmit={handleSubmit}>
       <input type="text" onChange={handleChange}/>
       <input type="submit" />
     </form>
