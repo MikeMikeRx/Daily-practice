@@ -50,10 +50,12 @@ const App = () => {
     <h2>Tasks: {total}</h2>
     <h3>Done: {done}</h3>
     <h3>To Do: {unDone}</h3>
-
-    {allTasks.map((item) => (
-      <ListTasks key={item.id} id={item.id} text={item.text} done={item.done} handleToggle={handleToggle} handleRemove={handleRemove}/>
-    ))}
+    
+    <div className="listed">
+      {allTasks.map((item) => (
+        <ListTasks key={item.id} id={item.id} text={item.text} done={item.done} handleToggle={handleToggle} handleRemove={handleRemove}/>
+      ))}
+    </div>
   </div>  
 }
 
