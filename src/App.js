@@ -38,7 +38,7 @@ const App = () => {
 
 const ListTasks = ({id, text, done, handleToggle}) =>{
   return <div key={id}>
-    <h2>TEXT</h2>
+    <h2>{text}</h2>
     <input type="checkbox" />
     <button>Remove</button>
   </div>
