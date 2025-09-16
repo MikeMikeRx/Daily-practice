@@ -20,6 +20,10 @@ const App = () => {
     setAllTasks([...allTasks, newTask])      
   }
 
+  const handleToggle = (id) =>{
+    setAllTasks(prev => prev.map(item => (item.id === id ? {...item, done: !item.done} : item)))        
+  }
+
   return <div>
     <form onSubmit={handleSubmit}>
       <input type="text" onChange={handleChange} value={toDo.text}/>
