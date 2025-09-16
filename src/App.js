@@ -30,7 +30,11 @@ const App = () => {
 
   const total = allTasks.length
   const done = allTasks.filter(a => a.done === true).length
-  const unDone = allTasks.filter(a => a.done !== true).length       
+  const unDone = allTasks.filter(a => a.done !== true).length
+  
+  useEffect(() =>{
+      localStorage.setItem("AllTasks", (JSON.stringify(allTasks))) 
+  },[allTasks])
 
   return <div>
     <form onSubmit={handleSubmit}>
