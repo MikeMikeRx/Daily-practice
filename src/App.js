@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 const App = () => {
   const[toDo, setTodo] = useState({text:""})
+  const[allTasks, setAllTasks] = useState([])
 
   return <div>
     <form action="">
