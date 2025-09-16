@@ -7,7 +7,7 @@ const App = () => {
     const saved = localStorage.getItem("AllTasks")
     return saved ? JSON.parse(saved) : []
   })
-  
+
   const handleChange = (e) =>{
     setToDo({text: e.target.value})    
   }
@@ -20,7 +20,9 @@ const App = () => {
       id: new Date().getTime(), 
       done: false}
 
-    setAllTasks([...allTasks, newTask])    
+    setAllTasks([...allTasks, newTask])
+    
+    setToDo({text: ""})
   }
 
   const handleToggle = (id) =>{
