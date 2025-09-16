@@ -36,7 +36,7 @@ const App = () => {
   </div>  
 }
 
-const ListTasks = () =>{
+const ListTasks = ({id, text, done, handleToggle}) =>{
   return <div>
     <h2>TEXT</h2>
     <input type="checkbox" />
