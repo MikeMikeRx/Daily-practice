@@ -31,6 +31,7 @@ const App = () => {
 const ListTasks = () =>{
   return <div>
     <h2>TEXT</h2>
+    <input type="checkbox" />
   </div>
 }
 
