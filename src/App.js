@@ -24,6 +24,10 @@ const App = () => {
     setAllTasks(prev => prev.map(item => (item.id === id ? {...item, done: !item.done} : item)))        
   }
 
+  const handleRemove = (id) =>{
+    setAllTasks(prev => prev.filter(item => item.id !== id))
+  }
+
   return <div>
     <form onSubmit={handleSubmit}>
       <input type="text" onChange={handleChange} value={toDo.text}/>
