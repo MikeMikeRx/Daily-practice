@@ -12,7 +12,7 @@ const App = () => {
   const handleSubmit = (e) =>{
     e.preventDefault()
 
-    
+    const newTask = {...toDo, id: new Date().getTime(), done: false}
   }
 
   return <div>
