@@ -39,7 +39,7 @@ const App = () => {
 const ListTasks = ({id, text, done, handleToggle}) =>{
   return <div key={id}>
     <h2>{text}</h2>
-    <input type="checkbox" />
+    <input type="checkbox" onChange={()=>handleToggle(id)}/>
     <button>Remove</button>
   </div>
 }
