@@ -29,7 +29,8 @@ const App = () => {
   }
 
   const total = allTasks.length
-  const done = allTasks.filter(a => a.done === true).length     
+  const done = allTasks.filter(a => a.done === true).length
+  const unDone = allTasks.filter(a => a.done !== true).length       
 
   return <div>
     <form onSubmit={handleSubmit}>
