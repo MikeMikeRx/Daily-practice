@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const App = () => {
   const[toDo, setToDo] = useState({text:""})
@@ -17,7 +17,7 @@ const App = () => {
       id: new Date().getTime(), 
       done: false}
 
-    setAllTasks([...allTasks, newTask])      
+    setAllTasks([...allTasks, newTask])    
   }
 
   const handleToggle = (id) =>{
