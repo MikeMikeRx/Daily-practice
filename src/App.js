@@ -46,7 +46,7 @@ const App = () => {
       <input type="submit" />
     </form>
 
-    <h2>Total sum: {totalSum}</h2>
+    <h2>Total sum: {totalSum.toLocaleString('de-De')}$</h2>
     <button onClick={handleDeleteAll}>Delete All</button>
 
     <ListedExpense allExpenses={allExpenses} handleRemove={handleRemove}/>
@@ -59,7 +59,7 @@ const ListedExpense = ({ allExpenses, handleRemove }) =>{
       {allExpenses.map(item =>{
         return (<li key={item.id}>
           <h3>Description: {item.description}</h3>
-          <p>Amount: {item.amount}</p>
+          <p>Amount: {item.amount},-</p>
           <button onClick={()=>handleRemove(item.id)}>Delete</button>
         </li>)
       })}
