@@ -17,6 +17,8 @@ const App = () => {
     setAllExpenses([...allExpenses, newExpense])
     
     setExpense({description:"", amount:""})
+
+    localStorage.setItem("Expenses", (JSON.stringify(allExpenses)))
   }
 
   const handleRemove = (id) =>{
