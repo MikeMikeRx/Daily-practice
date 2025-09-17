@@ -14,7 +14,9 @@ const App = () => {
       id: new Date().getTime()
     }    
 
-    setAllExpenses([...allExpenses, newExpense])    
+    setAllExpenses([...allExpenses, newExpense])
+    
+    setExpense({description:"", amount:""})
   }
 
   const handleRemove = (id) =>{
