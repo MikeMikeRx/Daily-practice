@@ -17,7 +17,7 @@ const App = () => {
   }
 
   return <div>
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="text">Description: </label>
       <input type="text" id="text" onChange={(e)=>setExpense({...expense, description: e.target.value})} value={expense.description}/>
       <label htmlFor="number">Amount: </label>
@@ -29,8 +29,6 @@ const App = () => {
     <button>Delete All</button>
 
     <ListedExpense allExpenses={allExpenses}/>
-
-
   </div>  
 }
 
