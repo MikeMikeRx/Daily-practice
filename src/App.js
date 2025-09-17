@@ -8,6 +8,10 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
+    const newExpense = {
+      ...expense,
+      id: new Date().getTime()
+    }
   }
 
   return <div>
