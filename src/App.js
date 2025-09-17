@@ -10,8 +10,9 @@ const App = () => {
 
     const newExpense = {
       ...expense,
+      amount: parseInt(expense.amount),
       id: new Date().getTime()
-    }
+    }    
 
     setAllExpenses([...allExpenses, newExpense])    
   }
