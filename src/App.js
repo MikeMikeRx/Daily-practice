@@ -1,70 +1,9 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
 
 const App = () => {
-  const[toDo, setToDo] = useState({text:""})
-  const[allTasks, setAllTasks] = useState(()=>{
-    const saved = localStorage.getItem("AllTasks")
-    return saved ? JSON.parse(saved) : []
-  })
-
-  const handleChange = (e) =>{
-    setToDo({text: e.target.value})    
-  }
-  
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-
-    const newTask = {
-      ...toDo, 
-      id: new Date().getTime(), 
-      done: false}
-
-    setAllTasks([...allTasks, newTask])
-    
-    setToDo({text: ""})
-  }
-
-  const handleToggle = (id) =>{
-    setAllTasks(prev => prev.map(item => (item.id === id ? {...item, done: !item.done} : item)))        
-  }
-
-  const handleRemove = (id) =>{
-    setAllTasks(prev => prev.filter(item => item.id !== id))
-  }
-
-  const total = allTasks.length
-  const done = allTasks.filter(a => a.done === true).length
-  const unDone = allTasks.filter(a => a.done !== true).length
-  
-  useEffect(() =>{
-      localStorage.setItem("AllTasks", (JSON.stringify(allTasks))) 
-  },[allTasks])
-
-  return <div className='container'>
-    <form onSubmit={handleSubmit} className='form'>
-      <input type="text" onChange={handleChange} value={toDo.text}/>
-      <input type="submit" value='Add Task'/>
-    </form>
-
-    <h2>Tasks: {total}</h2>
-    <h3>Done: {done}</h3>
-    <h3>To Do: {unDone}</h3>
-
-    <div className="listed">
-      {allTasks.map((item) => (
-        <ListTasks key={item.id} id={item.id} text={item.text} done={item.done} handleToggle={handleToggle} handleRemove={handleRemove}/>
-      ))}
-    </div>
-  </div>  
-}
-
-const ListTasks = ({id, text, done, handleToggle, handleRemove}) =>{
-  return <div key={id} className='one-task'>
-    <h2>{text}</h2>
-    <input type="checkbox" onChange={()=>handleToggle(id)} checked={done}/>
-    <button onClick={()=>handleRemove(id)}>Remove</button>
-  </div>
+  return (
+    <div>App</div>
+  )
 }
 
 export default App
