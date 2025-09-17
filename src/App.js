@@ -3,7 +3,10 @@ import { useState, useEffect } from 'react'
 
 const App = () => {
   const[expense, setExpense] = useState({description:"", amount:""})
-  const[allExpenses, setAllExpenses] = useState([])
+  const[allExpenses, setAllExpenses] = useState(()=>{
+    const loadLS = JSON.parse(localStorage.getItem("Expenses"))
+    return loadLS ? loadLS : []
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault()
