@@ -31,6 +31,7 @@ const ListedExpense = () =>{
   return <div>
     <h3>Description: XXX</h3>
     <p>Amount: XXX</p>
+    <button>Delete</button>
   </div>
 }
 
