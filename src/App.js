@@ -28,7 +28,9 @@ const App = () => {
 }
 
 const ListedExpense = () =>{
-  return <div></div>
+  return <div>
+    <p>Description: XXX</p>
+  </div>
 }
 
 export default App
