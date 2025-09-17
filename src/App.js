@@ -12,6 +12,8 @@ const App = () => {
       ...expense,
       id: new Date().getTime()
     }
+
+    setAllExpenses([...allExpenses, newExpense])    
   }
 
   return <div>
