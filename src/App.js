@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 const App = () => {
   const[expense, setExpense] = useState({Description:"", Amount:""})
+  const[allExpenses, setAllExpenses] = useState([])
 
   return <div>
     <form>
