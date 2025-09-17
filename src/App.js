@@ -42,13 +42,7 @@ const App = () => {
   })
 
   const totalSum = results.reduce((acc, r) => acc + r, 0)
-
-  const date = allExpenses.map(item =>{
-    return item.date
-  })
-  console.log(date);
   
-
   return <div>
     <form onSubmit={handleSubmit}>
       <label htmlFor="text">Description: </label>
@@ -71,6 +65,7 @@ const ListedExpense = ({ allExpenses, handleRemove }) =>{
       {allExpenses.map(item =>{
         return (<li key={item.id}>
           <h3>Description: {item.description}</h3>
+          <p>Date: {item.date}</p>
           <p>Amount: {item.amount},-</p>
           <button onClick={()=>handleRemove(item.id)}>Delete</button>
         </li>)
