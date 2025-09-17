@@ -52,10 +52,11 @@ const App = () => {
       <input type="submit" />
     </form>
 
-    <h2>Total sum: {totalSum.toLocaleString('de-De')}$</h2>
+    <h2>Total Expenses: {totalSum.toLocaleString('de-De')}$</h2>
     <button onClick={handleDeleteAll}>Delete All</button>
-
-    <ListedExpense allExpenses={allExpenses} handleRemove={handleRemove}/>
+    <div className="listed-comp">
+      <ListedExpense allExpenses={allExpenses} handleRemove={handleRemove}/>
+    </div>
   </div>  
 }
 
@@ -64,9 +65,9 @@ const ListedExpense = ({ allExpenses, handleRemove }) =>{
     <ul className='comp-container'>
       {allExpenses.map(item =>{
         return (<li key={item.id}>
-          <h3>Description: {item.description}</h3>
+          <h3>{item.description}</h3>
           <p>Date: {item.date}</p>
-          <p>Amount: {item.amount},-</p>
+          <p>Amount: {item.amount.toLocaleString('de-De')},-</p>
           <button onClick={()=>handleRemove(item.id)}>Delete</button>
         </li>)
       })}
