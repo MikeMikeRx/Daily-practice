@@ -11,10 +11,13 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
+    const fullDate = new Date().toLocaleDateString(`no-no`)
+
     const newExpense = {
       ...expense,
       amount: parseInt(expense.amount),
-      id: new Date().getTime()
+      id: new Date().getTime(),
+      date: fullDate
     }    
 
     setAllExpenses([...allExpenses, newExpense])
@@ -39,6 +42,12 @@ const App = () => {
   })
 
   const totalSum = results.reduce((acc, r) => acc + r, 0)
+
+  const date = allExpenses.map(item =>{
+    return item.date
+  })
+  console.log(date);
+  
 
   return <div>
     <form onSubmit={handleSubmit}>
