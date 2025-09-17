@@ -5,6 +5,11 @@ const App = () => {
   const[expense, setExpense] = useState({description:"", amount:""})
   const[allExpenses, setAllExpenses] = useState([])
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+  }
+
   return <div>
     <form>
       <label htmlFor="text">Description: </label>
