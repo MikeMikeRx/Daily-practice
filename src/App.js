@@ -19,7 +19,7 @@ const App = () => {
   return <div>
     <form>
       <label htmlFor="text">Description: </label>
-      <input type="text" id="text" onChange={(e)=>setExpense({...expense, description: e.target.value})}/>
+      <input type="text" id="text" onChange={(e)=>setExpense({...expense, description: e.target.value})} value={expense.description}/>
       <label htmlFor="number">Amount: </label>
       <input type="number" id="number" onChange={(e)=>setExpense({...expense, amount: e.target.value})}/>
       <input type="submit" />
