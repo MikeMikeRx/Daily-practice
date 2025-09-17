@@ -43,7 +43,7 @@ const App = () => {
     </form>
 
     <h2>Total sum: {totalSum}</h2>
-    <button>Delete All</button>
+    <button onClick={handleDeleteAll}>Delete All</button>
 
     <ListedExpense allExpenses={allExpenses} handleRemove={handleRemove}/>
   </div>  
