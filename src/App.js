@@ -43,8 +43,8 @@ const App = () => {
 
   const totalSum = results.reduce((acc, r) => acc + r, 0)
   
-  return <div>
-    <form onSubmit={handleSubmit}>
+  return <div className='container'>
+    <form onSubmit={handleSubmit} className='form'>
       <label htmlFor="text">Description: </label>
       <input type="text" id="text" onChange={(e)=>setExpense({...expense, description: e.target.value})} value={expense.description}/>
       <label htmlFor="number">Amount: </label>
@@ -61,7 +61,7 @@ const App = () => {
 
 const ListedExpense = ({ allExpenses, handleRemove }) =>{
   return (
-    <ul>
+    <ul className='comp-container'>
       {allExpenses.map(item =>{
         return (<li key={item.id}>
           <h3>Description: {item.description}</h3>
