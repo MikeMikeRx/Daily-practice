@@ -17,7 +17,13 @@ const App = () => {
     setAllExpenses([...allExpenses, newExpense])    
   }
 
-  // const totalSum = Object.values(allExpenses).reduce((acc, e) => acc + e, 0)
+  const results = allExpenses.map(item => {
+    return item.amount
+  })
+
+  const totalSum = results.reduce((acc, r) => acc + r, 0)
+
+  
 
   return <div>
     <form onSubmit={handleSubmit}>
