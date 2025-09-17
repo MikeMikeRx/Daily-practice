@@ -34,7 +34,7 @@ const App = () => {
       <input type="submit" />
     </form>
 
-    <h2>Total sum: XX</h2>
+    <h2>Total sum: {totalSum}</h2>
     <button>Delete All</button>
 
     <ListedExpense allExpenses={allExpenses}/>
