@@ -33,11 +33,18 @@ const App = () => {
 }
 
 const ListedExpense = () =>{
-  return <div>
-    <h3>Description: XXX</h3>
-    <p>Amount: XXX</p>
-    <button>Delete</button>
-  </div>
+  return (
+    <ul>
+      {allExpenses.map(item =>{
+        return (<li key={item.id}>
+          <h3>Description: {item.description}</h3>
+          <p>Amount: {item.amount}</p>
+          <button>Delete</button>
+        </li>)
+      })}
+
+    </ul>
+  )
 }
 
 export default App
