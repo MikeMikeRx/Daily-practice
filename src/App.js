@@ -16,6 +16,8 @@ const App = () => {
     setAllExpenses([...allExpenses, newExpense])    
   }
 
+  // const totalSum = Object.values(allExpenses).reduce((acc, e) => acc + e, 0)
+
   return <div>
     <form onSubmit={handleSubmit}>
       <label htmlFor="text">Description: </label>
