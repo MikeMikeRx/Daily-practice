@@ -27,7 +27,9 @@ const App = () => {
     setAllExpenses([])
   }
 
-
+  useEffect(()=>{
+    localStorage.setItem("Expenses", (JSON.stringify(allExpenses)))
+  },[allExpenses])
 
   const results = allExpenses.map(item => {
     return item.amount
