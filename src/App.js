@@ -52,7 +52,7 @@ const ListedExpense = ({ allExpenses, handleRemove }) =>{
         return (<li key={item.id}>
           <h3>Description: {item.description}</h3>
           <p>Amount: {item.amount}</p>
-          <button>Delete</button>
+          <button onClick={()=>handleRemove(item.id)}>Delete</button>
         </li>)
       })}
 
