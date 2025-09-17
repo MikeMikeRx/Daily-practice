@@ -29,7 +29,8 @@ const App = () => {
 
 const ListedExpense = () =>{
   return <div>
-    <p>Description: XXX</p>
+    <h3>Description: XXX</h3>
+    <p>Amount: XXX</p>
   </div>
 }
 
