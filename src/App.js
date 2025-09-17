@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const App = () => {
   const[expense, setExpense] = useState({description:"", amount:""})
@@ -17,8 +17,6 @@ const App = () => {
     setAllExpenses([...allExpenses, newExpense])
     
     setExpense({description:"", amount:""})
-
-    localStorage.setItem("Expenses", (JSON.stringify(allExpenses)))
   }
 
   const handleRemove = (id) =>{
@@ -29,13 +27,13 @@ const App = () => {
     setAllExpenses([])
   }
 
+
+
   const results = allExpenses.map(item => {
     return item.amount
   })
 
   const totalSum = results.reduce((acc, r) => acc + r, 0)
-
-  
 
   return <div>
     <form onSubmit={handleSubmit}>
