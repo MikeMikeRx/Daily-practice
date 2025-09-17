@@ -21,6 +21,10 @@ const App = () => {
     setAllExpenses(allExpenses.filter(a => a.id !== id))
   }
 
+  const handleDeleteAll = () =>{
+    setAllExpenses([])
+  }
+
   const results = allExpenses.map(item => {
     return item.amount
   })
