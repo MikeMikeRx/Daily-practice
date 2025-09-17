@@ -6,7 +6,8 @@ const App = () => {
     <form>
       <label htmlFor="text">Description: </label>
       <input type="text" id="text"/>
-      <input type="number" />
+      <label htmlFor="number">Amount: </label>
+      <input type="number" id="number"/>
       <input type="submit" />
     </form>
   </div>
