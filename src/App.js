@@ -41,7 +41,7 @@ const App = () => {
     <h2>Total sum: {totalSum}</h2>
     <button>Delete All</button>
 
-    <ListedExpense allExpenses={allExpenses}/>
+    <ListedExpense allExpenses={allExpenses} handleRemove={handleRemove}/>
   </div>  
 }
 
