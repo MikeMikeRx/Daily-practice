@@ -1,22 +1,25 @@
-# Expense Tracker  
+# React Daily Practice  
 
-A simple React app to track daily expenses.  
-Users can add a description and amount, view the total sum of expenses, and manage them with options to delete one or clear all.  
-All data is saved in **localStorage**, so it persists across page reloads.  
+This repository is dedicated to **daily React practice** through small projects and exercises.  
+The goal is to build discipline, strengthen problem-solving skills, and improve coding by repeating core concepts until they become second nature.  
 
-## Features  
-- Add expense with description, amount, and date  
-- View total expenses (auto-summed)  
-- Delete a single expense  
-- Delete all expenses  
-- Persistent data with localStorage  
-- Basic responsive styling  
+## Structure  
 
-## Tech Stack  
-- React (useState, useEffect)  
-- LocalStorage for persistence  
-- CSS for styling  
+- The `main` branch contains the overall practice setup and documentation.  
+- Each **branch** contains a finished small project or exercise, focusing on:  
+  - Building reusable components  
+  - Handling and managing state  
+  - Applying localStorage where useful  
+  - Practicing styling and layout  
 
-## Screenshots
+## Approach  
 
-![shot-1](./src/screenshots/Shot-1x.png)
+- Practice **every day** with a small React task or project.  
+- Push progress and completed projects to separate branches.  
+- Merge finished work into `main` to track activity and progress.  
+
+## Goals  
+
+- Build consistency through repetition.  
+- Improve confidence by completing exercises at first try.  
+- Strengthen fundamental React knowledge step by step.  
