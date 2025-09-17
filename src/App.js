@@ -45,7 +45,7 @@ const App = () => {
   </div>  
 }
 
-const ListedExpense = ({allExpenses}) =>{
+const ListedExpense = ({ allExpenses, handleRemove }) =>{
   return (
     <ul>
       {allExpenses.map(item =>{
