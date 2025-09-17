@@ -26,6 +26,9 @@ const App = () => {
     </form>
 
     <h2>Total sum: XX</h2>
+    <button>Delete All</button>
+
+
   </div>  
 }
 
