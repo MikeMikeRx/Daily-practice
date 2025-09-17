@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 
 const App = () => {
+  const[expense, setExpense] = useState({Description:"", Amount:""})
+
   return <div>
     <form>
       <label htmlFor="text">Description: </label>
@@ -10,8 +12,7 @@ const App = () => {
       <input type="number" id="number"/>
       <input type="submit" />
     </form>
-  </div>
-  
+  </div>  
 }
 
 export default App
