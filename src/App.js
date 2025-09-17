@@ -24,6 +24,8 @@ const App = () => {
       <input type="number" id="number" onChange={(e)=>setExpense({...expense, amount: e.target.value})} value={expense.amount}/>
       <input type="submit" />
     </form>
+
+    <h2>Total sum: XX</h2>
   </div>  
 }
 
