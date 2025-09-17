@@ -28,11 +28,13 @@ const App = () => {
     <h2>Total sum: XX</h2>
     <button>Delete All</button>
 
+    <ListedExpense allExpenses={allExpenses}/>
+
 
   </div>  
 }
 
-const ListedExpense = () =>{
+const ListedExpense = ({allExpenses}) =>{
   return (
     <ul>
       {allExpenses.map(item =>{
