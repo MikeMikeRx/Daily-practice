@@ -3,6 +3,7 @@ import { useState } from "react"
 const App = () => {
   const[contact, setContact] = useState({name:"", surname:"", phone:""})
   const[contactList, setContactList] = useState([])
+  const[searched, setSearched] = useState("")
 
   const handleChage = (e) => {
       const name = e.target.name
@@ -56,7 +57,7 @@ const App = () => {
       </form>
 
       <label htmlFor="search">Search: </label>
-      <input type="text" id="search"/>
+      <input type="text" id="search" onChange={(e)=>setSearched(e.target.value)}/>
 
       <ul className="contact-list">
         {contactList.map(item => (
