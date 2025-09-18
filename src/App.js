@@ -55,6 +55,8 @@ const App = () => {
         <input type="submit" value="Add Contact"/>
       </form>
 
+      <input type="text" id="serach"/>
+
       <ul className="contact-list">
         {contactList.map(item => (
           <li key={item.id}>
