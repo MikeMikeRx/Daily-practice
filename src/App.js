@@ -10,6 +10,17 @@ const App = () => {
       setContact({...contact, [name]: value})         
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const newContact = {
+      ...contact,
+      id: new Date().getTime()
+    }
+
+    setContactList(prev=>[...prev, newContact])  
+  }
+
   return (
     <form>
       <label htmlFor="name">Name: </label>
