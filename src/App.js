@@ -9,6 +9,7 @@ const App = () => {
       <input type="text" id="surname"/>
       <label htmlFor="phone">Phone number: </label>
       <input type="number" id="phone"/>
+      <input type="submit" value="Add Contact"/>
     </form>
   )
 }
