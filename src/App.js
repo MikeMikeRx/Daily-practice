@@ -49,6 +49,11 @@ const App = () => {
         />
         <input type="submit" value="Add Contact"/>
       </form>
+
+      <ul className="contact-list">
+        
+      </ul>
+
     </div>
   )
 }
