@@ -5,6 +5,7 @@ const App = () => {
     <form>
       <label htmlFor="name">Name: </label>
       <input type="text" id="name"/>
+      <input type="text" id="surname"/>
     </form>
   )
 }
