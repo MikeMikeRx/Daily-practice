@@ -21,6 +21,11 @@ const App = () => {
     setContactList(prev=>[...prev, newContact])  
   }
 
+  const handleDelete = (id) => {
+    const filtered = contactList.filter(a => a.id !== id)
+    setContactList(filtered)
+  }
+
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
