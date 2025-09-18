@@ -4,6 +4,12 @@ const App = () => {
   const[contact, setContact] = useState({name:"", surname:"", phone:""})
   const[contactList, setContactList] = useState([])
 
+  const handleChage = (e) => {
+      const name = e.target.name
+      const value = e.target.value
+      setContact({...contact, [name]: value})         
+  }
+
   return (
     <form>
       <label htmlFor="name">Name: </label>
