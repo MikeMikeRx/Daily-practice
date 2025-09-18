@@ -2,7 +2,7 @@ import { useState } from "react"
 
 const App = () => {
   return (
-    <div>App</div>
+    <form>App</form>
   )
 }
 
