@@ -51,7 +51,12 @@ const App = () => {
       </form>
 
       <ul className="contact-list">
-        
+        {contactList.map(item => (
+          <li key={item.id}>
+            <h3>{item.name} {item.surname}</h3>
+            <h4>Phone: {item.phone}</h4>
+          </li>
+        ))}
       </ul>
 
     </div>
