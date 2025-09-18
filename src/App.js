@@ -55,7 +55,8 @@ const App = () => {
         <input type="submit" value="Add Contact"/>
       </form>
 
-      <input type="text" id="serach"/>
+      <label htmlFor="search">Search: </label>
+      <input type="text" id="search"/>
 
       <ul className="contact-list">
         {contactList.map(item => (
