@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name: </label>
         <input 
           type="text" 
