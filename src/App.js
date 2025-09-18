@@ -2,7 +2,9 @@ import { useState } from "react"
 
 const App = () => {
   return (
-    <form>App</form>
+    <form>
+      <input type="text" />
+    </form>
   )
 }
 
