@@ -13,11 +13,11 @@ const App = () => {
   return (
     <form>
       <label htmlFor="name">Name: </label>
-      <input type="text" id="name" name="name"/>
+      <input type="text" id="name" name="name" value={contact.name}/>
       <label htmlFor="surname">Surname: </label>
-      <input type="text" id="surname" name="surname"/>
+      <input type="text" id="surname" name="surname" value={contact.surname}/>
       <label htmlFor="phone">Phone number: </label>
-      <input type="number" id="phone" name="phone"/>
+      <input type="number" id="phone" name="phone" value={contact.phone}/>
       <input type="submit" value="Add Contact"/>
     </form>
   )
