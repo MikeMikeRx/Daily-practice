@@ -1,9 +1,13 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const App = () => {
   const[contact, setContact] = useState({name:"", surname:"", phone:""})
-  const[contactList, setContactList] = useState([])
+  const[contactList, setContactList] = useState(()=>{
+    const loadLS = JSON.parse(localStorage.getItem("ContactList"))
+    return loadLS ? loadLS : []
+  })
   const[searched, setSearched] = useState("")
+  // const[filteredList, setFilteredList] = useState([])
 
   const handleChage = (e) => {
       const name = e.target.name
@@ -22,10 +26,38 @@ const App = () => {
     setContactList(prev=>[...prev, newContact])  
   }
 
+  // Searched term / Filtered list
+  // xxxxxxxxxxxxxxxxxx
+  // useEffect(()=>{
+  //   contactList.map(contact =>{
+  //     const name = contact.name.toLowerCase()
+  //     const surname = contact.surname.toLowerCase()
+  //     const phone = contact.phone
+
+  //     // console.log(name, surname, phone);
+      
+  //     const filtered = contactList.filter(a => a.name.includes(searched) || a.surname.includes(searched) || a.phone.includes(searched))
+      
+  //     if(!searched){
+  //       return contactList
+  //     } else {
+  //       setFilteredList(filtered)
+  //       return filteredList
+  //     }
+  //   })
+    
+  // },[searched])
+
+  // XXXXXXXXXXXXXXXXX
+
   const handleDelete = (id) => {
     const filtered = contactList.filter(a => a.id !== id)
     setContactList(filtered)
   }
+
+  useEffect(()=>{
+    const saveToLS = localStorage.setItem("ContactList", (JSON.stringify(contactList)))
+  },[contactList])
 
   return (
     <div className="container">
@@ -57,7 +89,7 @@ const App = () => {
       </form>
 
       <label htmlFor="search">Search: </label>
-      <input type="text" id="search" onChange={(e)=>setSearched(e.target.value)}/>
+      <input type="text" id="search" onChange={(e)=>setSearched((e.target.value).toLowerCase())}/>
 
       <ul className="contact-list">
         {contactList.map(item => (
