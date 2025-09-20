@@ -8,6 +8,7 @@ const App = () => {
   })
   const[searched, setSearched] = useState("")
   const[filteredList, setFilteredList] = useState([])
+  const[editingContact, setEditingContact] = useState("")
 
   const handleChage = (e) => {
       const name = e.target.name
