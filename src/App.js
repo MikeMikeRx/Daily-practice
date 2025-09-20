@@ -23,7 +23,8 @@ const App = () => {
       id: new Date().getTime()
     }
 
-    setContactList(prev=>[...prev, newContact])  
+    setContactList(prev=>[...prev, newContact])
+    setContact({name:"", surname:"", phone:""})  
   }
 
   // Searched term / Filtered list 
