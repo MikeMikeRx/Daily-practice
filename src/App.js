@@ -7,7 +7,7 @@ const App = () => {
     return loadLS ? loadLS : []
   })
   const[searched, setSearched] = useState("")
-  // const[filteredList, setFilteredList] = useState([])
+  const[filteredList, setFilteredList] = useState([])
 
   const handleChage = (e) => {
       const name = e.target.name
@@ -26,29 +26,14 @@ const App = () => {
     setContactList(prev=>[...prev, newContact])  
   }
 
-  // Searched term / Filtered list
-  // xxxxxxxxxxxxxxxxxx
-  // useEffect(()=>{
-  //   contactList.map(contact =>{
-  //     const name = contact.name.toLowerCase()
-  //     const surname = contact.surname.toLowerCase()
-  //     const phone = contact.phone
-
-  //     // console.log(name, surname, phone);
-      
-  //     const filtered = contactList.filter(a => a.name.includes(searched) || a.surname.includes(searched) || a.phone.includes(searched))
-      
-  //     if(!searched){
-  //       return contactList
-  //     } else {
-  //       setFilteredList(filtered)
-  //       return filteredList
-  //     }
-  //   })
-    
-  // },[searched])
-
-  // XXXXXXXXXXXXXXXXX
+  // Searched term / Filtered list 
+  useEffect(()=>{
+      if(!searched){
+    setFilteredList(contactList)
+    } else {
+      setFilteredList(contactList.filter(a => a.name.toLowerCase().includes(searched) || a.surname.toLowerCase().includes(searched) || a.phone.includes(searched)))
+  }
+  },[searched])
 
   const handleDelete = (id) => {
     const filtered = contactList.filter(a => a.id !== id)
