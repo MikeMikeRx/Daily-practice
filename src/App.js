@@ -77,7 +77,7 @@ const App = () => {
       <input type="text" id="search" onChange={(e)=>setSearched((e.target.value).toLowerCase())}/>
 
       <ul className="contact-list">
-        {contactList.map(item => (
+        {filteredList.map(item => (
           <li key={item.id}>
             <h3>{item.name} {item.surname}</h3>
             <h4>Phone: {item.phone}</h4>
