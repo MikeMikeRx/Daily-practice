@@ -92,7 +92,7 @@ const App = () => {
           <li key={item.id}>
             <h3>{item.name} {item.surname}</h3>
             <h4>Phone: {item.phone}</h4>
-            <button onClick={()=>handleEdit(item.id)}>Edit</button>
+            <button onClick={()=>handleEdit(item)}>Edit</button>
             <button onClick={()=>handleDelete(item.id)}>Delete</button>
           </li>
         ))}
