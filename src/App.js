@@ -8,7 +8,7 @@ const App = () => {
   })
   const[searched, setSearched] = useState("")
   const[filteredList, setFilteredList] = useState([])
-  const[editingContact, setEditingContact] = useState("")
+  const[editingContact, setEditingContact] = useState(null)
 
   const handleChage = (e) => {
       const name = e.target.name
@@ -36,6 +36,12 @@ const App = () => {
       setFilteredList(contactList.filter(a => a.name.toLowerCase().includes(searched) || a.surname.toLowerCase().includes(searched) || a.phone.includes(searched)))
   }
   },[searched])
+
+  // const handleEdit = (id) => {
+  //   setContact({...contact, id,})
+  //   console.log(contact.name);
+    
+  // }
 
   const handleDelete = (id) => {
     const filtered = contactList.filter(a => a.id !== id)
@@ -83,7 +89,7 @@ const App = () => {
           <li key={item.id}>
             <h3>{item.name} {item.surname}</h3>
             <h4>Phone: {item.phone}</h4>
-            <button>Edit</button>
+            {/* <button onClick={()=>handleEdit(item.id)}>Edit</button> */}
             <button onClick={()=>handleDelete(item.id)}>Delete</button>
           </li>
         ))}
