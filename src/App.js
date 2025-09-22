@@ -55,7 +55,7 @@ const App = () => {
       phone: contact.phone
     })
   }
-// filtered is set after delete - fix
+
   const handleDelete = (id) => {
     const filtered = contactList.filter(a => a.id !== id)
     setContactList(filtered)
@@ -91,7 +91,7 @@ const App = () => {
           value={contact.phone} 
           onChange={handleChage}
         />
-        <input type="submit" value="Add Contact"/>
+        <input type="submit" value={editingContact ? "Update Cotanct" : "Add Contact"}/>
       </form>
 
       <label htmlFor="search">Search: </label>
