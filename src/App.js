@@ -37,11 +37,14 @@ const App = () => {
   }
   },[searched])
 
-  // const handleEdit = (id) => {
-  //   setContact({...contact, id,})
-  //   console.log(contact.name);
-    
-  // }
+  const handleEdit = (contact) => {
+    setEditingContact(contact.id)
+    setContact({
+      name: contact.name,
+      surname: contact.surname,
+      phone: contact.phone
+    })
+  }
 
   const handleDelete = (id) => {
     const filtered = contactList.filter(a => a.id !== id)
@@ -89,7 +92,7 @@ const App = () => {
           <li key={item.id}>
             <h3>{item.name} {item.surname}</h3>
             <h4>Phone: {item.phone}</h4>
-            {/* <button onClick={()=>handleEdit(item.id)}>Edit</button> */}
+            <button onClick={()=>handleEdit(item.id)}>Edit</button>
             <button onClick={()=>handleDelete(item.id)}>Delete</button>
           </li>
         ))}
