@@ -19,13 +19,23 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const newContact = {
+    if(editingContact){
+      setContactList(prev => 
+        prev.map(c => 
+          c.id === editingContact ? {...c, ...contact} : c
+        )
+      )
+      setEditingContact(null)
+      setContact({name: "", surname: "", phone: ""})
+    } else {
+      const newContact = {
       ...contact,
       id: new Date().getTime()
     }
 
     setContactList(prev=>[...prev, newContact])
     setContact({name:"", surname:"", phone:""})  
+    }
   }
 
   // Searched term / Filtered list 
@@ -45,7 +55,7 @@ const App = () => {
       phone: contact.phone
     })
   }
-
+// filtered is set after delete - fix
   const handleDelete = (id) => {
     const filtered = contactList.filter(a => a.id !== id)
     setContactList(filtered)
