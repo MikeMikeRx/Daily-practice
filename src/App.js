@@ -23,6 +23,10 @@ const App = () => {
           type="number" 
           id="phone"
         />
+        <input 
+          type="submit" 
+          value="Add contact"
+        />
       </form>
     </div>
   )
