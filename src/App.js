@@ -9,11 +9,20 @@ const App = () => {
     <div>
       <form>
         <label htmlFor="name">Name: </label>
-        <input type="text" id="name"/>
+        <input 
+          type="text" 
+          id="name"
+        />
         <label htmlFor="surname">Surname: </label>
-        <input type="text" id="surname"/>
+        <input 
+          type="text" 
+          id="surname"
+        />
         <label htmlFor="phone">Phone: </label>
-        <input type="number" id="phone"/>
+        <input 
+          type="number" 
+          id="phone"
+        />
       </form>
     </div>
   )
