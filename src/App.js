@@ -10,6 +10,7 @@ const App = () => {
       <form>
         <label htmlFor="name">Name: </label>
         <input type="text" id="name"/>
+        <label htmlFor="surname">Surname: </label>
         <input type="text" id="surname"/>
       </form>
     </div>
