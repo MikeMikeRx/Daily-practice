@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div>
       <form>
-        
+        <input type="text" id="name"/>
       </form>
     </div>
   )
