@@ -2,7 +2,10 @@ import { useState, useEffect } from "react"
 
 const App = () => {
   const[contact, setContact] = useState({name:"", surname:"", phone:""})
-  const[contactList, setContactList] = useState([])
+  const[contactList, setContactList] = useState(()=>{
+    const loadLS = JSON.parse(localStorage.getItem("ContactList"))
+    return loadLS ? loadLS : []
+  })
 
   const handleChange = (e) =>{
     const name = e.target.name
