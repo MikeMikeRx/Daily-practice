@@ -35,8 +35,10 @@ const App = () => {
       a.surname.toLowerCase().includes(searchTerm) || 
       a.phone.includes(searchTerm)
     )
-    
+
     searchTerm ? setContactList(filteredList) : setContactList(contactList)
+
+    setSearchTerm("")
   }
 
   useEffect(()=>{
