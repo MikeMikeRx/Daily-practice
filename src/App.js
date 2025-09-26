@@ -19,8 +19,7 @@ const App = () => {
     }
 
     setContactList([ ...contactList, newContact ])
-
-    console.log(contactList);    
+    setContact({name:"", surname:"", phone:""})
   }
 
   return (
