@@ -66,7 +66,7 @@ const App = () => {
 
       <section className="Search-secttion">
         <form>
-          
+          <input type="text" id="search"/>
         </form>
       </section>
 
