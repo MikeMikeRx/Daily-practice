@@ -66,6 +66,7 @@ const App = () => {
 
       <section className="Search-secttion">
         <form>
+          <label htmlFor="search">Search for contact: </label>
           <input type="text" id="search"/>
         </form>
       </section>
