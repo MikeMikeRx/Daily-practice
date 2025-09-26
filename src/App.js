@@ -29,14 +29,14 @@ const App = () => {
   const handleSearch = (e) =>{
     e.preventDefault()
 
-    const filteredList = contactList
+    const filtered = contactList
     .filter(a => 
       a.name.toLowerCase().includes(searchTerm) || 
       a.surname.toLowerCase().includes(searchTerm) || 
       a.phone.includes(searchTerm)
     )
 
-    searchTerm ? setContactList(filteredList) : setContactList(contactList)
+    searchTerm ? setContactList(filtered) : setContactList(contactList)
 
     setSearchTerm("")
   }
