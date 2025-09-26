@@ -95,7 +95,7 @@ const App = () => {
 
       <section className="ListConctact-section">
         <li>
-          {contactList.map(contact => (
+          {filteredList.map(contact => (
             <ul key={contact.id}>
               <p>name: <strong>{contact.name} {contact.surname}</strong></p>
               <p>phone: <strong>{contact.phone}</strong></p>
