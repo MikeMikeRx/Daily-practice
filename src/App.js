@@ -26,6 +26,19 @@ const App = () => {
     setContact({name:"", surname:"", phone:""})
   }
 
+  const handleSearch = (e) =>{
+    e.preventDefault()
+
+    const filteredList = contactList
+    .filter(a => 
+      a.name.toLowerCase().includes(searchTerm) || 
+      a.surname.toLowerCase().includes(searchTerm) || 
+      a.phone.includes(searchTerm)
+    )
+    
+    searchTerm ? setContactList(filteredList) : setContactList(contactList)
+  }
+
   useEffect(()=>{
     localStorage.setItem("ContactList", (JSON.stringify(contactList)))
   },[contactList])
@@ -66,7 +79,7 @@ const App = () => {
       </section>
 
       <section className="Search-secttion">
-        <form>
+        <form onSubmit={handleSearch}>
           <label htmlFor="search">Search for contact: </label>
           <input type="text" id="search" onChange={(e)=>setSearchTerm(e.target.value.toLowerCase())}/>
           <button type="submit">Search</button>
