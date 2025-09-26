@@ -21,6 +21,7 @@ const App = () => {
           id="name"
           name="name"
           onChange={handleChange}
+          value={contact.name}
         />
         <label htmlFor="surname">Surname: </label>
         <input 
@@ -28,6 +29,7 @@ const App = () => {
           id="surname"
           name="surname"
           onChange={handleChange}
+          value={contact.surname}
         />
         <label htmlFor="phone">Phone: </label>
         <input 
@@ -35,6 +37,7 @@ const App = () => {
           id="phone"
           name="phone"
           onChange={handleChange}
+          value={contact.phone}
         />
         <input 
           type="submit" 
