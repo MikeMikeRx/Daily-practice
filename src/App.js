@@ -68,6 +68,7 @@ const App = () => {
         <form>
           <label htmlFor="search">Search for contact: </label>
           <input type="text" id="search"/>
+          <button type="submit">Search</button>
         </form>
       </section>
 
