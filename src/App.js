@@ -68,7 +68,7 @@ const App = () => {
       <section className="Search-secttion">
         <form>
           <label htmlFor="search">Search for contact: </label>
-          <input type="text" id="search" onChange={(e)=>setSearchTerm(e.target.value)}/>
+          <input type="text" id="search" onChange={(e)=>setSearchTerm(e.target.value.toLowerCase())}/>
           <button type="submit">Search</button>
         </form>
       </section>
