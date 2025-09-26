@@ -8,8 +8,19 @@ const App = () => {
     const name = e.target.name
     const value = e.target.value
     setContact({ ...contact, [name]: value })
+  }
 
-    console.log(contact);    
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+
+    const newContact = {
+      ...contact,
+      id: new Date().getTime()
+    }
+
+    setContactList([ ...contactList, newContact ])
+
+    console.log(contactList);    
   }
 
   return (
