@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const App = () => {
   const[contact, setContact] = useState({name:"", surname:"", phone:""})
