@@ -37,8 +37,12 @@ const App = () => {
       a.phone.includes(searchTerm)
     )
 
-    searchTerm ? setContactList(filtered) : setContactList(contactList)
+    setFilteredList(
+      searchTerm ? filtered : contactList
+    )
 
+    console.log(filteredList);
+    
     setSearchTerm("")
   }
 
