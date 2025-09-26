@@ -7,6 +7,7 @@ const App = () => {
     return loadLS ? loadLS : []
   })
   const[searchTerm, setSearchTerm] = useState("")
+  const[filteredList, setFilteredList] = useState(contactList)
 
   const handleChange = (e) =>{
     const name = e.target.name
