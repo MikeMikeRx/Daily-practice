@@ -63,7 +63,11 @@ const App = () => {
           />
         </form>
       </section>
+
+      <section className="Search-secttion">
         
+      </section>
+
       <section className="ListConctact-section">
         <li>
           {contactList.map(contact => (
