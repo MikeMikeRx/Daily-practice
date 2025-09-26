@@ -20,18 +20,21 @@ const App = () => {
           type="text" 
           id="name"
           name="name"
+          onChange={handleChange}
         />
         <label htmlFor="surname">Surname: </label>
         <input 
           type="text" 
           id="surname"
           name="surname"
+          onChange={handleChange}
         />
         <label htmlFor="phone">Phone: </label>
         <input 
           type="number" 
           id="phone"
           name="phone"
+          onChange={handleChange}
         />
         <input 
           type="submit" 
