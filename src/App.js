@@ -31,36 +31,38 @@ const App = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name: </label>
-        <input 
-          type="text" 
-          id="name"
-          name="name"
-          onChange={handleChange}
-          value={contact.name}
-        />
-        <label htmlFor="surname">Surname: </label>
-        <input 
-          type="text" 
-          id="surname"
-          name="surname"
-          onChange={handleChange}
-          value={contact.surname}
-        />
-        <label htmlFor="phone">Phone: </label>
-        <input 
-          type="number" 
-          id="phone"
-          name="phone"
-          onChange={handleChange}
-          value={contact.phone}
-        />
-        <input 
-          type="submit" 
-          value="Add contact"
-        />
-      </form>
+      <section className="AddContact-section">    
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">Name: </label>
+          <input 
+            type="text" 
+            id="name"
+            name="name"
+            onChange={handleChange}
+            value={contact.name}
+          />
+          <label htmlFor="surname">Surname: </label>
+          <input 
+            type="text" 
+            id="surname"
+            name="surname"
+            onChange={handleChange}
+            value={contact.surname}
+          />
+          <label htmlFor="phone">Phone: </label>
+          <input 
+            type="number" 
+            id="phone"
+            name="phone"
+            onChange={handleChange}
+            value={contact.phone}
+          />
+          <input 
+            type="submit" 
+            value="Add contact"
+          />
+        </form>
+      </section>  
 
       <li>
         {contactList.map(contact => (
