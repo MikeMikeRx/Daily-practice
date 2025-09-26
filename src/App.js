@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name: </label>
         <input 
           type="text" 
