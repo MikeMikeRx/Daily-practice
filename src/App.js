@@ -19,16 +19,19 @@ const App = () => {
         <input 
           type="text" 
           id="name"
+          name="name"
         />
         <label htmlFor="surname">Surname: </label>
         <input 
           type="text" 
           id="surname"
+          name="surname"
         />
         <label htmlFor="phone">Phone: </label>
         <input 
           type="number" 
           id="phone"
+          name="phone"
         />
         <input 
           type="submit" 
