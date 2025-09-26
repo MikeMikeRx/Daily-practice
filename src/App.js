@@ -23,7 +23,7 @@ const App = () => {
       id: new Date().getTime()
     }
 
-    setContactList([ ...contactList, newContact ])
+    setContactList(prev => [ ...prev, newContact ])
     setContact({name:"", surname:"", phone:""})
   }
 
