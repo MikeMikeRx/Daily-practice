@@ -65,7 +65,9 @@ const App = () => {
       </section>
 
       <section className="Search-secttion">
-        
+        <form>
+          
+        </form>
       </section>
 
       <section className="ListConctact-section">
