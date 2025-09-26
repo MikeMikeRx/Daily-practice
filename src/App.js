@@ -6,6 +6,7 @@ const App = () => {
     const loadLS = JSON.parse(localStorage.getItem("ContactList"))
     return loadLS ? loadLS : []
   })
+  const[searchTerm, setSearchTerm] = useState("")
 
   const handleChange = (e) =>{
     const name = e.target.name
