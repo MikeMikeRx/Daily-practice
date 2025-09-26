@@ -22,6 +22,10 @@ const App = () => {
     setContact({name:"", surname:"", phone:""})
   }
 
+  useEffect(()=>{
+    localStorage.setItem("ContactList", (JSON.stringify(contactList)))
+  },[contactList])
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
