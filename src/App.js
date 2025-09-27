@@ -45,7 +45,11 @@ const App = () => {
   const handleEdit = (id) =>{
     setEditingId(id)
     const found = filteredList.find(c => c.id === id)
-    console.log(found);              
+    setContact({
+      name: found.name,
+      surname: found.surname,
+      phone: found.phone
+    })             
   }
 
   useEffect(()=>{
