@@ -7,7 +7,6 @@ const App = () => {
     return loadLS ? loadLS : []
   })
   const[searchTerm, setSearchTerm] = useState("")
-  // const[filteredList, setFilteredList] = useState(contactList)
   const[editingId, setEditingId] = useState(null)
 
   const filtered = contactList
@@ -39,9 +38,7 @@ const App = () => {
 }
 
   const handleSearch = (e) =>{
-    // e.preventDefault()
     setSearchTerm(e.target.value.toLowerCase())
-    // searchTerm ? filtered : contactList
   }
 
   const handleEdit = (id) =>{
