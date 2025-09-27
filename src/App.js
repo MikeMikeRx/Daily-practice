@@ -102,6 +102,7 @@ const App = () => {
               <p>name: <strong>{contact.name} {contact.surname}</strong></p>
               <p>phone: <strong>{contact.phone}</strong></p>
               <button onClick={()=>handleEdit(contact.id)}>Edit</button>
+              <button>Remove</button>
             </ul>
           ))}
         </li>
