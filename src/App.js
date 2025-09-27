@@ -29,7 +29,7 @@ const App = () => {
 
   const handleSearch = (e) =>{
     e.preventDefault()
-    
+
     const filtered = contactList
     .filter(a => 
       a.name.toLowerCase().includes(searchTerm) || 
@@ -40,6 +40,12 @@ const App = () => {
       searchTerm ? filtered : contactList
     )
     setSearchTerm("")
+  }
+
+  const handleEdit = (id) =>{
+    setEditingId(id)
+    const found = filteredList.find(c => c.id === id)
+    console.log(found);              
   }
 
   useEffect(()=>{
