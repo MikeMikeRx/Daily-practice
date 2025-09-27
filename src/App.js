@@ -8,6 +8,7 @@ const App = () => {
   })
   const[searchTerm, setSearchTerm] = useState("")
   const[filteredList, setFilteredList] = useState(contactList)
+  const[editingId, setEditingId] = useState("")
 
   const handleChange = (e) =>{
     const name = e.target.name
