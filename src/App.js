@@ -7,7 +7,7 @@ const App = () => {
     return loadLS ? loadLS : []
   })
   const[searchTerm, setSearchTerm] = useState("")
-  const[filteredList, setFilteredList] = useState(contactList)
+  // const[filteredList, setFilteredList] = useState(contactList)
   const[editingId, setEditingId] = useState(null)
 
   const filtered = contactList
@@ -25,6 +25,7 @@ const App = () => {
 
   const handleSubmit = (e) =>{
     e.preventDefault()
+
     if(editingId === null){
     const newContact = {
       ...contact,
@@ -38,14 +39,14 @@ const App = () => {
 }
 
   const handleSearch = (e) =>{
-    e.preventDefault()
+    // e.preventDefault()
     setSearchTerm(e.target.value.toLowerCase())
-    setFilteredList(searchTerm ? filtered : contactList)    
+    // searchTerm ? filtered : contactList
   }
 
   const handleEdit = (id) =>{
     setEditingId(id)
-    const found = filteredList.find(c => c.id === id)
+    const found = filtered.find(c => c.id === id)
     setContact({
       name: found.name,
       surname: found.surname,
@@ -99,7 +100,7 @@ const App = () => {
 
       <section className="ListConctact-section">
         <li>
-          {filteredList.map(contact => (
+          {filtered.map(contact => (
             <ul key={contact.id}>
               <p>name: <strong>{contact.name} {contact.surname}</strong></p>
               <p>phone: <strong>{contact.phone}</strong></p>
