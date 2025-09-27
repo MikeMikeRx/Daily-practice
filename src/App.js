@@ -102,16 +102,16 @@ const App = () => {
       </section>
 
       <section className="ListConctact-section">
-        <li>
+        <ul>
           {filtered.map(contact => (
-            <ul key={contact.id}>
+            <li key={contact.id}>
               <p>name: <strong>{contact.name} {contact.surname}</strong></p>
               <p>phone: <strong>{contact.phone}</strong></p>
               <button onClick={()=>handleEdit(contact.id)}>Edit</button>
               <button onClick={()=>handleRemove(contact.id)}>Remove</button>
-            </ul>
+            </li>
           ))}
-        </li>
+        </ul>
       </section>
     </div>
   )
