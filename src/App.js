@@ -10,6 +10,13 @@ const App = () => {
   const[filteredList, setFilteredList] = useState(contactList)
   const[editingId, setEditingId] = useState(null)
 
+  const filtered = contactList
+    .filter(a => 
+      a.name.toLowerCase().includes(searchTerm) || 
+      a.surname.toLowerCase().includes(searchTerm) || 
+      a.phone.includes(searchTerm)
+    )
+
   const handleChange = (e) =>{
     const name = e.target.name
     const value = e.target.value
@@ -33,12 +40,6 @@ const App = () => {
   const handleSearch = (e) =>{
     e.preventDefault()
 
-    const filtered = contactList
-    .filter(a => 
-      a.name.toLowerCase().includes(searchTerm) || 
-      a.surname.toLowerCase().includes(searchTerm) || 
-      a.phone.includes(searchTerm)
-    )
     setFilteredList(
       searchTerm ? filtered : contactList
     )
