@@ -34,6 +34,7 @@ const App = () => {
     setContact({name:"", surname:"", phone:""})
   } else {
     setContactList(prev => prev.map(c => c.id === editingId ? {...c, ...contact } : c))
+    setContact({name:"", surname:"", phone:""})
     setEditingId(null)
   }
 }
