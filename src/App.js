@@ -8,7 +8,7 @@ const App = () => {
   })
   const[searchTerm, setSearchTerm] = useState("")
   const[filteredList, setFilteredList] = useState(contactList)
-  const[editingId, setEditingId] = useState("")
+  const[editingId, setEditingId] = useState(null)
 
   const handleChange = (e) =>{
     const name = e.target.name
@@ -18,14 +18,17 @@ const App = () => {
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-
+    if(editingId === null){
     const newContact = {
       ...contact,
       id: new Date().getTime()
     }
     setContactList(prev => [ ...prev, newContact ])
     setContact({name:"", surname:"", phone:""})
+  } else {
+    setContactList(prev => prev.map(c => c.id === editingId ? {...c, ...contact } : c))
   }
+}
 
   const handleSearch = (e) =>{
     e.preventDefault()
