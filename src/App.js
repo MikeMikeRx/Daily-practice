@@ -39,11 +39,8 @@ const App = () => {
 
   const handleSearch = (e) =>{
     e.preventDefault()
-
-    setFilteredList(
-      searchTerm ? filtered : contactList
-    )
-    setSearchTerm("")
+    setSearchTerm(e.target.value.toLowerCase())
+    setFilteredList(searchTerm ? filtered : contactList)    
   }
 
   const handleEdit = (id) =>{
@@ -96,11 +93,8 @@ const App = () => {
       </section>
 
       <section className="Search-secttion">
-        <form onSubmit={handleSearch}>
           <label htmlFor="search">Search for contact: </label>
-          <input type="text" id="search" onChange={(e)=>setSearchTerm(e.target.value.toLowerCase())}/>
-          <button type="submit">Search</button>
-        </form>
+          <input type="text" id="search" onChange={handleSearch}/>
       </section>
 
       <section className="ListConctact-section">
