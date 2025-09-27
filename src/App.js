@@ -23,27 +23,22 @@ const App = () => {
       ...contact,
       id: new Date().getTime()
     }
-
     setContactList(prev => [ ...prev, newContact ])
     setContact({name:"", surname:"", phone:""})
   }
 
   const handleSearch = (e) =>{
     e.preventDefault()
-
+    
     const filtered = contactList
     .filter(a => 
       a.name.toLowerCase().includes(searchTerm) || 
       a.surname.toLowerCase().includes(searchTerm) || 
       a.phone.includes(searchTerm)
     )
-
     setFilteredList(
       searchTerm ? filtered : contactList
     )
-
-    console.log(filteredList);
-    
     setSearchTerm("")
   }
 
