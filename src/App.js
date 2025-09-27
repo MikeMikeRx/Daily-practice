@@ -51,6 +51,10 @@ const App = () => {
     })             
   }
 
+  const handleRemove = (id) =>{
+    setContactList(contactList.filter(c => c.id !==id))
+  }
+
   useEffect(()=>{
     localStorage.setItem("ContactList", (JSON.stringify(contactList)))
   },[contactList])
@@ -102,7 +106,7 @@ const App = () => {
               <p>name: <strong>{contact.name} {contact.surname}</strong></p>
               <p>phone: <strong>{contact.phone}</strong></p>
               <button onClick={()=>handleEdit(contact.id)}>Edit</button>
-              <button>Remove</button>
+              <button onClick={()=>handleRemove(contact.id)}>Remove</button>
             </ul>
           ))}
         </li>
