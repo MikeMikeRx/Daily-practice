@@ -99,6 +99,7 @@ const App = () => {
             <ul key={contact.id}>
               <p>name: <strong>{contact.name} {contact.surname}</strong></p>
               <p>phone: <strong>{contact.phone}</strong></p>
+              <button>Edit</button>
             </ul>
           ))}
         </li>
