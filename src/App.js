@@ -96,7 +96,7 @@ const App = () => {
         </form>
       </section>
 
-      <section className="Search-secttion">
+      <section className="Search-section">
           <label htmlFor="search">Search for contact: </label>
           <input type="text" id="search" onChange={handleSearch}/>
       </section>
@@ -104,7 +104,7 @@ const App = () => {
       <section className="ListConctact-section">
         <ul>
           {filtered.map(contact => (
-            <li key={contact.id}>
+            <li key={contact.id} className="Contact-card">
               <p>name: <strong>{contact.name} {contact.surname}</strong></p>
               <p>phone: <strong>{contact.phone}</strong></p>
               <button onClick={()=>handleEdit(contact.id)}>Edit</button>

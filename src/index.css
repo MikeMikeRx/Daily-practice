@@ -1,0 +1,42 @@
+.AddContact-section{
+    margin-top: 25px;
+}
+
+.AddContact-section form{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 0px auto;
+}
+
+.AddContact-section form input[type="submit"]{
+    width: 150px;
+    margin: 10px auto;
+}
+
+.Search-section{
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+.Search-section label, #search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0px auto;
+}
+
+.ListConctact-section ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 1300px;
+    list-style: none;
+}
+
+.Contact-card{
+    flex: 1 1 calc(33.333% - 40px);
+    min-width: 45px; 
+    border: 2px solid black;
+    padding: 10px;
+}
