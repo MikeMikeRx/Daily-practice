@@ -7,6 +7,7 @@ const App = () => {
         <form>
           <label htmlFor="firstName">Name: </label>
           <input type="text" id="firstName"/>
+          <label htmlFor="lastName">Surname: </label>
           <input type="text" id="lastName"/>
         </form>
       </section>
