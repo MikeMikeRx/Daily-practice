@@ -120,6 +120,8 @@ const ContactSearch = ({ handleSearch }) =>{
 }
 
 const ContactList = ({ foundContacts }) =>{
+  const [editedId, setEditedId] = useState("")
+
   return(
     <ul>
       {foundContacts.map(contact => (
