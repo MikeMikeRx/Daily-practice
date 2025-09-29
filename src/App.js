@@ -12,6 +12,10 @@ const App = () => {
     setContactList(prev => [...prev, newContact])
   }
 
+  const handleEdit = (editedId) =>{
+    const edited = contactList.find(a => a.id === editedId)
+  }
+
   const handleSearch = (searched) =>{
     const filtered = contactList.filter(a => 
       a.firstName.toLowerCase().includes(searched.toLowerCase()) ||
@@ -64,15 +68,14 @@ const ContactForm = ({ handleAddNew, contactList }) =>{
     setContact({firstName:"", lastName:"", phone:"", email:""})   
   }
 
-  const handleEdit = (editedId) =>{
-    const edited = contactList.find(a => a.id === editedId)
+
     // setContact({
     //   firstName: edited.firstName,
     //   lastName: edited.lastName,
     //   phone: edited.phone,
     //   email: edited.email
     // })   
-  }
+  
 
   return ( 
     <div>
