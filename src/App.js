@@ -119,7 +119,7 @@ const ContactSearch = ({ handleSearch }) =>{
   )
 }
 
-const ContactList = ({contactList}) =>{
+const ContactList = ({contactList, foundContacts}) =>{
   return(
     <ul>
       {contactList.map(contact => (
