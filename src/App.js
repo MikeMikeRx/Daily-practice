@@ -21,7 +21,7 @@ const App = () => {
       </section>
 
       <section className="List-sec">
-        <ContactList/>
+        <ContactList contactList={contactList}/>
       </section>
     </div>
   )
@@ -87,7 +87,7 @@ const ContactForm = ({ handleAddNew }) =>{
   )
 }
 
-const ContactList = () =>{
+const ContactList = ({contactList}) =>{
   return(
     <ul>
       {contactList.map(contact => (
