@@ -21,7 +21,7 @@ const App = () => {
       </section>
 
       <section className="Search-sec">
-
+        <ContactSearch />
       </section>
 
       <section className="List-sec">
