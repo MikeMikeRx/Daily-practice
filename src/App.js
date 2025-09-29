@@ -13,6 +13,7 @@ const App = () => {
           <input type="number" id="phone"/>
           <label htmlFor="email">E-mail: </label>
           <input type="email" id="email"/>
+          <input type="submit" id="submit"/>
         </form>
       </section>
     </div>
