@@ -46,6 +46,7 @@ const App = () => {
 
 const ContactForm = ({ handleAddNew }) =>{
   const [contact, setContact] = useState({firstName:"", lastName:"", phone:"", email:""})
+  const [editedId, setEditedId] = useState("")
 
   const handleChange = (e) => {
     const name = e.target.name
@@ -120,7 +121,6 @@ const ContactSearch = ({ handleSearch }) =>{
 }
 
 const ContactList = ({ foundContacts }) =>{
-  const [editedId, setEditedId] = useState("")
   
   return(
     <ul>
@@ -129,7 +129,7 @@ const ContactList = ({ foundContacts }) =>{
           <p>Name: <strong>{contact.firstName} {contact.lastName}</strong></p>
           <p>Phone : <strong>{contact.phone}</strong></p>
           <p>E-mail: <strong>{contact.email}</strong></p>
-          <button onClick={()=>setEditedId(contact.id)}>Edit</button>
+          <button>Edit</button>
         </li>
       ))}
     </ul>
