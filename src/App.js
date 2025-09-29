@@ -4,7 +4,7 @@ const App = () => {
   return (
     <div>
       <section className="AddContact-sec">
-        <form>
+        <form className="Add-form">
           <label htmlFor="firstName">Name: </label>
           <input type="text" id="firstName"/>
           <label htmlFor="lastName">Surname: </label>
