@@ -62,6 +62,12 @@ const ContactForm = ({ handleAddNew, editedId, edited }) =>{
     setContact({...contact, [name]:value})
   }
 
+  useEffect(()=>{
+    if(editedId){
+      setContact(edited)
+    }
+  },[editedId])
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
