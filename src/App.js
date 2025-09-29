@@ -98,7 +98,7 @@ const ContactSearch = () =>{
   return (
     <div>
       <label htmlFor="search">Search for contact: </label>
-      <input type="text" id="search" onChange={(e)=>setSearched(e.target.value)}/>
+      <input type="text" id="search" value={searched} onChange={(e)=>setSearched(e.target.value)}/>
     </div>
   )
 }
