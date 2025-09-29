@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div>
       <section className="AddContact-sec">
-        <ContactForm />
+        <ContactForm handleAddNew={handleAddNew}/>
       </section>
 
       <section className="List-sec">
