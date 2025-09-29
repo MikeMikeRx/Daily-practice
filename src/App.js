@@ -43,7 +43,12 @@ const App = () => {
       </section>
 
       <section className="List-sec">
-        <ContactList foundContacts={foundContacts} handleEdit={handleEdit} edited={edited}/>
+        <ContactList 
+          foundContacts={foundContacts} 
+          handleEdit={handleEdit} 
+          edited={edited} 
+          editedId={editedId}
+        />
       </section>
     </div>
   )
