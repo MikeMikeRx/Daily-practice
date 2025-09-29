@@ -34,7 +34,7 @@ const App = () => {
   return (
     <div>
       <section className="AddContact-sec">
-        <ContactForm handleAddNew={handleAddNew} contactList={contactList}/>
+        <ContactForm handleAddNew={handleAddNew}/>
       </section>
 
       <section className="Search-sec">
@@ -49,7 +49,7 @@ const App = () => {
 }
 
 
-const ContactForm = ({ handleAddNew, contactList }) =>{
+const ContactForm = ({ handleAddNew }) =>{
   const [contact, setContact] = useState({firstName:"", lastName:"", phone:"", email:""})
 
   const handleChange = (e) => {
