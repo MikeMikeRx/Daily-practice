@@ -95,7 +95,7 @@ const ContactForm = ({ handleAddNew }) =>{
 const ContactSearch = () =>{
   return (
     <div>
-      <label htmlFor="search"></label>
+      <label htmlFor="search">Search for contact: </label>
       <input type="text" id="search"/>
     </div>
   )
