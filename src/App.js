@@ -122,7 +122,7 @@ const ContactSearch = ({ handleSearch }) =>{
 const ContactList = ({contactList, foundContacts}) =>{
   return(
     <ul>
-      {contactList.map(contact => (
+      {foundContacts.map(contact => (
         <li key={contact.id}>
           <p>Name: <strong>{contact.firstName} {contact.lastName}</strong></p>
           <p>Phone : <strong>{contact.phone}</strong></p>
