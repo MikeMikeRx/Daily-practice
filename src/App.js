@@ -1,6 +1,8 @@
 import { useState } from "react"
 
 const App = () => {
+  const [contact, setContact] = useState({firstName:"", lastName:"", phone:"", email:""})
+
   return (
     <div>
       <section className="AddContact-sec">
