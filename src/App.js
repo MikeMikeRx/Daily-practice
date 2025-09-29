@@ -104,7 +104,7 @@ const ContactForm = ({ handleAddNew }) =>{
   )
 }
 
-const ContactSearch = () =>{
+const ContactSearch = ({ handleSearch }) =>{
   const [searched, setSearched] = useState("")  
   
   return (
