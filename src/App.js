@@ -93,12 +93,12 @@ const ContactForm = ({ handleAddNew }) =>{
 }
 
 const ContactSearch = () =>{
-  const [searched, setSearched] = useState("")
+  const [searched, setSearched] = useState("")  
 
   return (
     <div>
       <label htmlFor="search">Search for contact: </label>
-      <input type="text" id="search"/>
+      <input type="text" id="search" onChange={(e)=>setSearched(e.target.value)}/>
     </div>
   )
 }
