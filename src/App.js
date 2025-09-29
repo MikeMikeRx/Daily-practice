@@ -11,6 +11,7 @@ const App = () => {
           <input type="text" id="lastName"/>
           <label htmlFor="phone">Phone number: </label>
           <input type="number" id="phone"/>
+          <label htmlFor="email">E-mail: </label>
           <input type="email" id="email"/>
         </form>
       </section>
