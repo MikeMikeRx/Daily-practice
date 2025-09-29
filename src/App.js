@@ -64,6 +64,17 @@ const ContactForm = ({ handleAddNew, contactList }) =>{
     setContact({firstName:"", lastName:"", phone:"", email:""})   
   }
 
+  const handleEdit = (editedId) =>{
+    const edited = contactList.find(a => a.id === editedId)
+    setContact({
+      firstName: edited.firstName,
+      lastName: edited.lastName,
+      phone: edited.phone,
+      email: edited.email
+    })
+    console.log(contact);    
+  }
+
   return ( 
     <div>
       <form className="Add-form" onSubmit={handleSubmit}>
