@@ -93,6 +93,8 @@ const ContactForm = ({ handleAddNew }) =>{
 }
 
 const ContactSearch = () =>{
+  const [searched, setSearched] = useState("")
+
   return (
     <div>
       <label htmlFor="search">Search for contact: </label>
