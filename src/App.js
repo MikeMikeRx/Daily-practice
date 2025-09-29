@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div>
       <section className="AddContact-sec">
-        <form className="Add-form">
+        <form className="Add-form" onSubmit={handleSubmit}>
           <label htmlFor="firstName">Name: </label>
           <input 
             type="text" 
