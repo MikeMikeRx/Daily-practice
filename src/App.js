@@ -35,7 +35,7 @@ const App = () => {
   return (
     <div>
       <section className="AddContact-sec">
-        <ContactForm handleAddNew={handleAddNew}/>
+        <ContactForm handleAddNew={handleAddNew} edited={edited} editedId={editedId}/>
       </section>
 
       <section className="Search-sec">
@@ -46,8 +46,6 @@ const App = () => {
         <ContactList 
           foundContacts={foundContacts} 
           handleEdit={handleEdit} 
-          edited={edited} 
-          editedId={editedId}
         />
       </section>
     </div>
