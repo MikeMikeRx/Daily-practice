@@ -22,7 +22,7 @@ const App = () => {
     setFoundCountacs(searched ? filtered : contactList)
   }
 
-    useEffect(()=>{
+  useEffect(()=>{
     localStorage.setItem("ContactList", (JSON.stringify(contactList)))
   },[contactList])
 
@@ -37,7 +37,7 @@ const App = () => {
       </section>
 
       <section className="List-sec">
-        <ContactList contactList={contactList} foundContacts={foundContacts}/>
+        <ContactList foundContacts={foundContacts}/>
       </section>
     </div>
   )
@@ -119,7 +119,7 @@ const ContactSearch = ({ handleSearch }) =>{
   )
 }
 
-const ContactList = ({contactList, foundContacts}) =>{
+const ContactList = ({ foundContacts }) =>{
   return(
     <ul>
       {foundContacts.map(contact => (
@@ -127,6 +127,7 @@ const ContactList = ({contactList, foundContacts}) =>{
           <p>Name: <strong>{contact.firstName} {contact.lastName}</strong></p>
           <p>Phone : <strong>{contact.phone}</strong></p>
           <p>E-mail: <strong>{contact.email}</strong></p>
+          <button>Edit</button>
         </li>
       ))}
     </ul>
