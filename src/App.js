@@ -33,7 +33,7 @@ const App = () => {
       </section>
 
       <section className="Search-sec">
-        <ContactSearch />
+        <ContactSearch handleSearch={handleSearch}/>
       </section>
 
       <section className="List-sec">
