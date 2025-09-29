@@ -2,9 +2,10 @@ import { useState, useEffect } from "react"
 
 const App = () => {
     const [contactList, setContactList] = useState(()=>{
-    const loadLS = JSON.parse(localStorage.getItem("ContactList"))
-    return loadLS ? loadLS : []
-  })
+      const loadLS = JSON.parse(localStorage.getItem("ContactList"))
+      return loadLS ? loadLS : []
+    })
+    const [foundContacts, seFoundCountacs] = useState([])
 
   const handleAddNew = (newContact) =>{
     setContactList(prev => [...prev, newContact])
@@ -94,7 +95,7 @@ const ContactForm = ({ handleAddNew }) =>{
 
 const ContactSearch = () =>{
   const [searched, setSearched] = useState("")  
-
+  
   return (
     <div>
       <label htmlFor="search">Search for contact: </label>
