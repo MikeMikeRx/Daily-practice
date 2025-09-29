@@ -19,7 +19,8 @@ const App = () => {
       ...contact,
       id: new Date().getTime()
     }
-    setContactList(prev => [...prev, newContact])   
+    setContactList(prev => [...prev, newContact])
+    setContact({firstName:"", lastName:"", phone:"", email:""})   
   }
 
   useEffect(()=>{
