@@ -50,6 +50,7 @@ const ContactForm = ({ handleAddNew }) =>{
       ...contact,
       id: new Date().getTime()
     }
+    handleAddNew(newContact)
     setContact({firstName:"", lastName:"", phone:"", email:""})   
   }
 
