@@ -105,7 +105,11 @@ const ContactForm = ({ handleAddNew }) =>{
 }
 
 const ContactSearch = ({ handleSearch }) =>{
-  const [searched, setSearched] = useState("")  
+  const [searched, setSearched] = useState("")
+  
+  useEffect(()=>{
+    handleSearch(searched)
+  },[searched])
   
   return (
     <div>
