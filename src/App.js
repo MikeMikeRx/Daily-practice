@@ -1,61 +1,32 @@
 import { useState, useEffect } from "react"
 
 const App = () => {
-  const[contact, setContact] = useState({name:"", surname:"", phone:""})
-  const[contactList, setContactList] = useState(()=>{
-    const loadLS = JSON.parse(localStorage.getItem("ContactList"))
-    return loadLS ? loadLS : []
-  })
-  const[searchTerm, setSearchTerm] = useState("")
-  const[editingId, setEditingId] = useState(null)
+    const [contactList, setContactList] = useState(()=>{
+      const loadLS = JSON.parse(localStorage.getItem("ContactList"))
+      return loadLS ? loadLS : []
+    })
+    const [foundContacts, setFoundCountacs] = useState([])
+    const [editedId, setEditedId] = useState("")
 
-  const filtered = contactList
-    .filter(a => 
-      a.name.toLowerCase().includes(searchTerm) || 
-      a.surname.toLowerCase().includes(searchTerm) || 
-      a.phone.includes(searchTerm)
+  const handleAddNew = (newContact) =>{
+    setContactList(prev => [...prev, newContact])
+  }
+
+  const handleEdit = (editedId) =>{
+    setEditedId(editedId)   
+  }
+
+  const handleSearch = (searched) =>{
+    const filtered = contactList.filter(a => 
+      a.firstName.toLowerCase().includes(searched.toLowerCase()) ||
+      a.lastName.toLowerCase().includes(searched.toLowerCase()) ||
+      a.phone.includes(searched) ||
+      a.email.toLowerCase().includes(searched.toLowerCase())
     )
-
-  const handleChange = (e) =>{
-    const name = e.target.name
-    const value = e.target.value
-    setContact({ ...contact, [name]: value })
+    setFoundCountacs(searched ? filtered : contactList)
   }
 
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-
-    if(editingId === null){
-    const newContact = {
-      ...contact,
-      id: new Date().getTime()
-    }
-    setContactList(prev => [ ...prev, newContact ])
-    setContact({name:"", surname:"", phone:""})
-  } else {
-    setContactList(prev => prev.map(c => c.id === editingId ? {...c, ...contact } : c))
-    setContact({name:"", surname:"", phone:""})
-    setEditingId(null)
-  }
-}
-
-  const handleSearch = (e) =>{
-    setSearchTerm(e.target.value.toLowerCase())
-  }
-
-  const handleEdit = (id) =>{
-    setEditingId(id)
-    const found = filtered.find(c => c.id === id)
-    setContact({
-      name: found.name,
-      surname: found.surname,
-      phone: found.phone
-    })             
-  }
-
-  const handleRemove = (id) =>{
-    setContactList(contactList.filter(c => c.id !==id))
-  }
+  const edited = contactList.find(a => a.id === editedId) 
 
   useEffect(()=>{
     localStorage.setItem("ContactList", (JSON.stringify(contactList)))
@@ -96,7 +67,7 @@ const App = () => {
         </form>
       </section>
 
-      <section className="Search-section">
+      <section className="Search-secttion">
           <label htmlFor="search">Search for contact: </label>
           <input type="text" id="search" onChange={handleSearch}/>
       </section>
@@ -104,7 +75,7 @@ const App = () => {
       <section className="ListConctact-section">
         <ul>
           {filtered.map(contact => (
-            <li key={contact.id} className="Contact-card">
+            <li key={contact.id}>
               <p>name: <strong>{contact.name} {contact.surname}</strong></p>
               <p>phone: <strong>{contact.phone}</strong></p>
               <button onClick={()=>handleEdit(contact.id)}>Edit</button>
