@@ -6,6 +6,7 @@ const App = () => {
       return loadLS ? loadLS : []
     })
     const [foundContacts, setFoundCountacs] = useState([])
+    const [editedId, setEditedId] = useState("")
 
   const handleAddNew = (newContact) =>{
     setContactList(prev => [...prev, newContact])
@@ -46,7 +47,6 @@ const App = () => {
 
 const ContactForm = ({ handleAddNew, contactList }) =>{
   const [contact, setContact] = useState({firstName:"", lastName:"", phone:"", email:""})
-  const [editedId, setEditedId] = useState("")
 
   const handleChange = (e) => {
     const name = e.target.name
@@ -66,13 +66,12 @@ const ContactForm = ({ handleAddNew, contactList }) =>{
 
   const handleEdit = (editedId) =>{
     const edited = contactList.find(a => a.id === editedId)
-    setContact({
-      firstName: edited.firstName,
-      lastName: edited.lastName,
-      phone: edited.phone,
-      email: edited.email
-    })
-    console.log(contact);    
+    // setContact({
+    //   firstName: edited.firstName,
+    //   lastName: edited.lastName,
+    //   phone: edited.phone,
+    //   email: edited.email
+    // })   
   }
 
   return ( 
