@@ -121,7 +121,7 @@ const ContactSearch = ({ handleSearch }) =>{
 
 const ContactList = ({ foundContacts }) =>{
   const [editedId, setEditedId] = useState("")
-
+  
   return(
     <ul>
       {foundContacts.map(contact => (
@@ -129,7 +129,7 @@ const ContactList = ({ foundContacts }) =>{
           <p>Name: <strong>{contact.firstName} {contact.lastName}</strong></p>
           <p>Phone : <strong>{contact.phone}</strong></p>
           <p>E-mail: <strong>{contact.email}</strong></p>
-          <button>Edit</button>
+          <button onClick={()=>setEditedId(contact.id)}>Edit</button>
         </li>
       ))}
     </ul>
