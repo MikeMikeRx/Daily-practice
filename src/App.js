@@ -133,7 +133,7 @@ const ContactSearch = ({ handleSearch }) =>{
   )
 }
 
-const ContactList = ({ foundContacts }) =>{
+const ContactList = ({ foundContacts, handleEdit }) =>{
   
   return(
     <ul>
