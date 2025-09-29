@@ -5,7 +5,8 @@ const App = () => {
     <div>
       <section className="AddContact-sec">
         <form>
-          
+          <input type="text" />
+          <input type="text" />
         </form>
       </section>
     </div>
