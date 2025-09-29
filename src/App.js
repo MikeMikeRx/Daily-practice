@@ -13,7 +13,7 @@ const App = () => {
   }
 
   const handleEdit = (editedId) =>{
-    const edited = contactList.find(a => a.id === editedId)
+    const edited = contactList.find(a => a.id === editedId)  
   }
 
   const handleSearch = (searched) =>{
@@ -142,7 +142,7 @@ const ContactList = ({ foundContacts, handleEdit }) =>{
           <p>Name: <strong>{contact.firstName} {contact.lastName}</strong></p>
           <p>Phone : <strong>{contact.phone}</strong></p>
           <p>E-mail: <strong>{contact.email}</strong></p>
-          <button>Edit</button>
+          <button onClick={()=>handleEdit(contact.id)}>Edit</button>
         </li>
       ))}
     </ul>
