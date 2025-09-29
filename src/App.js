@@ -19,6 +19,10 @@ const App = () => {
     setContactList(prev => [...prev, newContact])   
   }
 
+  useEffect(()=>{
+    localStorage.setItem("ContactList", (JSON.stringify(contactList)))
+  },[contactList])
+
   return (
     <div>
       <section className="AddContact-sec">
