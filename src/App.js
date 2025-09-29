@@ -9,13 +9,13 @@ const App = () => {
       <section className="AddContact-sec">
         <form className="Add-form">
           <label htmlFor="firstName">Name: </label>
-          <input type="text" id="firstName"/>
+          <input type="text" id="firstName" value={contact.firstName}/>
           <label htmlFor="lastName">Surname: </label>
-          <input type="text" id="lastName"/>
+          <input type="text" id="lastName" value={contact.lastName}/>
           <label htmlFor="phone">Phone number: </label>
-          <input type="number" id="phone"/>
+          <input type="number" id="phone" value={contact.phone}/>
           <label htmlFor="email">E-mail: </label>
-          <input type="email" id="email"/>
+          <input type="email" id="email" value={contact.email}/>
           <input type="submit" id="submit"/>
         </form>
       </section>
