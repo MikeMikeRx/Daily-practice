@@ -70,7 +70,7 @@ const ContactForm = ({ handleAddNew, editedId, edited }) =>{
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
+// Need fix xxxxxxxxxxxxxx
     if(!editedId){
       const newContact = {
         ...contact,
