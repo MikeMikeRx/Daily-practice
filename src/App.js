@@ -21,7 +21,7 @@ const App = () => {
       </section>
 
       <section className="Search-sec">
-        
+
       </section>
 
       <section className="List-sec">
@@ -88,6 +88,15 @@ const ContactForm = ({ handleAddNew }) =>{
         />
         <input type="submit" id="submit"/>
       </form>
+    </div>
+  )
+}
+
+const ContactSearch = () =>{
+  return (
+    <div>
+      <label htmlFor="search"></label>
+      <input type="text" id="search"/>
     </div>
   )
 }
