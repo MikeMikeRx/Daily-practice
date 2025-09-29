@@ -2,6 +2,7 @@ import { useState } from "react"
 
 const App = () => {
   const [contact, setContact] = useState({firstName:"", lastName:"", phone:"", email:""})
+  const [contactList, setContactList] = useState([])
 
   return (
     <div>
