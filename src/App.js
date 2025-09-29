@@ -55,7 +55,7 @@ const App = () => {
 }
 
 
-const ContactForm = ({ handleAddNew }) =>{
+const ContactForm = ({ handleAddNew, editedId, edited }) =>{
   const [contact, setContact] = useState({firstName:"", lastName:"", phone:"", email:""})
 
   const handleChange = (e) => {
@@ -66,23 +66,20 @@ const ContactForm = ({ handleAddNew }) =>{
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const newContact = {
-      ...contact,
-      id: new Date().getTime()
+
+    if(!editedId){
+      const newContact = {
+        ...contact,
+        id: new Date().getTime()
+      }
+      handleAddNew(newContact)
+      setContact({firstName:"", lastName:"", phone:"", email:""}) 
+    } else {
+      handleAddNew(contact)
+      setContact({firstName:"", lastName:"", phone:"", email:""})
     }
-    handleAddNew(newContact)
-    setContact({firstName:"", lastName:"", phone:"", email:""})   
-  }
-
-
-    // setContact({
-    //   firstName: edited.firstName,
-    //   lastName: edited.lastName,
-    //   phone: edited.phone,
-    //   email: edited.email
-    // })   
+  }  
   
-
   return ( 
     <div>
       <form className="Add-form" onSubmit={handleSubmit}>
