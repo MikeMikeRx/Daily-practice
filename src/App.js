@@ -5,10 +5,21 @@ const App = () => {
       const loadLS = JSON.parse(localStorage.getItem("ContactList"))
       return loadLS ? loadLS : []
     })
-    const [foundContacts, seFoundCountacs] = useState([])
+    const [foundContacts, setFoundCountacs] = useState([])
 
   const handleAddNew = (newContact) =>{
     setContactList(prev => [...prev, newContact])
+  }
+
+  const handleSearch = (searched) =>{
+    const filtered = contactList.filter(a => 
+      a.firstName.toLowerCase().icludes(searched.toLowerCase()) ||
+      a.lastName.toLowerCase().icludes(searched.toLowerCase()) ||
+      a.phone.icludes(searched) ||
+      a.email.toLowerCase().icludes(searched.toLowerCase())
+    )
+
+    setFoundCountacs(searched ? filtered : contactList)
   }
 
     useEffect(()=>{
