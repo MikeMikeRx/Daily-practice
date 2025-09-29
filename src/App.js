@@ -13,8 +13,7 @@ const App = () => {
   }
 
   const handleEdit = (editedId) =>{
-    setEditedId(editedId)
-    const edited = contactList.find(a => a.id === editedId)  
+    setEditedId(editedId)   
   }
 
   const handleSearch = (searched) =>{
@@ -24,9 +23,10 @@ const App = () => {
       a.phone.includes(searched) ||
       a.email.toLowerCase().includes(searched.toLowerCase())
     )
-
     setFoundCountacs(searched ? filtered : contactList)
   }
+
+  const edited = contactList.find(a => a.id === editedId) 
 
   useEffect(()=>{
     localStorage.setItem("ContactList", (JSON.stringify(contactList)))
