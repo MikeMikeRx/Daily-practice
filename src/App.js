@@ -2,7 +2,11 @@ import { useState } from "react"
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <section className="AddContact-sec">
+
+      </section>
+    </div>
   )
 }
 
