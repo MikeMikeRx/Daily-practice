@@ -67,7 +67,15 @@ const App = () => {
       </section>
 
       <section className="List-sec">
-
+        <ul>
+          {contactList.map(contact => (
+            <li key={contact.id}>
+              <p>Name: <strong>{contact.firstName} {contact.lastName}</strong></p>
+              <p>Phone number: <strong>{contact.phone}</strong></p>
+              <p>E-mail: <strong>{contact.email}</strong></p>
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   )
