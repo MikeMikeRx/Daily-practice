@@ -6,6 +6,10 @@ const App = () => {
     return loadLS ? loadLS : []
   })
 
+  const handleAddNew = (newContact) =>{
+    setContactList(prev => [...prev, newContact])
+  }
+
     useEffect(()=>{
     localStorage.setItem("ContactList", (JSON.stringify(contactList)))
   },[contactList])
