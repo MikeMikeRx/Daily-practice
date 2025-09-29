@@ -44,7 +44,7 @@ const App = () => {
 }
 
 
-const ContactForm = ({ handleAddNew }) =>{
+const ContactForm = ({ handleAddNew, contactList }) =>{
   const [contact, setContact] = useState({firstName:"", lastName:"", phone:"", email:""})
   const [editedId, setEditedId] = useState("")
 
