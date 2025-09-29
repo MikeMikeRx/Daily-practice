@@ -13,6 +13,7 @@ const App = () => {
   }
 
   const handleEdit = (editedId) =>{
+    setEditedId(editedId)
     const edited = contactList.find(a => a.id === editedId)  
   }
 
