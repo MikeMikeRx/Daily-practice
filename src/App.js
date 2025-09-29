@@ -20,12 +20,17 @@ const App = () => {
         <ContactForm handleAddNew={handleAddNew}/>
       </section>
 
+      <section className="Search-sec">
+        
+      </section>
+
       <section className="List-sec">
         <ContactList contactList={contactList}/>
       </section>
     </div>
   )
 }
+
 
 const ContactForm = ({ handleAddNew }) =>{
   const [contact, setContact] = useState({firstName:"", lastName:"", phone:"", email:""})
