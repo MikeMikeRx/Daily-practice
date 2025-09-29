@@ -72,7 +72,7 @@ const App = () => {
           {contactList.map(contact => (
             <li key={contact.id}>
               <p>Name: <strong>{contact.firstName} {contact.lastName}</strong></p>
-              <p>Phone number: <strong>{contact.phone}</strong></p>
+              <p>Phone : <strong>{contact.phone}</strong></p>
               <p>E-mail: <strong>{contact.email}</strong></p>
             </li>
           ))}
