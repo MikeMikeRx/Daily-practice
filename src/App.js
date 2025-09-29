@@ -15,13 +15,13 @@ const App = () => {
       <section className="AddContact-sec">
         <form className="Add-form">
           <label htmlFor="firstName">Name: </label>
-          <input type="text" id="firstName" name="firstName" value={contact.firstName}/>
+          <input type="text" id="firstName" name="firstName" value={contact.firstName} onChange={handleChange}/>
           <label htmlFor="lastName">Surname: </label>
-          <input type="text" id="lastName" name="lastName" value={contact.lastName}/>
+          <input type="text" id="lastName" name="lastName" value={contact.lastName} onChange={handleChange}/>
           <label htmlFor="phone">Phone number: </label>
-          <input type="number" id="phone" name="phone" value={contact.phone}/>
+          <input type="number" id="phone" name="phone" value={contact.phone} onChange={handleChange}/>
           <label htmlFor="email">E-mail: </label>
-          <input type="email" id="email" name="email" value={contact.email}/>
+          <input type="email" id="email" name="email" value={contact.email} onChange={handleChange}/>
           <input type="submit" id="submit"/>
         </form>
       </section>
