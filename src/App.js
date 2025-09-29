@@ -4,7 +4,9 @@ const App = () => {
   return (
     <div>
       <section className="AddContact-sec">
-
+        <form>
+          
+        </form>
       </section>
     </div>
   )
