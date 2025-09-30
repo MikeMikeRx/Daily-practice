@@ -50,6 +50,7 @@ const App = () => {
 
   return (
     <div className="container">
+      <h1>Contact Manager</h1>
       <section className="AddContact-sec">
         <ContactForm 
           handleAddNew={handleAddNew} 
