@@ -154,6 +154,7 @@ const ContactList = ({ foundContacts, handleEdit }) =>{
           <p>Phone : <strong>{contact.phone}</strong></p>
           <p>E-mail: <strong>{contact.email}</strong></p>
           <button onClick={()=>handleEdit(contact.id)}>Edit</button>
+          <button>Delete</button>
         </li>
       ))}
     </ul>
