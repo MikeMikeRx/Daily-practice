@@ -39,7 +39,7 @@ const App = () => {
   return (
     <div>
       <section className="AddContact-sec">
-        <ContactForm handleAddNew={handleAddNew} edited={edited} editedId={editedId}/>
+        <ContactForm handleAddNew={handleAddNew} edited={edited} editedId={editedId} handleUpdateList={handleUpdateList}/>
       </section>
 
       <section className="Search-sec">
