@@ -6,7 +6,7 @@ const App = () => {
       return loadLS ? loadLS : []
     })
     const [foundContacts, setFoundCountacs] = useState([])
-    const [editedId, setEditedId] = useState("")
+    const [editedId, setEditedId] = useState(null)
 
   const handleAddNew = (newContact) =>{
     setContactList(prev => [...prev, newContact])
