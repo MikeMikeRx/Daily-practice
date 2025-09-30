@@ -30,7 +30,11 @@ const App = () => {
     setFoundCountacs(searched ? filtered : contactList)
   }
 
-  const edited = contactList.find(a => a.id === editedId) 
+  const edited = contactList.find(a => a.id === editedId)
+  
+  const handleDelete = (id) => {
+    setContactList(prev => prev.filter(c => c.id !== id))
+  }
 
   useEffect(()=>{
     localStorage.setItem("ContactList", (JSON.stringify(contactList)))
