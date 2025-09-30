@@ -53,7 +53,8 @@ const App = () => {
       <section className="List-sec">
         <ContactList 
           foundContacts={foundContacts} 
-          handleEdit={handleEdit} 
+          handleEdit={handleEdit}
+          handleDelete={handleDelete} 
         />
       </section>
     </div>
