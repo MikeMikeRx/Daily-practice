@@ -149,7 +149,7 @@ const ContactSearch = ({ handleSearch }) =>{
   )
 }
 
-const ContactList = ({ foundContacts, handleEdit }) =>{
+const ContactList = ({ foundContacts, handleEdit, handleDelete }) =>{
   
   return(
     <ul>
