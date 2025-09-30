@@ -7,6 +7,7 @@ const App = () => {
     })
     const [foundContacts, setFoundCountacs] = useState([])
     const [editedId, setEditedId] = useState(null)
+    const [searchTerm, setSearchTerm] = useState("")
 
   const handleAddNew = (newContact) =>{
     setContactList(prev => [...prev, newContact])
