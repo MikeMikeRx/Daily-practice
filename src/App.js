@@ -51,27 +51,34 @@ const App = () => {
   return (
     <div className="container">
       <h1>Contact Manager</h1>
-      <section className="AddContact-sec">
-        <ContactForm 
-          handleAddNew={handleAddNew} 
-          edited={edited} 
-          editedId={editedId} 
-          handleUpdateList={handleUpdateList}
-        />
-      </section>
 
-      <section className="Search-sec">
-        <ContactSearch 
-          handleSearch={handleSearch}/>
-      </section>
+      <div className="main-content">
+        <div className="first-part">
+          <section className="AddContact-sec">
+            <ContactForm 
+              handleAddNew={handleAddNew} 
+              edited={edited} 
+              editedId={editedId} 
+              handleUpdateList={handleUpdateList}
+            />
+          </section>
+        </div>
 
-      <section className="List-sec">
-        <ContactList 
-          foundContacts={foundContacts} 
-          handleEdit={handleEdit}
-          handleDelete={handleDelete} 
-        />
-      </section>
+        <div className="second-part">
+          <section className="Search-sec">
+            <ContactSearch 
+              handleSearch={handleSearch}/>
+          </section>
+
+          <section className="List-sec">
+            <ContactList 
+              foundContacts={foundContacts} 
+              handleEdit={handleEdit}
+              handleDelete={handleDelete} 
+            />
+          </section>
+        </div>
+      </div>
     </div>
   )
 }
@@ -111,33 +118,33 @@ const ContactForm = ({ handleAddNew, editedId, edited, handleUpdateList }) =>{
   return ( 
     <div>
       <form className="Add-form" onSubmit={handleSubmit}>
-        <label htmlFor="firstName">Name: </label>
         <input 
-          type="text" 
+          type="text"
+          placeholder="Name" 
           id="firstName" 
           name="firstName" 
           value={contact.firstName} 
           onChange={handleChange}
         />
-        <label htmlFor="lastName">Surname: </label>
         <input 
-          type="text" 
+          type="text"
+          placeholder="Surname" 
           id="lastName" 
           name="lastName" 
           value={contact.lastName} 
           onChange={handleChange}
         />
-        <label htmlFor="phone">Phone number: </label>
         <input 
-          type="number" 
+          type="number"
+          placeholder="Number" 
           id="phone" 
           name="phone" 
           value={contact.phone} 
           onChange={handleChange}
         />
-        <label htmlFor="email">E-mail: </label>
         <input 
-          type="email" 
+          type="email"
+          placeholder="E-mail" 
           id="email" 
           name="email" 
           value={contact.email} 
@@ -172,17 +179,31 @@ const ContactSearch = ({ handleSearch }) =>{
 const ContactList = ({ foundContacts, handleEdit, handleDelete }) =>{
   
   return(
-    <ul>
-      {foundContacts.map(contact => (
-        <li key={contact.id} className="Contact-card">
-          <p>Name: <strong>{contact.firstName} {contact.lastName}</strong></p>
-          <p>Phone : <strong>{contact.phone}</strong></p>
-          <p>E-mail: <strong>{contact.email}</strong></p>
-          <button onClick={()=>handleEdit(contact.id)}>Edit</button>
-          <button onClick={()=>handleDelete(contact.id)}>Delete</button>
-        </li>
-      ))}
-    </ul>
+    <div className="Contact-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {foundContacts.map(contact => (
+            <tr key={contact.id} className="Contact-card">
+              <td><strong>{contact.firstName} {contact.lastName}</strong></td>
+              <td><strong>{contact.phone}</strong></td>
+              <td><strong>{contact.email}</strong></td>
+              <td>
+                <button onClick={()=>handleEdit(contact.id)}>Edit</button>
+                <button onClick={()=>handleDelete(contact.id)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>       
+      </table>
+    </div>
   )
 }
 
