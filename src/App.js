@@ -23,14 +23,20 @@ const App = () => {
   }
 
   const handleSearch = (searched) =>{
-    const filtered = contactList.filter(a => 
-      a.firstName.toLowerCase().includes(searched.toLowerCase()) ||
-      a.lastName.toLowerCase().includes(searched.toLowerCase()) ||
-      a.phone.includes(searched) ||
-      a.email.toLowerCase().includes(searched.toLowerCase())
-    )
-    setFoundCountacs(searched ? filtered : contactList)
+    setSearchTerm(searched)
   }
+
+  useEffect(()=>{
+      const filtered = contactList.filter(a => 
+      a.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      a.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      a.phone.includes(searchTerm) ||
+      a.email.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    setFoundCountacs(searchTerm ? filtered : contactList)
+  },[contactList, searchTerm])
+
+  
 
   const edited = contactList.find(a => a.id === editedId)
   
