@@ -17,7 +17,7 @@ const App = () => {
   }
 
   const handleUpdateList = (updatedContact) =>{
-    setContactList(prev => prev.map(c => c.id === editedId ? {...c, updatedContact } : c))
+    setContactList(prev => prev.map(c => c.id === editedId ? {...c, ...updatedContact } : c))
   }
 
   const handleSearch = (searched) =>{
