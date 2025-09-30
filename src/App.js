@@ -6,7 +6,8 @@ const App = () => {
       return loadLS ? loadLS : []
     })
     const [foundContacts, setFoundCountacs] = useState([])
-    const [editedId, setEditedId] = useState("")
+    const [editedId, setEditedId] = useState(null)
+    const [searchTerm, setSearchTerm] = useState("")
 
   const handleAddNew = (newContact) =>{
     setContactList(prev => [...prev, newContact])
@@ -16,74 +17,192 @@ const App = () => {
     setEditedId(editedId)   
   }
 
-  const handleSearch = (searched) =>{
-    const filtered = contactList.filter(a => 
-      a.firstName.toLowerCase().includes(searched.toLowerCase()) ||
-      a.lastName.toLowerCase().includes(searched.toLowerCase()) ||
-      a.phone.includes(searched) ||
-      a.email.toLowerCase().includes(searched.toLowerCase())
-    )
-    setFoundCountacs(searched ? filtered : contactList)
+  const handleUpdateList = (updatedContact) =>{
+    setContactList(prev => 
+      prev.map(c => c.id === editedId ? {...c, ...updatedContact } : c))
   }
 
-  const edited = contactList.find(a => a.id === editedId) 
+  const handleSearch = (searched) =>{
+    setSearchTerm(searched)
+  }
+
+  useEffect(()=>{
+      const filtered = contactList.filter(a => 
+      a.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      a.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      a.phone.includes(searchTerm) ||
+      a.email.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    setFoundCountacs(searchTerm ? filtered : contactList)
+  },[contactList, searchTerm])
+
+  
+
+  const edited = contactList.find(a => a.id === editedId)
+  
+  const handleDelete = (id) => {
+    setContactList(prev => prev.filter(c => c.id !== id))
+  }
 
   useEffect(()=>{
     localStorage.setItem("ContactList", (JSON.stringify(contactList)))
   },[contactList])
 
   return (
+    <div className="container">
+      <h1>Contact Manager</h1>
+
+      <div className="main-content">
+        <div className="first-part">
+          <section className="AddContact-sec">
+            <ContactForm 
+              handleAddNew={handleAddNew} 
+              edited={edited} 
+              editedId={editedId} 
+              handleUpdateList={handleUpdateList}
+            />
+          </section>
+        </div>
+
+        <div className="second-part">
+          <section className="Search-sec">
+            <ContactSearch 
+              handleSearch={handleSearch}/>
+          </section>
+
+          <section className="List-sec">
+            <ContactList 
+              foundContacts={foundContacts} 
+              handleEdit={handleEdit}
+              handleDelete={handleDelete} 
+            />
+          </section>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+const ContactForm = ({ handleAddNew, editedId, edited, handleUpdateList }) =>{
+  const [contact, setContact] = useState({firstName:"", lastName:"", phone:"", email:""})
+
+  const handleChange = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    setContact({...contact, [name]:value})
+  }
+
+  useEffect(()=>{
+    if(editedId){
+      setContact(edited)
+    }
+  },[editedId])
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if(!editedId){
+      const newContact = {
+        ...contact,
+        id: new Date().getTime()
+      }
+      handleAddNew(newContact)
+      setContact({firstName:"", lastName:"", phone:"", email:""}) 
+    } else {
+      handleUpdateList(contact)
+      setContact({firstName:"", lastName:"", phone:"", email:""})
+    }
+  }  
+  
+  return ( 
     <div>
-      <section className="AddContact-section">    
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name: </label>
-          <input 
-            type="text" 
-            id="name"
-            name="name"
-            onChange={handleChange}
-            value={contact.name}
-          />
-          <label htmlFor="surname">Surname: </label>
-          <input 
-            type="text" 
-            id="surname"
-            name="surname"
-            onChange={handleChange}
-            value={contact.surname}
-          />
-          <label htmlFor="phone">Phone: </label>
-          <input 
-            type="number" 
-            id="phone"
-            name="phone"
-            onChange={handleChange}
-            value={contact.phone}
-          />
-          <input 
-            type="submit" 
-            value="Add contact"
-          />
-        </form>
-      </section>
+      <form className="Add-form" onSubmit={handleSubmit}>
+        <input 
+          type="text"
+          placeholder="Name" 
+          id="firstName" 
+          name="firstName" 
+          value={contact.firstName} 
+          onChange={handleChange}
+        />
+        <input 
+          type="text"
+          placeholder="Surname" 
+          id="lastName" 
+          name="lastName" 
+          value={contact.lastName} 
+          onChange={handleChange}
+        />
+        <input 
+          type="number"
+          placeholder="Number" 
+          id="phone" 
+          name="phone" 
+          value={contact.phone} 
+          onChange={handleChange}
+        />
+        <input 
+          type="email"
+          placeholder="E-mail" 
+          id="email" 
+          name="email" 
+          value={contact.email} 
+          onChange={handleChange}
+        />
+        <input type="submit" id="submit"/>
+      </form>
+    </div>
+  )
+}
 
-      <section className="Search-secttion">
-          <label htmlFor="search">Search for contact: </label>
-          <input type="text" id="search" onChange={handleSearch}/>
-      </section>
+const ContactSearch = ({ handleSearch }) =>{
+  const [searched, setSearched] = useState("")
+  
+  useEffect(()=>{
+    handleSearch(searched)
+  },[searched])
+  
+  return (
+    <div>
+      <label htmlFor="search">Search for contact: </label>
+      <input 
+        type="text" 
+        id="search" 
+        value={searched} 
+        onChange={(e)=>setSearched(e.target.value)}
+      />
+    </div>
+  )
+}
 
-      <section className="ListConctact-section">
-        <ul>
-          {filtered.map(contact => (
-            <li key={contact.id}>
-              <p>name: <strong>{contact.name} {contact.surname}</strong></p>
-              <p>phone: <strong>{contact.phone}</strong></p>
-              <button onClick={()=>handleEdit(contact.id)}>Edit</button>
-              <button onClick={()=>handleRemove(contact.id)}>Remove</button>
-            </li>
+const ContactList = ({ foundContacts, handleEdit, handleDelete }) =>{
+  
+  return(
+    <div className="Contact-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {foundContacts.map(contact => (
+            <tr key={contact.id} className="Contact-card">
+              <td><strong>{contact.firstName} {contact.lastName}</strong></td>
+              <td><strong>{contact.phone}</strong></td>
+              <td><strong>{contact.email}</strong></td>
+              <td>
+                <button onClick={()=>handleEdit(contact.id)}>Edit</button>
+                <button onClick={()=>handleDelete(contact.id)}>Delete</button>
+              </td>
+            </tr>
           ))}
-        </ul>
-      </section>
+        </tbody>       
+      </table>
     </div>
   )
 }

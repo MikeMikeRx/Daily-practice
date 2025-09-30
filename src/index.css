@@ -1,42 +1,127 @@
-.AddContact-section{
-    margin-top: 25px;
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
 }
 
-.AddContact-section form{
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    margin: 0px auto;
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
 }
 
-.AddContact-section form input[type="submit"]{
-    width: 150px;
-    margin: 10px auto;
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
 }
 
-.Search-section{
-    margin-top: 25px;
-    margin-bottom: 35px;
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.Search-section label, #search{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0px auto;
+.first-part{
+    flex: 0 0 300px;
 }
 
-.ListConctact-section ul{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 1300px;
-    list-style: none;
+.second-part {
+  flex: 1;
 }
 
-.Contact-card{
-    flex: 1 1 calc(33.333% - 40px);
-    min-width: 45px; 
-    border: 2px solid black;
-    padding: 10px;
+/* Form */
+.Add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.Add-form input[type="text"],
+.Add-form input[type="number"],
+.Add-form input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.Add-form input[type="submit"] {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.Add-form input[type="submit"]:hover {
+  background: #0056b3;
+}
+
+/* Search */
+.Search-sec {
+  margin-bottom: 20px;
+}
+
+.Search-sec input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* Contact list */
+.Contact-list table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.Contact-list th,
+.Contact-list td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.Contact-list th {
+  background: #f4f6f8;
+  font-weight: bold;
+  color: #333;
+}
+
+.Contact-list tr:hover {
+  background: #fafafa;
+}
+
+.Contact-card button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.Contact-card button:first-of-type {
+  background: #28a745;
+  color: white;
+}
+
+.Contact-card button:last-of-type {
+  background: #dc3545;
+  color: white;
+}
+
+.Contact-card button:hover {
+  opacity: 0.9;
 }
