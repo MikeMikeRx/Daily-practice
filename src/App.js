@@ -49,7 +49,7 @@ const App = () => {
   },[contactList])
 
   return (
-    <div>
+    <div className="container">
       <section className="AddContact-sec">
         <ContactForm 
           handleAddNew={handleAddNew} 
