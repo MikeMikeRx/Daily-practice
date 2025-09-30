@@ -173,7 +173,7 @@ const ContactList = ({ foundContacts, handleEdit, handleDelete }) =>{
   return(
     <ul>
       {foundContacts.map(contact => (
-        <li key={contact.id}>
+        <li key={contact.id} className="Contact-card">
           <p>Name: <strong>{contact.firstName} {contact.lastName}</strong></p>
           <p>Phone : <strong>{contact.phone}</strong></p>
           <p>E-mail: <strong>{contact.email}</strong></p>
