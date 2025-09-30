@@ -17,7 +17,8 @@ const App = () => {
   }
 
   const handleUpdateList = (updatedContact) =>{
-    setContactList(prev => prev.map(c => c.id === editedId ? {...c, ...updatedContact } : c))
+    setContactList(prev => 
+      prev.map(c => c.id === editedId ? {...c, ...updatedContact } : c))
   }
 
   const handleSearch = (searched) =>{
@@ -43,11 +44,17 @@ const App = () => {
   return (
     <div>
       <section className="AddContact-sec">
-        <ContactForm handleAddNew={handleAddNew} edited={edited} editedId={editedId} handleUpdateList={handleUpdateList}/>
+        <ContactForm 
+          handleAddNew={handleAddNew} 
+          edited={edited} 
+          editedId={editedId} 
+          handleUpdateList={handleUpdateList}
+        />
       </section>
 
       <section className="Search-sec">
-        <ContactSearch handleSearch={handleSearch}/>
+        <ContactSearch 
+          handleSearch={handleSearch}/>
       </section>
 
       <section className="List-sec">
@@ -79,7 +86,7 @@ const ContactForm = ({ handleAddNew, editedId, edited, handleUpdateList }) =>{
 
   const handleSubmit = (e) => {
     e.preventDefault()
-// Need fix xxxxxxxxxxxxxx
+
     if(!editedId){
       const newContact = {
         ...contact,
@@ -144,7 +151,12 @@ const ContactSearch = ({ handleSearch }) =>{
   return (
     <div>
       <label htmlFor="search">Search for contact: </label>
-      <input type="text" id="search" value={searched} onChange={(e)=>setSearched(e.target.value)}/>
+      <input 
+        type="text" 
+        id="search" 
+        value={searched} 
+        onChange={(e)=>setSearched(e.target.value)}
+      />
     </div>
   )
 }
