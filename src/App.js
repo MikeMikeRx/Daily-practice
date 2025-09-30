@@ -16,6 +16,10 @@ const App = () => {
     setEditedId(editedId)   
   }
 
+  const updatedList = (updatedContact) =>{
+    setContactList(prev => prev.map(c => c.id === editedId ? {...c, updatedContact } : c))
+  }
+
   const handleSearch = (searched) =>{
     const filtered = contactList.filter(a => 
       a.firstName.toLowerCase().includes(searched.toLowerCase()) ||
