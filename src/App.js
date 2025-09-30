@@ -83,7 +83,7 @@ const ContactForm = ({ handleAddNew, editedId, edited, handleUpdateList }) =>{
       handleAddNew(newContact)
       setContact({firstName:"", lastName:"", phone:"", email:""}) 
     } else {
-      handleAddNew(contact)
+      handleUpdateList(contact)
       setContact({firstName:"", lastName:"", phone:"", email:""})
     }
   }  
