@@ -57,7 +57,7 @@ const App = () => {
 }
 
 
-const ContactForm = ({ handleAddNew, editedId, edited }) =>{
+const ContactForm = ({ handleAddNew, editedId, edited, handleUpdateList }) =>{
   const [contact, setContact] = useState({firstName:"", lastName:"", phone:"", email:""})
 
   const handleChange = (e) => {
