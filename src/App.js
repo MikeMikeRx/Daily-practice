@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <div>
-      <NoteForm/>
+      <NoteForm handleAddNote={handleAddNote}/>
     </div>
   )
 }
