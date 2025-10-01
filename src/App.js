@@ -16,7 +16,7 @@ const App = () => {
 
   useEffect(()=>{
     localStorage.setItem("Notes", (JSON.stringify(notes)))
-  })
+  },[notes])
 
   return (
     <div>
@@ -58,7 +58,7 @@ const NoteForm = ({ handleAddNote }) => {
 }
 
 const NoteList = ({ notes }) =>{
-  return <div>  
+  return <div>
     {notes.map((note) => {
       <article key={note.id} className="note-cart">
         <h2>{note.title}</h2>
