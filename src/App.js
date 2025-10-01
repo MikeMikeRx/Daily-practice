@@ -62,12 +62,12 @@ const NoteForm = ({ handleAddNote }) => {
 
 const NoteList = ({ updatedNotes }) =>{
   return <div>
-    {updatedNotes.map((note) => {
+    {updatedNotes.map((note) =>(
       <article key={note.id} className="note-cart">
         <h2>{note.title}</h2>
         <p>{note.body}</p>
       </article>
-    })}
+    ))}
   </div>  
   
 }
