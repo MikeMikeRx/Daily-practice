@@ -5,6 +5,7 @@ const App = () => {
     const loadLs = JSON.parse(localStorage.getItem("notes"))
     return loadLs ? loadLs : []  
   })
+  const [updatedNotes, setUpdatedNotes] = useState([])
 
   const handleAddNote = (note) =>{
     const newNote = {
@@ -15,6 +16,8 @@ const App = () => {
   }
 
   useEffect(()=>{
+    setUpdatedNotes(notes)
+ 
     localStorage.setItem("Notes", (JSON.stringify(notes)))
   },[notes])
 
@@ -25,7 +28,7 @@ const App = () => {
       </section>
 
       <section className="list-sec">
-        <NoteList notes={notes}/>
+        <NoteList updatedNotes={updatedNotes}/>
       </section>
     </div>
   )
@@ -57,9 +60,9 @@ const NoteForm = ({ handleAddNote }) => {
   )
 }
 
-const NoteList = ({ notes }) =>{
+const NoteList = ({ updatedNotes }) =>{
   return <div>
-    {notes.map((note) => {
+    {updatedNotes.map((note) => {
       <article key={note.id} className="note-cart">
         <h2>{note.title}</h2>
         <p>{note.body}</p>
