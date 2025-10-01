@@ -58,7 +58,11 @@ const NoteForm = ({ handleAddNote }) => {
 }
 
 const NoteList = () =>{
-  return
+  return (
+    <div className="note-cart">
+      
+    </div>
+  )
 }
 
 export default App
