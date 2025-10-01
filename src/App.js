@@ -15,4 +15,8 @@ const App = () => {
   )
 }
 
+const NoteForm = () => {
+  return 
+}
+
 export default App
