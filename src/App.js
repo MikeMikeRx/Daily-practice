@@ -6,6 +6,14 @@ const App = () => {
     return loadLs ? loadLs : []  
   })
 
+  const handleAddNote = (note) =>{
+    const newNote = {
+      ...note,
+      id: Date.now() + Math.random()
+    } 
+    setNotes(prev => [ ...prev, newNote ])
+  }
+
   useEffect(()=>{
     localStorage.setItem("Notes", (JSON.stringify(notes)))
   })
