@@ -57,4 +57,8 @@ const NoteForm = ({ handleAddNote }) => {
   )
 }
 
+const NoteList = () =>{
+  return
+}
+
 export default App
