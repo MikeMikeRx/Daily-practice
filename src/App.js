@@ -6,6 +6,10 @@ const App = () => {
     return loadLs ? loadLs : []  
   })
 
+  useEffect(()=>{
+    localStorage.setItem("Notes", (JSON.stringify(notes)))
+  })
+
   return (
     <div>App</div>
   )
