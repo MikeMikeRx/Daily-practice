@@ -11,7 +11,7 @@ const App = () => {
       ...note,
       id: Date.now() + Math.random()
     } 
-    setNotes(prev => [ ...prev, newNote ])
+    setNotes(prev => [ ...prev, newNote ])    
   }
 
   useEffect(()=>{
@@ -32,6 +32,12 @@ const NoteForm = ({ handleAddNote }) => {
     const name = e.target.name
     const value = e.target.value
     setOneNote({...oneNote, [name]:value})    
+  }
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+
+    handleAddNote(oneNote)
   }
 
   return (
