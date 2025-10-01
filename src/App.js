@@ -18,7 +18,9 @@ const App = () => {
 const NoteForm = () => {
   return (
     <form>
+      <label htmlFor="title">Title: </label>
       <input type="text" id="title"/>
+      <label htmlFor="body">Body: </label>
       <input type="text" id="body"/>
     </form>
   )
