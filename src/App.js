@@ -20,6 +20,12 @@ const App = () => {
 const NoteForm = () => {
   const [oneNote, setOneNote] = useState({title:"", body:""})
 
+  const handleChange = (e) =>{
+    const name = e.target.name
+    const value = e.target.value
+    setOneNote({...oneNote, [name]:value})
+  }
+
   return (
     <form>
       <label htmlFor="title">Title: </label>
