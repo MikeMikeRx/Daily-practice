@@ -22,6 +22,7 @@ const NoteForm = () => {
       <input type="text" id="title"/>
       <label htmlFor="body">Body: </label>
       <input type="text" id="body"/>
+      <button type="submit"> Add Note</button>
     </form>
   )
 }
