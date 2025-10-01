@@ -18,7 +18,8 @@ const App = () => {
 const NoteForm = () => {
   return (
     <form>
-      
+      <input type="text" id="title"/>
+      <input type="text" id="body"/>
     </form>
   )
 }
