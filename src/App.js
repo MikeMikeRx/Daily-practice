@@ -57,7 +57,7 @@ const NoteForm = ({ handleAddNote }) => {
   )
 }
 
-const NoteList = () =>{
+const NoteList = ({ notes }) =>{
   return <div>  
     {notes.map((note) => {
       <article key={note.id} className="note-cart">
