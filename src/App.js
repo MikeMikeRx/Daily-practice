@@ -25,7 +25,7 @@ const App = () => {
       </section>
 
       <section className="list-sec">
-
+        <NoteList notes={notes}/>
       </section>
     </div>
   )
