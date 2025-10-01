@@ -29,9 +29,9 @@ const NoteForm = () => {
   return (
     <form>
       <label htmlFor="title">Title: </label>
-      <input type="text" id="title"/>
+      <input type="text" id="title" name="title" value={oneNote.title}/>
       <label htmlFor="body">Body: </label>
-      <input type="text" id="body"/>
+      <input type="text" id="body" name="body" value={oneNote.body}/>
       <button type="submit"> Add Note</button>
     </form>
   )
