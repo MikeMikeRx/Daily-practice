@@ -58,14 +58,15 @@ const NoteForm = ({ handleAddNote }) => {
 }
 
 const NoteList = () =>{
-  return (
-    <div className="note-cart">
-      {notes.map(note =>(
+  return <div>  
+    {notes.map((note) => {
+      <article key={note.id} className="note-cart">
         <h2>{note.title}</h2>
         <p>{note.body}</p>
-      ))}
-    </div>
-  )
+      </article>
+    })}
+  </div>  
+  
 }
 
 export default App
