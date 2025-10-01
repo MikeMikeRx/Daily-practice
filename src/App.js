@@ -16,7 +16,11 @@ const App = () => {
 }
 
 const NoteForm = () => {
-  return 
+  return (
+    <form>
+      
+    </form>
+  )
 }
 
 export default App
