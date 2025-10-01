@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 const App = () => {
   const [notes, setNotes] = useState(()=>{
-    const loadLs = JSON.parse(localStorage.getItem("notes"))
+    const loadLs = JSON.parse(localStorage.getItem("Notes"))
     return loadLs ? loadLs : []  
   })
   const [updatedNotes, setUpdatedNotes] = useState([])
