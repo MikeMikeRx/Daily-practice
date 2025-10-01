@@ -23,6 +23,10 @@ const App = () => {
       <section className="form-sec">
         <NoteForm handleAddNote={handleAddNote}/>
       </section>
+
+      <section className="list-sec">
+
+      </section>
     </div>
   )
 }
