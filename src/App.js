@@ -18,6 +18,8 @@ const App = () => {
 }
 
 const NoteForm = () => {
+  const [oneNote, setOneNote] = useState({title:"", body:""})
+
   return (
     <form>
       <label htmlFor="title">Title: </label>
