@@ -71,7 +71,7 @@ const NoteList = ({ updatedNotes, handleDelete }) =>{
         <h2>{note.title}</h2>
         <p>{note.body}</p>
         <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={()=>handleDelete(note.id)}>Delete</button>
       </article>
     ))}
   </>  
