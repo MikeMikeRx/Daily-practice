@@ -9,11 +9,16 @@ const App = () => {
   const [editingId, setEditingId] = useState(null)
 
   const handleAddNote = (note) =>{
-    const newNote = {
-      ...note,
-      id: Date.now() + Math.random()
-    } 
-    setNotes(prev => [ ...prev, newNote ])    
+    if(editingId === null){
+      const newNote = {
+        ...note,
+        id: Date.now() + Math.random()
+      } 
+      setNotes(prev => [ ...prev, newNote ])  
+    } else {
+      setNotes(prev => prev.map(n => n.id === editingId ? {...n, ...note} : n))
+      setEditingId(null)
+    }  
   }
 
   const handleEdit = (id) =>{
