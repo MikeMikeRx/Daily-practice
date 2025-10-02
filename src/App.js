@@ -54,21 +54,21 @@ const NoteForm = ({ handleAddNote }) => {
       <label htmlFor="title">Title: </label>
       <input type="text" id="title" name="title" value={oneNote.title} onChange={handleChange}/>
       <label htmlFor="body">Body: </label>
-      <input type="text" id="body" name="body" value={oneNote.body} onChange={handleChange}/>
+      <textarea type="text" id="body" name="body" value={oneNote.body} onChange={handleChange}/>
       <button type="submit"> Add Note</button>
     </form>
   )
 }
 
 const NoteList = ({ updatedNotes }) =>{
-  return <div>
+  return <>
     {updatedNotes.map((note) =>(
       <article key={note.id} className="note-cart">
         <h2>{note.title}</h2>
         <p>{note.body}</p>
       </article>
     ))}
-  </div>  
+  </>  
   
 }
 
