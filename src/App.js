@@ -45,7 +45,7 @@ const App = () => {
   )
 }
 
-const NoteForm = ({ handleAddNote, editingId }) => {
+const NoteForm = ({ handleAddNote, editingId, edited }) => {
   const [oneNote, setOneNote] = useState({title:"", body:""})
 
   const handleChange = (e) =>{
