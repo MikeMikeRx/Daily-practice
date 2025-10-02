@@ -63,6 +63,7 @@ const NoteForm = ({ handleAddNote, editingId, edited }) => {
     e.preventDefault()
 
     handleAddNote(oneNote)
+    setOneNote({title:"", body:""})  
   }
 
   return (
