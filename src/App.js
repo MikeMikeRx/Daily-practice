@@ -24,6 +24,8 @@ const App = () => {
     setNotes(prev => prev.filter(n => n.id !== id))
   }
 
+  const edited = notes.find(n => n.id === editingId)
+
   useEffect(()=>{
     setUpdatedNotes(notes)
  
@@ -43,7 +45,7 @@ const App = () => {
   )
 }
 
-const NoteForm = ({ handleAddNote }) => {
+const NoteForm = ({ handleAddNote, editingId }) => {
   const [oneNote, setOneNote] = useState({title:"", body:""})
 
   const handleChange = (e) =>{
