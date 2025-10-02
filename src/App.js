@@ -17,7 +17,7 @@ const App = () => {
   }
 
   const handleEdit = (id) =>{
-    setEditingId(id)
+    setEditingId(id)    
   }
 
   const handleDelete = (id) =>{
@@ -33,7 +33,7 @@ const App = () => {
   return (
     <div>
       <section className="form-sec">
-        <NoteForm handleAddNote={handleAddNote}/>
+        <NoteForm handleAddNote={handleAddNote} editingId={editingId}/>
       </section>
 
       <section className="list-sec">
