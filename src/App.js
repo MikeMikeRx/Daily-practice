@@ -25,7 +25,7 @@ const App = () => {
   }
 
   const edited = notes.find(n => n.id === editingId)
-
+  
   useEffect(()=>{
     setUpdatedNotes(notes)
  
@@ -53,6 +53,11 @@ const NoteForm = ({ handleAddNote, editingId, edited }) => {
     const value = e.target.value
     setOneNote({...oneNote, [name]:value})    
   }
+  
+  useEffect(()=>{
+    if(editingId){setOneNote({...edited, title: edited.title, body: edited.body})}
+  },[editingId])
+  
 
   const handleSubmit = (e) =>{
     e.preventDefault()
