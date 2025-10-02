@@ -61,7 +61,7 @@ const NoteForm = ({ handleAddNote, editingId, edited }) => {
   
   useEffect(()=>{
     if(editingId){setOneNote({...edited, title: edited.title, body: edited.body})}
-  },[editingId])
+  },[editingId, edited])
   
 
   const handleSubmit = (e) =>{
