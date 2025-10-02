@@ -32,7 +32,7 @@ const App = () => {
       </section>
 
       <section className="list-sec">
-        <NoteList updatedNotes={updatedNotes}/>
+        <NoteList updatedNotes={updatedNotes} handleDelete={handleDelete}/>
       </section>
     </div>
   )
