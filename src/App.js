@@ -16,6 +16,10 @@ const App = () => {
     setNotes(prev => [ ...prev, newNote ])    
   }
 
+  const handleEdit = (id) =>{
+    setEditingId(id)
+  }
+
   const handleDelete = (id) =>{
     setNotes(prev => prev.filter(n => n.id !== id))
   }
