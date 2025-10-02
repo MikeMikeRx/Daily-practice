@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from "react"
+import { useState, useEffect } from "react"
 
 const App = () => {
   const [notes, setNotes] = useState(()=>{
@@ -16,7 +16,7 @@ const App = () => {
     setNotes(prev => [ ...prev, newNote ])    
   }
 
-  const handleDelete = (id) => {
+  const handleDelete = (id) =>{
     setNotes(prev => prev.filter(n => n.id !== id))
   }
 
