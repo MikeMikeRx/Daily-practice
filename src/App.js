@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, use } from "react"
 
 const App = () => {
   const [notes, setNotes] = useState(()=>{
@@ -6,6 +6,7 @@ const App = () => {
     return loadLs ? loadLs : []  
   })
   const [updatedNotes, setUpdatedNotes] = useState([])
+  const [editingId, setEditingId] = useState(null)
 
   const handleAddNote = (note) =>{
     const newNote = {
