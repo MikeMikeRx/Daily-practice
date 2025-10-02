@@ -69,13 +69,13 @@ const NoteForm = ({ handleAddNote }) => {
   )
 }
 
-const NoteList = ({ updatedNotes, handleDelete }) =>{
+const NoteList = ({ updatedNotes, handleDelete, handleEdit }) =>{
   return <>
     {updatedNotes.map((note) =>(
       <article key={note.id} className="note-cart">
         <h2>{note.title}</h2>
         <p>{note.body}</p>
-        <button>Edit</button>
+        <button onClick={()=>handleEdit(note.id)}>Edit</button>
         <button onClick={()=>handleDelete(note.id)}>Delete</button>
       </article>
     ))}
