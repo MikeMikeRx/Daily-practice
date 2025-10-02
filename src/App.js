@@ -37,7 +37,7 @@ const App = () => {
       </section>
 
       <section className="list-sec">
-        <NoteList updatedNotes={updatedNotes} handleDelete={handleDelete}/>
+        <NoteList updatedNotes={updatedNotes} handleDelete={handleDelete} handleEdit={handleEdit}/>
       </section>
     </div>
   )
