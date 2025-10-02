@@ -50,7 +50,7 @@ const NoteForm = ({ handleAddNote }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="note-form">
       <label htmlFor="title">Title: </label>
       <input type="text" id="title" name="title" value={oneNote.title} onChange={handleChange}/>
       <label htmlFor="body">Body: </label>
