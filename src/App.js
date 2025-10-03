@@ -43,6 +43,10 @@ const App = () => {
         <NoteForm handleAddNote={handleAddNote} editingId={editingId} edited={edited}/>
       </section>
 
+      <section className="search-sec">
+        
+      </section>
+
       <section className="list-sec">
         <NoteList updatedNotes={updatedNotes} handleDelete={handleDelete} handleEdit={handleEdit}/>
       </section>
