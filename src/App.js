@@ -86,7 +86,7 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("")
 
   return <>
-  <input type="text" id="search"/>
+  <input type="text" id="search" value={searchTerm}/>
   </>
 }
 
