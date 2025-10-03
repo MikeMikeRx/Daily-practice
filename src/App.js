@@ -31,7 +31,7 @@ const App = () => {
         n => n.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
         n.body.toLowerCase().includes(searchTerm.toLowerCase())
       )
-      setNotes(filtered)
+      setUpdatedNotes(filtered)
     } else {
       setUpdatedNotes(notes)
     }
