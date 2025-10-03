@@ -22,6 +22,21 @@ const App = () => {
     }  
   }
 
+  const handleSearch = (term) =>{
+    setSearchTerm(term)
+
+    if(searchTerm){
+      const filtered = notes
+      .filter(
+        n => n.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+        n.body.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      setNotes(filtered)
+    } else {
+      setUpdatedNotes(notes)
+    }
+  }
+
   const handleEdit = (id) =>{
     setEditingId(id)    
   }
