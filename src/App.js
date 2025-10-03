@@ -83,7 +83,9 @@ const NoteForm = ({ handleAddNote, editingId, edited }) => {
 }
 
 const SearchBar = () => {
-  return
+  return <>
+  <input type="text" id="search"/>
+  </>
 }
 
 const NoteList = ({ updatedNotes, handleDelete, handleEdit }) =>{
