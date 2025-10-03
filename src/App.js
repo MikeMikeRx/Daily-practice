@@ -165,7 +165,7 @@ const ContactSearch = ({ handleSearch }) =>{
   
   return (
     <div>
-      <label htmlFor="search">Search for contact: </label>
+      <label htmlFor="search"><strong>Search for contact:</strong> </label>
       <input 
         type="text" 
         id="search" 

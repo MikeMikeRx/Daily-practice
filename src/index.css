@@ -89,14 +89,14 @@ h1 {
 .Contact-list th,
 .Contact-list td {
   padding: 12px 15px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee;
   text-align: left;
 }
 
 .Contact-list th {
-  background: #f4f6f8;
+  background: #007bff;
   font-weight: bold;
-  color: #333;
+  color: #fcfafa;
 }
 
 .Contact-list tr:hover {
