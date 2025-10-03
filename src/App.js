@@ -83,6 +83,8 @@ const NoteForm = ({ handleAddNote, editingId, edited }) => {
 }
 
 const SearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState("")
+
   return <>
   <input type="text" id="search"/>
   </>
