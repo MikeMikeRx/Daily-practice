@@ -86,7 +86,7 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("")
 
   return <>
-  <input type="text" id="search" value={searchTerm}/>
+  <input type="text" id="search" value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)}/>
   </>
 }
 
