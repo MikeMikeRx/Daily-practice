@@ -7,6 +7,7 @@ const App = () => {
   })
   const [updatedNotes, setUpdatedNotes] = useState([])
   const [editingId, setEditingId] = useState(null)
+  const [searchTerm, setSearchTerm] = useState("")
 
   const handleAddNote = (note) =>{
     if(editingId === null){
@@ -87,7 +88,6 @@ const NoteForm = ({ handleAddNote, editingId, edited }) => {
 }
 
 const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState("")
 
   return <>
   <input type="text" id="search" value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)}/>
