@@ -44,7 +44,7 @@ const App = () => {
       </section>
 
       <section className="search-sec">
-        
+        <SearchBar/>
       </section>
 
       <section className="list-sec">
