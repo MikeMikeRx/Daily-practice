@@ -60,7 +60,7 @@ const App = () => {
       </section>
 
       <section className="search-sec">
-        <SearchBar/>
+        <SearchBar handleSearch={handleSearch}/>
       </section>
 
       <section className="list-sec">
