@@ -102,7 +102,7 @@ const NoteForm = ({ handleAddNote, editingId, edited }) => {
   )
 }
 
-const SearchBar = () => {
+const SearchBar = ({ searchTerm, handleSearch}) => {
 
   return <>
   <input type="text" id="search" value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)}/>
