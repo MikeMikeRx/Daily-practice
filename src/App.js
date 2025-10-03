@@ -7,6 +7,7 @@ const App = () => {
   })
   const [updatedNotes, setUpdatedNotes] = useState([])
   const [editingId, setEditingId] = useState(null)
+  const [searchTerm, setSearchTerm] = useState("")
 
   const handleAddNote = (note) =>{
     if(editingId === null){
@@ -21,6 +22,10 @@ const App = () => {
     }  
   }
 
+  const handleSearch = (term) =>{
+    setSearchTerm(term)
+  }
+
   const handleEdit = (id) =>{
     setEditingId(id)    
   }
@@ -32,15 +37,27 @@ const App = () => {
   const edited = notes.find(n => n.id === editingId)
   
   useEffect(()=>{
-    setUpdatedNotes(notes)
+    if(searchTerm){
+      const filtered = notes.filter(
+        n => n.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+        n.body.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      setUpdatedNotes(filtered)
+    } else {
+      setUpdatedNotes(notes)
+    }
  
     localStorage.setItem("Notes", (JSON.stringify(notes)))
-  },[notes])
+  },[notes, searchTerm])
 
   return (
     <div>
       <section className="form-sec">
         <NoteForm handleAddNote={handleAddNote} editingId={editingId} edited={edited}/>
+      </section>
+
+      <section className="search-sec">
+        <SearchBar handleSearch={handleSearch} searchTerm={searchTerm}/>
       </section>
 
       <section className="list-sec">
@@ -80,6 +97,13 @@ const NoteForm = ({ handleAddNote, editingId, edited }) => {
       <button type="submit"> Add Note</button>
     </form>
   )
+}
+
+const SearchBar = ({ searchTerm, handleSearch}) => {
+
+  return <>
+  <input type="text" id="search" value={searchTerm} onChange={(e)=>handleSearch(e.target.value)}/>
+  </>
 }
 
 const NoteList = ({ updatedNotes, handleDelete, handleEdit }) =>{
