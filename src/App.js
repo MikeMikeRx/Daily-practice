@@ -82,6 +82,10 @@ const NoteForm = ({ handleAddNote, editingId, edited }) => {
   )
 }
 
+const SearchBar = () => {
+  return
+}
+
 const NoteList = ({ updatedNotes, handleDelete, handleEdit }) =>{
   return <>
     {updatedNotes.map((note) =>(
