@@ -35,7 +35,7 @@ const App = () => {
   return (
     <div>
       <section className="sec-1">
-        <NoteForm handleAddNote={handleAddNote}/>
+        <NoteForm handleAddNote={handleAddNote} editedId={editedId} editedNote={editedNote}/>
       </section>
       <section className="sec-2">
 
