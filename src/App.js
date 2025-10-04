@@ -35,6 +35,8 @@ const App = () => {
       setUpdatedNotes(prev => prev.filter(n => 
         n.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
         n.body.toLowerCase().includes(searchTerm.toLowerCase())))
+    } else {
+      setUpdatedNotes(notes)
     }
   },[searchTerm])
 
