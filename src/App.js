@@ -6,6 +6,15 @@ const App = () => {
     return loadLS ? loadLS : []
   })
 
+  const handleAddNote = (note) =>{
+    const newNote = {
+      ...note,
+      id: new Date().getTime() + Math.random()
+    }
+    setNotes(prev => [...prev, newNote])
+    console.log(notes);    
+  }
+
   useEffect(()=>{
     localStorage.setItem("Notes", (JSON.stringify(notes)))
   })
@@ -34,9 +43,7 @@ const NoteForm = () =>{
     setOneNote(prev => ({
       ...prev,
       [id]: value
-    }))
-
-    console.log(oneNote);    
+    }))   
   }
 
   return <>
