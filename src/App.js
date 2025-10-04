@@ -107,7 +107,7 @@ const NoteForm = ({ handleAddNote, editedId, editedNote }) =>{
 
 const NoteSearch = ({ handleSearch }) =>{
   return <>
-    <input type="text" id="search"/>
+    <input type="text" id="search" onChange={(e)=>handleSearch(e.target.value)}/>
   </>
 }
 
