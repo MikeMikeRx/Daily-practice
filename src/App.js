@@ -2,122 +2,128 @@ import { useState, useEffect } from "react"
 
 const App = () => {
   const [notes, setNotes] = useState(()=>{
-    const loadLs = JSON.parse(localStorage.getItem("Notes"))
-    return loadLs ? loadLs : []  
+    const loadLS = JSON.parse(localStorage.getItem("Notes"))
+    return loadLS ? loadLS : []
   })
-  const [updatedNotes, setUpdatedNotes] = useState([])
-  const [editingId, setEditingId] = useState(null)
+  const [updatedNotes, setUpdatedNotes] = useState(notes)
+  const [editedId, setEditedId] = useState(null)
   const [searchTerm, setSearchTerm] = useState("")
 
   const handleAddNote = (note) =>{
-    if(editingId === null){
-      const newNote = {
-        ...note,
-        id: Date.now() + Math.random()
-      } 
-      setNotes(prev => [ ...prev, newNote ])  
-    } else {
-      setNotes(prev => prev.map(n => n.id === editingId ? {...n, ...note} : n))
-      setEditingId(null)
-    }  
+    const newNote = {
+      ...note,
+      id: new Date().getTime() + Math.random()
+    }
+    setNotes(prev => [...prev, newNote])
+    console.log(notes);    
+  }
+
+  const handleEdit = (id) =>{
+    setEditedId(id)
+  }
+
+  const handleDelete = (id) =>{
+    setNotes(notes.filter(n => n.id !== id))
   }
 
   const handleSearch = (term) =>{
     setSearchTerm(term)
   }
 
-  const handleEdit = (id) =>{
-    setEditingId(id)    
-  }
-
-  const handleDelete = (id) =>{
-    setNotes(prev => prev.filter(n => n.id !== id))
-  }
-
-  const edited = notes.find(n => n.id === editingId)
-  
   useEffect(()=>{
     if(searchTerm){
-      const filtered = notes.filter(
-        n => n.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-        n.body.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      setUpdatedNotes(filtered)
+      setUpdatedNotes(prev => prev.filter(n => 
+        n.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+        n.body.toLowerCase().includes(searchTerm.toLowerCase())))
     } else {
       setUpdatedNotes(notes)
     }
- 
+  },[searchTerm])
+
+  useEffect(()=>{
+    setUpdatedNotes(notes)
     localStorage.setItem("Notes", (JSON.stringify(notes)))
-  },[notes, searchTerm])
+  },[notes])
+
+  const editedNote = updatedNotes.find(n => n.id === editedId)  
 
   return (
     <div>
-      <section className="form-sec">
-        <NoteForm handleAddNote={handleAddNote} editingId={editingId} edited={edited}/>
+      <section className="sec-1">
+        <NoteForm handleAddNote={handleAddNote} editedId={editedId} editedNote={editedNote}/>
       </section>
-
-      <section className="search-sec">
-        <SearchBar handleSearch={handleSearch} searchTerm={searchTerm}/>
+      <section className="sec-2">
+        <NoteSearch handleSearch={handleSearch}/>
       </section>
-
-      <section className="list-sec">
-        <NoteList updatedNotes={updatedNotes} handleDelete={handleDelete} handleEdit={handleEdit}/>
+      <section className="sec-3">
+        <NoteList updatedNotes={updatedNotes} handleEdit={handleEdit} handleDelete={handleDelete}/>
       </section>
     </div>
   )
 }
 
-const NoteForm = ({ handleAddNote, editingId, edited }) => {
-  const [oneNote, setOneNote] = useState({title:"", body:""})
+const NoteForm = ({ handleAddNote, editedId, editedNote }) =>{
+  const[oneNote, setOneNote] = useState({title:"", body:""})
 
-  const handleChange = (e) =>{
-    const name = e.target.name
-    const value = e.target.value
-    setOneNote({...oneNote, [name]:value})    
-  }
-  
+  const handleChange = (e) => {
+    const { id, value } = e.target
+
+    setOneNote(prev => ({
+      ...prev,
+      [id]: value
+    }))   
+  } 
+
   useEffect(()=>{
-    if(editingId){setOneNote({...edited, title: edited.title, body: edited.body})}
-  },[editingId, edited])
-  
+    if(editedId){
+      setOneNote({ ...editedNote })
+    }
+  },[editedId])
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault()
-
     handleAddNote(oneNote)
-    setOneNote({title:"", body:""})  
   }
-
-  return (
-    <form onSubmit={handleSubmit} className="note-form">
-      <label htmlFor="title">Title: </label>
-      <input type="text" id="title" name="title" value={oneNote.title} onChange={handleChange}/>
-      <label htmlFor="body">Body: </label>
-      <textarea type="text" id="body" name="body" value={oneNote.body} onChange={handleChange}/>
-      <button type="submit"> Add Note</button>
-    </form>
-  )
-}
-
-const SearchBar = ({ searchTerm, handleSearch}) => {
 
   return <>
-  <input type="text" id="search" value={searchTerm} onChange={(e)=>handleSearch(e.target.value)}/>
+  <form onSubmit={handleSubmit}>
+    <label htmlFor="title">Title: </label>
+    <input 
+    type="text" 
+    id="title"
+    value={oneNote.title}
+    onChange={handleChange}
+    />
+
+    <label htmlFor="body">Body: </label>
+    <textarea 
+    id="body"
+    value={oneNote.body}
+    onChange={handleChange}
+    />
+
+    <button type="submit">Add Note</button>
+  </form>
   </>
 }
 
-const NoteList = ({ updatedNotes, handleDelete, handleEdit }) =>{
+const NoteSearch = ({ handleSearch }) =>{
   return <>
-    {updatedNotes.map((note) =>(
-      <article key={note.id} className="note-cart">
-        <h2>{note.title}</h2>
+    <input type="text" id="search" onChange={(e)=>handleSearch(e.target.value)}/>
+  </>
+}
+
+const NoteList = ({ updatedNotes, handleEdit, handleDelete }) =>{
+  return <>
+    {updatedNotes.map(note => (
+      <article key={note.id}>
+        <h3>{note.title}</h3>
         <p>{note.body}</p>
         <button onClick={()=>handleEdit(note.id)}>Edit</button>
         <button onClick={()=>handleDelete(note.id)}>Delete</button>
       </article>
     ))}
-  </>  
-  
+  </>
 }
 
 export default App
