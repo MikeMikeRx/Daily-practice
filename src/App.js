@@ -7,6 +7,7 @@ const App = () => {
   })
   const [updatedNotes, setUpdatedNotes] = useState(notes)
   const [editedId, setEditedId] = useState(null)
+  const [searchTerm, setSearchTerm] = useState("")
 
   const handleAddNote = (note) =>{
     const newNote = {
