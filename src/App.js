@@ -30,7 +30,7 @@ const App = () => {
 
       </section>
       <section className="sec-3">
-
+        <NoteList updatedNotes={updatedNotes}/>
       </section>
     </div>
   )
