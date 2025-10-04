@@ -11,7 +11,17 @@ const App = () => {
   })
 
   return (
-    <div>App</div>
+    <div>
+      <section className="sec-1">
+
+      </section>
+      <section className="sec-2">
+
+      </section>
+      <section className="sec-3">
+        
+      </section>
+    </div>
   )
 }
 
