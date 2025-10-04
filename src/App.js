@@ -34,7 +34,7 @@ const App = () => {
   )
 }
 
-const NoteForm = () =>{
+const NoteForm = ({ handleAddNote }) =>{
   const[oneNote, setOneNote] = useState({title:"", body:""})
 
   const handleChange = (e) => {
