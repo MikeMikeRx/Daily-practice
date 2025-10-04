@@ -30,6 +30,12 @@ const App = () => {
     setSearchTerm(term)
   }
 
+  useEffect(()=>{
+    if(searchTerm){
+      setUpdatedNotes(prev => prev.filter(n => 
+        n.title.toLowerCase().includes(searchTerm.toLowerCase()) || n.body.toLowerCase().includes(searchTerm.toLowerCase())))
+    }
+  },[searchTerm])
 
   useEffect(()=>{
     setUpdatedNotes(notes)
