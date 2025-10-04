@@ -77,7 +77,12 @@ const NoteForm = ({ handleAddNote }) =>{
 
 const NoteList = () =>{
   return <>
-  
+    {updatedNotes.map(note => (
+      <article key={note.id}>
+        <h3>{note.title}</h3>
+        <p>{note.body}</p>
+      </article>
+    ))}
   </>
 }
 
