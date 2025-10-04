@@ -52,7 +52,7 @@ const NoteForm = ({ handleAddNote }) =>{
   }
 
   return <>
-  <form>
+  <form onSubmit={handleSubmit}>
     <label htmlFor="title">Title: </label>
     <input 
     type="text" 
