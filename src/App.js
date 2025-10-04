@@ -30,6 +30,8 @@ const App = () => {
     localStorage.setItem("Notes", (JSON.stringify(notes)))
   },[notes])
 
+  const editedNote = updatedNotes.find(n => n.id === editedId)  
+
   return (
     <div>
       <section className="sec-1">
