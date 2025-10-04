@@ -46,6 +46,11 @@ const NoteForm = ({ handleAddNote }) =>{
     }))   
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    handleAddNote(oneNote)
+  }
+
   return <>
   <form>
     <label htmlFor="title">Title: </label>
