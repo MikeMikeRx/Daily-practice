@@ -26,6 +26,11 @@ const App = () => {
     setNotes(notes.filter(n => n.id !== id))
   }
 
+  const handleSearch = (term) =>{
+    setSearchTerm(term)
+  }
+
+
   useEffect(()=>{
     setUpdatedNotes(notes)
     localStorage.setItem("Notes", (JSON.stringify(notes)))
