@@ -19,10 +19,18 @@ const App = () => {
 
       </section>
       <section className="sec-3">
-        
+
       </section>
     </div>
   )
+}
+
+const NoteForm = () =>{
+  return <>
+  <form>
+    
+  </form>
+  </>
 }
 
 export default App
