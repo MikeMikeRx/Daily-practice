@@ -92,6 +92,12 @@ const NoteForm = ({ handleAddNote, editedId, editedNote }) =>{
   </>
 }
 
+const NoteSearch = () =>{
+  return <>
+    <input type="text" id="search"/>
+  </>
+}
+
 const NoteList = ({ updatedNotes, handleEdit, handleDelete }) =>{
   return <>
     {updatedNotes.map(note => (
