@@ -27,13 +27,25 @@ const App = () => {
 
 const NoteForm = () =>{
   const[oneNote, setOneNote] = useState({title:"", body:""})
-  
+
+  const handleChange = (e) => {
+    const { id, value } = e.target
+
+    setOneNote(prev => ({
+      ...prev,
+      [id]: value
+    }))
+
+    console.log(oneNote);    
+  }
+
   return <>
   <form>
     <label htmlFor="title">Title: </label>
     <input type="text" id="title"/>
     <label htmlFor="body">Body: </label>
     <textarea id="body"/>
+    
     <button type="submit">Add Note</button>
   </form>
   </>
