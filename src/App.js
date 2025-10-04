@@ -17,8 +17,9 @@ const App = () => {
   }
 
   useEffect(()=>{
+    setUpdatedNotes(notes)
     localStorage.setItem("Notes", (JSON.stringify(notes)))
-  })
+  },[notes])
 
   return (
     <div>
