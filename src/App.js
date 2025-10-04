@@ -33,7 +33,8 @@ const App = () => {
   useEffect(()=>{
     if(searchTerm){
       setUpdatedNotes(prev => prev.filter(n => 
-        n.title.toLowerCase().includes(searchTerm.toLowerCase()) || n.body.toLowerCase().includes(searchTerm.toLowerCase())))
+        n.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+        n.body.toLowerCase().includes(searchTerm.toLowerCase())))
     }
   },[searchTerm])
 
@@ -50,7 +51,7 @@ const App = () => {
         <NoteForm handleAddNote={handleAddNote} editedId={editedId} editedNote={editedNote}/>
       </section>
       <section className="sec-2">
-        <NoteSearch searchTerm={searchTerm}/>
+        <NoteSearch handleSearch={handleSearch}/>
       </section>
       <section className="sec-3">
         <NoteList updatedNotes={updatedNotes} handleEdit={handleEdit} handleDelete={handleDelete}/>
