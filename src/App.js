@@ -42,10 +42,20 @@ const NoteForm = () =>{
   return <>
   <form>
     <label htmlFor="title">Title: </label>
-    <input type="text" id="title"/>
+    <input 
+    type="text" 
+    id="title"
+    value={oneNote.title}
+    onChange={handleChange}
+    />
+
     <label htmlFor="body">Body: </label>
-    <textarea id="body"/>
-    
+    <textarea 
+    id="body"
+    value={oneNote.body}
+    onChange={handleChange}
+    />
+
     <button type="submit">Add Note</button>
   </form>
   </>
