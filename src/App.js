@@ -17,6 +17,10 @@ const App = () => {
     console.log(notes);    
   }
 
+  const handleEdit = (id) =>{
+    setEditedId(id)
+  }
+
   const handleDelete = (id) =>{
     setNotes(notes.filter(n => n.id !== id))
   }
