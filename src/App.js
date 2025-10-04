@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div>
       <section className="sec-1">
-
+        <NoteForm/>
       </section>
       <section className="sec-2">
 
