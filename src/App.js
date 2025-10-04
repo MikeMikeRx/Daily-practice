@@ -28,7 +28,8 @@ const App = () => {
 const NoteForm = () =>{
   return <>
   <form>
-    
+    <input type="text" id="title"/>
+    <input type="textarea" id="body"/>
   </form>
   </>
 }
