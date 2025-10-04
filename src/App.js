@@ -5,6 +5,7 @@ const App = () => {
     const loadLS = JSON.parse(localStorage.getItem("Notes"))
     return loadLS ? loadLS : []
   })
+  const [updatedNotes, setUpdatedNotes] = useState(notes)
 
   const handleAddNote = (note) =>{
     const newNote = {
