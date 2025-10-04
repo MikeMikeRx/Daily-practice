@@ -6,6 +6,7 @@ const App = () => {
     return loadLS ? loadLS : []
   })
   const [updatedNotes, setUpdatedNotes] = useState(notes)
+  const [editedId, setEditedId] = useState(null)
 
   const handleAddNote = (note) =>{
     const newNote = {
