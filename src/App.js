@@ -16,6 +16,10 @@ const App = () => {
     console.log(notes);    
   }
 
+  const handleDelete = (id) =>{
+    setNotes(notes.filter(n => n.id !== id))
+  }
+
   useEffect(()=>{
     setUpdatedNotes(notes)
     localStorage.setItem("Notes", (JSON.stringify(notes)))
