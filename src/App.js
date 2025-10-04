@@ -105,7 +105,7 @@ const NoteForm = ({ handleAddNote, editedId, editedNote }) =>{
   </>
 }
 
-const NoteSearch = () =>{
+const NoteSearch = ({ handleSearch }) =>{
   return <>
     <input type="text" id="search"/>
   </>
