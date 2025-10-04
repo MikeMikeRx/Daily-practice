@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div>
       <section className="sec-1">
-        <NoteForm/>
+        <NoteForm handleAddNote={handleAddNote}/>
       </section>
       <section className="sec-2">
 
