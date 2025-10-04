@@ -81,6 +81,8 @@ const NoteList = ({ updatedNotes }) =>{
       <article key={note.id}>
         <h3>{note.title}</h3>
         <p>{note.body}</p>
+        <button>Edit</button>
+        <button>Delete</button>
       </article>
     ))}
   </>
