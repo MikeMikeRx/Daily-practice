@@ -39,7 +39,7 @@ const App = () => {
         <NoteForm handleAddNote={handleAddNote} editedId={editedId} editedNote={editedNote}/>
       </section>
       <section className="sec-2">
-
+        <NoteSearch searchTerm={searchTerm}/>
       </section>
       <section className="sec-3">
         <NoteList updatedNotes={updatedNotes} handleEdit={handleEdit} handleDelete={handleDelete}/>
