@@ -57,7 +57,13 @@ const NoteForm = ({ handleAddNote, editedId, editedNote }) =>{
       ...prev,
       [id]: value
     }))   
-  }
+  } 
+
+  useEffect(()=>{
+    if(editedId){
+      setOneNote({ ...editedNote })
+    }
+  },[editedId])
 
   const handleSubmit = (e) => {
     e.preventDefault()
