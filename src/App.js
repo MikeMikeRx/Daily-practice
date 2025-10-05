@@ -92,7 +92,7 @@ const NoteForm = ({ handleAddNote, editedId, editedNote }) =>{
   }
 
   return <>
-  <form onSubmit={handleSubmit}>
+  <form onSubmit={handleSubmit} className="note-form">
     <label htmlFor="title">Title: </label>
     <input 
     type="text" 
