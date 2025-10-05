@@ -122,7 +122,7 @@ const NoteSearch = ({ handleSearch }) =>{
 const NoteList = ({ updatedNotes, handleEdit, handleDelete }) =>{
   return <>
     {updatedNotes.map(note => (
-      <article key={note.id}>
+      <article key={note.id} className="note-card">
         <h3>{note.title}</h3>
         <p>{note.body}</p>
         <button onClick={()=>handleEdit(note.id)}>Edit</button>
