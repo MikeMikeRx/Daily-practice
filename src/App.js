@@ -89,6 +89,7 @@ const NoteForm = ({ handleAddNote, editedId, editedNote }) =>{
   const handleSubmit = (e) => {
     e.preventDefault()
     handleAddNote(oneNote)
+    setOneNote({title:"", body:""})
   }
 
   return <>
