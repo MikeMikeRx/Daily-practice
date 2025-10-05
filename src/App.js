@@ -10,12 +10,16 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("")
 
   const handleAddNote = (note) =>{
-    const newNote = {
-      ...note,
-      id: new Date().getTime() + Math.random()
-    }
+    if(editedId === null){
+          const newNote = {
+            ...note,
+            id: new Date().getTime() + Math.random()
+          }
     setNotes(prev => [...prev, newNote])
-    console.log(notes);    
+    } else {
+      setNotes(prev => prev.map(n => n.id === editedId ? { ...n, ...note} : n))
+      setEditedId(null)
+    }       
   }
 
   const handleEdit = (id) =>{
