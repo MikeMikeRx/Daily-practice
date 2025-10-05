@@ -45,7 +45,7 @@ const App = () => {
   },[searchTerm])
 
   useEffect(()=>{
-    setUpdatedNotes(notes)
+    setUpdatedNotes(notes)    
     localStorage.setItem("Notes", (JSON.stringify(notes)))
   },[notes])
 
@@ -81,6 +81,8 @@ const NoteForm = ({ handleAddNote, editedId, editedNote }) =>{
   useEffect(()=>{
     if(editedId){
       setOneNote({ ...editedNote })
+    } else {
+      setOneNote({title:"", body:""})
     }
   },[editedId])
 
