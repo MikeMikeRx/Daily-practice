@@ -115,6 +115,7 @@ const NoteForm = ({ handleAddNote, editedId, editedNote }) =>{
 
 const NoteSearch = ({ handleSearch }) =>{
   return <>
+    <label htmlFor="search">Search: </label>
     <input type="text" id="search" onChange={(e)=>handleSearch(e.target.value)}/>
   </>
 }
@@ -125,8 +126,14 @@ const NoteList = ({ updatedNotes, handleEdit, handleDelete }) =>{
       <article key={note.id} className="note-card">
         <h3>{note.title}</h3>
         <p>{note.body}</p>
-        <button onClick={()=>handleEdit(note.id)}>Edit</button>
-        <button onClick={()=>handleDelete(note.id)}>Delete</button>
+        <div className="button-1">
+          <button onClick={()=>handleEdit(note.id)}>Edit</button>
+          <button onClick={()=>handleDelete(note.id)}>Delete</button>
+        </div>
+                
+        <div className="button-2">
+          
+        </div>        
       </article>
     ))}
   </>
