@@ -1,0 +1,110 @@
+body{
+    margin-bottom: 500px;
+    background: linear-gradient(rgb(206, 43, 255),rgb(255, 196, 109));
+    background: black;
+}
+
+.sec-1{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.note-form{
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    border: 2px solid rgb(255, 208, 0);
+    border-radius: 8px;
+    color: rgb(253, 252, 252);
+}
+
+.note-form label{
+    margin: 0px 20px;
+    padding: 10px;
+}
+
+.note-form #title{
+    margin-right: 350px;
+    margin-left: 20px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.note-form #body{
+    height: 100px;
+    margin: 0px 20px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.note-form button[type="submit"]{
+    margin: 15px auto;
+    width: 15%;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: rgb(255, 230, 0);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.note-form button:hover[type="submit"]{
+    transform: scale(1.03);
+}
+
+.sec-2{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.sec-2 label{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.sec-2 #search{
+    margin-top: 10px;
+    width: 25%;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.sec-3{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.note-card {
+    display: flex;
+    flex-direction: column;
+    width: 27%;
+    font-size: 20px;
+    background-color: rgba(3, 3, 3, 0.281);
+    border: 3px solid rgb(255, 230, 0);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    color: white;
+}
+
+.note-card button{
+    margin-left: 5px;
+    width: 15%;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: rgb(255, 230, 0);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.note-card button:hover{
+    transform: scale(1.03);
+}
+

@@ -10,12 +10,16 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("")
 
   const handleAddNote = (note) =>{
-    const newNote = {
-      ...note,
-      id: new Date().getTime() + Math.random()
-    }
+    if(editedId === null){
+          const newNote = {
+            ...note,
+            id: new Date().getTime() + Math.random()
+          }
     setNotes(prev => [...prev, newNote])
-    console.log(notes);    
+    } else {
+      setNotes(prev => prev.map(n => n.id === editedId ? { ...n, ...note} : n))
+      setEditedId(null)
+    }       
   }
 
   const handleEdit = (id) =>{
@@ -41,7 +45,7 @@ const App = () => {
   },[searchTerm])
 
   useEffect(()=>{
-    setUpdatedNotes(notes)
+    setUpdatedNotes(notes)    
     localStorage.setItem("Notes", (JSON.stringify(notes)))
   },[notes])
 
@@ -77,16 +81,19 @@ const NoteForm = ({ handleAddNote, editedId, editedNote }) =>{
   useEffect(()=>{
     if(editedId){
       setOneNote({ ...editedNote })
+    } else {
+      setOneNote({title:"", body:""})
     }
   },[editedId])
 
   const handleSubmit = (e) => {
     e.preventDefault()
     handleAddNote(oneNote)
+    setOneNote({title:"", body:""})
   }
 
   return <>
-  <form onSubmit={handleSubmit}>
+  <form onSubmit={handleSubmit} className="note-form">
     <label htmlFor="title">Title: </label>
     <input 
     type="text" 
@@ -109,6 +116,7 @@ const NoteForm = ({ handleAddNote, editedId, editedNote }) =>{
 
 const NoteSearch = ({ handleSearch }) =>{
   return <>
+    <label htmlFor="search">Search: </label>
     <input type="text" id="search" onChange={(e)=>handleSearch(e.target.value)}/>
   </>
 }
@@ -116,11 +124,17 @@ const NoteSearch = ({ handleSearch }) =>{
 const NoteList = ({ updatedNotes, handleEdit, handleDelete }) =>{
   return <>
     {updatedNotes.map(note => (
-      <article key={note.id}>
+      <article key={note.id} className="note-card">
         <h3>{note.title}</h3>
         <p>{note.body}</p>
-        <button onClick={()=>handleEdit(note.id)}>Edit</button>
-        <button onClick={()=>handleDelete(note.id)}>Delete</button>
+        <div className="button-1">
+          <button onClick={()=>handleEdit(note.id)}>Edit</button>
+          <button onClick={()=>handleDelete(note.id)}>Delete</button>
+        </div>
+                
+        <div className="button-2">
+          
+        </div>        
       </article>
     ))}
   </>
