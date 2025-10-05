@@ -5,6 +5,7 @@ body{
 }
 
 .sec-1{
+    margin-top: 25px;
     display: flex;
     justify-content: center;
 }
