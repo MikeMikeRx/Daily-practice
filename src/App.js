@@ -5,7 +5,14 @@ const App = () => {
   const [filter, setFilter] = ("all", "active", "completed")
 
   return (
-    <div>App</div>
+    <div>
+      <section className="sec-1">
+
+      </section>
+      <section className="sec-2">
+        
+      </section>
+      </div>
   )
 }
 
