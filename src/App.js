@@ -26,7 +26,7 @@ const App = () => {
   )
 }
 
-const TaskForm = () => {
+const TaskForm = ({ handleSubmit }) => {
   return <div>
     <form>
       <input type="text" id="title" placeholder="Title"/>
