@@ -30,6 +30,15 @@ const App = () => {
     setFilter(state)
   }
 
+  useEffect(()=>{
+    if(filter === "all"){
+      setUpdatedTasks(tasks)
+    } else if(filter === "active"){
+      setUpdatedTasks(prev => prev.filter(t => t.completed === false))
+    } else if(filter === "completed"){
+      setUpdatedTasks(prev => prev.filter(t => t.completed === true))
+    }
+  },[filter])
 
   useEffect(()=>{
     setUpdatedTasks(tasks)
