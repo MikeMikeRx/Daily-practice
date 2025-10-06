@@ -38,7 +38,7 @@ const App = () => {
       </section>
 
       <section className="sec-2">
-
+        <TaskFilter/>
       </section>
 
       <section className="sec-3">
