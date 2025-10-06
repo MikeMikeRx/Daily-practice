@@ -38,7 +38,7 @@ const App = () => {
       </section>
 
       <section className="sec-2">
-      
+
       </section>
 
       <section className="sec-3">
@@ -69,6 +69,14 @@ const TaskForm = ({ handleAddTask }) => {
 
       <button type="submit">Add Task</button>
     </form>
+  </div>
+}
+
+const TaskFilter = () => {
+  return <div>
+    <button>All</button>
+    <button>Active</button>
+    <button>Completed</button>
   </div>
 }
 
