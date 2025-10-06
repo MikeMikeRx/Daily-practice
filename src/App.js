@@ -14,6 +14,10 @@ const App = () => {
     setTask(prev => [...prev, newTask])
   }
 
+  useEffect(()=>{
+    setUpdatedTasks(tasks)
+  },[tasks])
+
   return (
     <div>
       <section className="sec-1">
