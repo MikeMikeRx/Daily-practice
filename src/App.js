@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div>
       <section className="sec-1">
-        <TaskForm/>
+        <TaskForm handleSubmit={handleSubmit}/>
       </section>
 
       <section className="sec-2">
