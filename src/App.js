@@ -69,7 +69,7 @@ const TaskList = ({ updatedTasks, handleDelete }) => {
     <li key={t.id}>
       <h1>{t.title}</h1>
       <input type="checkbox" id="completed"/>
-      <button>Delete</button>
+      <button onClick={()=>handleDelete(t.id)}>Delete</button>
     </li>
   ))}
   </>
