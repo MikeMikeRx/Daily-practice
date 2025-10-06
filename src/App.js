@@ -4,6 +4,15 @@ const App = () => {
   const [tasks, setTask] = useState([])
   const [filter, setFilter] = ("all", "active", "completed")
 
+  const handleSubmit = (task) => {
+    const newTask = {
+      ...task, 
+      id: new Date().getTime() + Math.random
+    }
+
+    setTask(prev => [...prev, newTask])
+  }
+
   return (
     <div>
       <section className="sec-1">
