@@ -29,7 +29,7 @@ const App = () => {
       </section>
 
       <section className="sec-2">
-
+        <TaskList updatedTasks={updatedTasks}/>
       </section>
       </div>
   )
