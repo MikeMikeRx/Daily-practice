@@ -36,6 +36,7 @@ const TaskForm = ({ handleAddTask }) => {
       id="title" 
       placeholder="Title" 
       onChange={(e)=>setOneTask({title: e.target.value})}
+      value={oneTask.title}
       />
 
       <button type="submit">Add Task</button>
