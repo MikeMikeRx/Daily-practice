@@ -7,7 +7,7 @@ const App = () => {
   const handleAddTask = (task) => {
     const newTask = {
       ...task, 
-      id: new Date().getTime() + Math.random
+      id: new Date().getTime() + Math.random()
     }
 
     setTask(prev => [...prev, newTask])
