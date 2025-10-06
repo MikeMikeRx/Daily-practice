@@ -38,7 +38,7 @@ const App = () => {
     } else {
       setUpdatedTasks(tasks)
     }
-  },[filter])
+  },[tasks, filter])
 
   useEffect(()=>{
     setUpdatedTasks(tasks)
