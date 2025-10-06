@@ -26,6 +26,11 @@ const App = () => {
     setTask(prev => prev.filter(t => t.id !== id))
   }
 
+  const handleFilter = (state) => {
+    setFilter(state)
+  }
+
+
   useEffect(()=>{
     setUpdatedTasks(tasks)
     localStorage.setItem("Tasks", (JSON.stringify(tasks)))
