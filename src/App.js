@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 const App = () => {
   const [tasks, setTask] = useState([])
-  const [filter, setFilter] = ("all", "active", "completed")
+  const [filter, setFilter] = useState("all", "active", "completed")
 
   const handleAddTask = (task) => {
     const newTask = {
