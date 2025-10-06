@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react"
 
 const App = () => {
-  const [tasks, setTask] = useState([])
+  const [tasks, setTask] = useState(()=>{
+    const loadLS = JSON.parse(localStorage.getItem("Tasks"))
+    return loadLS ? loadLS : []
+  })
   const [updatedTasks, setUpdatedTasks] = useState(tasks)
   const [filter, setFilter] = useState("all", "active", "completed")
 
