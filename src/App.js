@@ -36,7 +36,7 @@ const TaskForm = ({ handleAddTask }) => {
   }
   
   return <div>
-    <form>
+    <form onSubmit={handleSubmit}>
       <input 
       type="text" 
       id="title" 
