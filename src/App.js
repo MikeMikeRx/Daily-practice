@@ -9,4 +9,15 @@ const App = () => {
   )
 }
 
+const TaskForm = () => {
+  return <div>
+    <form>
+      <input type="text" id="title" placeholder="Title"/>
+      <input type="checkbox" id="completed"/>
+
+      <button type="submit">Add Task</button>
+    </form>
+  </div>
+}
+
 export default App
