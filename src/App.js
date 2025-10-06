@@ -86,7 +86,7 @@ const TaskForm = ({ handleAddTask }) => {
   </div>
 }
 
-const TaskFilter = () => {
+const TaskFilter = ({ handleFilter }) => {
   return <div>
     <button>All</button>
     <button>Active</button>
