@@ -23,7 +23,7 @@ const App = () => {
 
   useEffect(()=>{
     setUpdatedTasks(tasks)
-    localStorage.setItem("Notes", (JSON.stringify(tasks)))
+    localStorage.setItem("Tasks", (JSON.stringify(tasks)))
   },[tasks])
 
   return (
