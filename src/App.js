@@ -27,6 +27,8 @@ const App = () => {
 }
 
 const TaskForm = ({ handleAddTask }) => {
+  const [oneTask, setOneTask] = useState({title:""})
+
   return <div>
     <form>
       <input type="text" id="title" placeholder="Title"/>
