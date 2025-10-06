@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <section className="sec-1">
-
+        <TaskForm/>
       </section>
 
       <section className="sec-2">
