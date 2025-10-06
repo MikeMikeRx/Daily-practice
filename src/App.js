@@ -17,6 +17,10 @@ const App = () => {
     setTask(prev => [...prev, newTask])
   }
 
+  const handleDelete = (id) => {
+    setTask(prev => prev.filter(t => t.id !== id))
+  }
+
   useEffect(()=>{
     setUpdatedTasks(tasks)
     localStorage.setItem("Notes", (JSON.stringify(tasks)))
