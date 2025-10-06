@@ -52,7 +52,7 @@ const App = () => {
       </section>
 
       <section className="sec-2">
-        <TaskFilter/>
+        <TaskFilter handleFilter={handleFilter}/>
       </section>
 
       <section className="sec-3">
