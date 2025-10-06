@@ -28,10 +28,15 @@ const App = () => {
 
 const TaskForm = ({ handleAddTask }) => {
   const [oneTask, setOneTask] = useState({title:""})
-
+  
   return <div>
     <form>
-      <input type="text" id="title" placeholder="Title"/>
+      <input 
+      type="text" 
+      id="title" 
+      placeholder="Title" 
+      onChange={(e)=>setOneTask({title: e.target.value})}
+      />
 
       <button type="submit">Add Task</button>
     </form>
