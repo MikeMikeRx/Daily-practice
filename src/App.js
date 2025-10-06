@@ -38,6 +38,10 @@ const App = () => {
       </section>
 
       <section className="sec-2">
+      
+      </section>
+
+      <section className="sec-3">
         <TaskList updatedTasks={updatedTasks} handleToggle={handleToggle} handleDelete={handleDelete}/>
       </section>
       </div>
