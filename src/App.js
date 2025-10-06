@@ -4,7 +4,7 @@ const App = () => {
   const [tasks, setTask] = useState([])
   const [filter, setFilter] = ("all", "active", "completed")
 
-  const handleSubmit = (task) => {
+  const handleAddTask = (task) => {
     const newTask = {
       ...task, 
       id: new Date().getTime() + Math.random
@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div>
       <section className="sec-1">
-        <TaskForm handleSubmit={handleSubmit}/>
+        <TaskForm handleAddTask={handleAddTask}/>
       </section>
 
       <section className="sec-2">
@@ -26,7 +26,7 @@ const App = () => {
   )
 }
 
-const TaskForm = ({ handleSubmit }) => {
+const TaskForm = ({ handleAddTask }) => {
   return <div>
     <form>
       <input type="text" id="title" placeholder="Title"/>
