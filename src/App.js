@@ -18,6 +18,10 @@ const App = () => {
     setTask(prev => [...prev, newTask])
   }
 
+  const handleToggle = (id) => {
+    setTask(prev => prev.map(t => (t.id === id ? {...t, completed: !t.completed} : t)))
+  }
+
   const handleDelete = (id) => {
     setTask(prev => prev.filter(t => t.id !== id))
   }
