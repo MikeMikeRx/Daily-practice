@@ -59,4 +59,16 @@ const TaskForm = ({ handleAddTask }) => {
   </div>
 }
 
+const TaskList = () => {
+  return <>
+  {updatedTasks.map(t => (
+    <li key={t.id}>
+      <h1>{t.title}</h1>
+      <input type="checkbox" id="completed"/>
+      <button>Delete</button>
+    </li>
+  ))}
+  </>
+}
+
 export default App
