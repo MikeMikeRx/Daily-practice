@@ -10,7 +10,8 @@ const App = () => {
 
   const handleAddTask = (task) => {
     const newTask = {
-      ...task, 
+      ...task,
+      completed: false, 
       id: new Date().getTime() + Math.random()
     }
 
