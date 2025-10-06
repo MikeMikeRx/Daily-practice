@@ -28,6 +28,12 @@ const App = () => {
 
 const TaskForm = ({ handleAddTask }) => {
   const [oneTask, setOneTask] = useState({title:""})
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    handleAddTask(oneTask)
+  }
   
   return <div>
     <form>
