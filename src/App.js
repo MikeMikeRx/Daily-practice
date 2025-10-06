@@ -31,12 +31,12 @@ const App = () => {
   }
 
   useEffect(()=>{
-    if(filter === "all"){
-      setUpdatedTasks(tasks)
-    } else if(filter === "active"){
+   if (filter === "active"){
       setUpdatedTasks(prev => prev.filter(t => t.completed === false))
-    } else if(filter === "completed"){
+    } else if (filter === "completed"){
       setUpdatedTasks(prev => prev.filter(t => t.completed === true))
+    } else {
+      setUpdatedTasks(tasks)
     }
   },[filter])
 
