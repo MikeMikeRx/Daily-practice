@@ -9,8 +9,9 @@ const App = () => {
       <section className="sec-1">
 
       </section>
+
       <section className="sec-2">
-        
+
       </section>
       </div>
   )
@@ -20,7 +21,6 @@ const TaskForm = () => {
   return <div>
     <form>
       <input type="text" id="title" placeholder="Title"/>
-      <input type="checkbox" id="completed"/>
 
       <button type="submit">Add Task</button>
     </form>
