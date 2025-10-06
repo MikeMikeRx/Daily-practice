@@ -59,7 +59,7 @@ const TaskForm = ({ handleAddTask }) => {
   </div>
 }
 
-const TaskList = () => {
+const TaskList = ({ updatedTasks }) => {
   return <>
   {updatedTasks.map(t => (
     <li key={t.id}>
