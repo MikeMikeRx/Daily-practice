@@ -7,6 +7,7 @@ const App = () => {
   })
   const [updatedTasks, setUpdatedTasks] = useState(tasks)
   const [filter, setFilter] = useState("all", "active", "completed")
+  const [editingId ,setEditignId] = useState(null)
 
   const handleAddTask = (task) => {
     const newTask = {
