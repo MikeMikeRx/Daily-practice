@@ -97,6 +97,7 @@ const TaskForm = ({ handleAddTask, editingId, editedTask }) => {
     e.preventDefault()
 
     handleAddTask(oneTask)
+    setOneTask({title:""})
   }
 
   useEffect(()=>{
