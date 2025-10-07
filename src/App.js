@@ -129,7 +129,7 @@ const TaskFilter = ({ handleFilter, handleClear }) => {
     <button onClick={()=>handleFilter("completed")}>Completed</button>
     
     <div className="clear-btn">
-      <button>Clear Completed Tasks</button>
+      <button onClick={handleClear}>Clear Completed Tasks</button>
     </div>
   </div>
 }
