@@ -99,7 +99,7 @@ const TaskFilter = ({ handleFilter }) => {
   </div>
 }
 
-const TaskList = ({ updatedTasks, handleToggle, handleDelete }) => {
+const TaskList = ({ updatedTasks, handleToggle, handleEdit, handleDelete }) => {
   return <>
   {updatedTasks.map(t => (
     <li key={t.id}>
