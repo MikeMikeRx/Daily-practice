@@ -6,7 +6,7 @@ const App = () => {
     return loadLS ? loadLS : []
   })
   const [updatedTasks, setUpdatedTasks] = useState(tasks)
-  const [filter, setFilter] = useState("all", "active", "completed")
+  const [filter, setFilter] = useState("all")
   const [editingId ,setEditignId] = useState(null)
 
   const handleAddTask = (task) => {
