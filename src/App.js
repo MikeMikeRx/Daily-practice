@@ -40,6 +40,10 @@ const App = () => {
     setFilter(state)
   }
 
+  const handleClear = () =>{
+    setTask(prev => prev.filter(t => !t.completed))
+  }
+
   useEffect(()=>{
    if (filter === "active"){
       setUpdatedTasks(tasks.filter(t => !t.completed))
