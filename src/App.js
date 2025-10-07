@@ -50,6 +50,8 @@ const App = () => {
     localStorage.setItem("Tasks", (JSON.stringify(tasks)))
   },[tasks])
 
+  const editedTask = editingId ? tasks.find(t => t.id === editingId ) : null  
+
   return (
     <div>
       <section className="sec-1">
