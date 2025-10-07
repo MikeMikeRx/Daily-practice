@@ -54,7 +54,6 @@ const App = () => {
   },[tasks, filter])
 
   useEffect(()=>{
-    setUpdatedTasks(tasks)
     localStorage.setItem("Tasks", (JSON.stringify(tasks)))
   },[tasks])
 
