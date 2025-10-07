@@ -106,7 +106,7 @@ const TaskList = ({ updatedTasks, handleToggle, handleEdit, handleDelete }) => {
       <h1>{t.title}</h1>
       <input type="checkbox" id="completed" checked={t.completed} onChange={()=>handleToggle(t.id)}/>
       <button onClick={()=>handleDelete(t.id)}>Delete</button>
-      <button>Edit</button>
+      <button onClick={()=>handleEdit(t.id)}>Edit</button>
     </li>
   ))}
   </>
