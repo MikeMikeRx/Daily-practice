@@ -74,6 +74,7 @@ const App = () => {
       <section className="sec-2">
         <TaskFilter 
           handleFilter={handleFilter}
+          handleClear={handleClear}
         />
       </section>
 
