@@ -80,7 +80,7 @@ const App = () => {
   )
 }
 
-const TaskForm = ({ handleAddTask }) => {
+const TaskForm = ({ handleAddTask, editingId, editedTask }) => {
   const [oneTask, setOneTask] = useState({title:""})
 
   const handleSubmit = (e) => {
