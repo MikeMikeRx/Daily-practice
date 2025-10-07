@@ -122,7 +122,7 @@ const TaskForm = ({ handleAddTask, editingId, editedTask }) => {
   </div>
 }
 
-const TaskFilter = ({ handleFilter }) => {
+const TaskFilter = ({ handleFilter, handleClear }) => {
   return <div>
     <button onClick={()=>handleFilter("all")}>All</button>
     <button onClick={()=>handleFilter("active")}>Active</button>
