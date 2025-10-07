@@ -88,6 +88,10 @@ const TaskForm = ({ handleAddTask, editingId, editedTask }) => {
 
     handleAddTask(oneTask)
   }
+
+  useEffect(()=>{
+    if(editingId){setOneTask({...editedTask})}
+  },[editingId])
   
   return <div>
     <form onSubmit={handleSubmit}>
