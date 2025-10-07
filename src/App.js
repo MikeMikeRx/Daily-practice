@@ -114,7 +114,7 @@ const TaskForm = ({ handleAddTask, editingId, editedTask }) => {
       type="text" 
       id="title" 
       placeholder="Title" 
-      onChange={(e)=>setOneTask({title: e.target.value})}
+      onChange={(e)=>setOneTask(prev => ({...prev, title: e.target.value}))}
       value={oneTask.title}
       />
 
