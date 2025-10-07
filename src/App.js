@@ -13,8 +13,7 @@ const App = () => {
     if(editingId){
       setTask(prev => prev.map(t => t.id === editingId ? {...t, ...task} : t))
       setEditingId(null)
-    }
-    if(!editingId){
+    } else {
       const newTask = {
         ...task,
         completed: false, 
