@@ -57,6 +57,8 @@ const App = () => {
       <section className="sec-1">
         <TaskForm 
           handleAddTask={handleAddTask}
+          editingId={editingId}
+          editedTask={editedTask}
         />
       </section>
 
