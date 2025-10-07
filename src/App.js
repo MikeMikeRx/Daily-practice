@@ -61,7 +61,7 @@ const App = () => {
       </section>
 
       <section className="sec-3">
-        <TaskList updatedTasks={updatedTasks} handleToggle={handleToggle} handleDelete={handleDelete}/>
+        <TaskList updatedTasks={updatedTasks} handleToggle={handleToggle} handleEdit={handleEdit} handleDelete={handleDelete}/>
       </section>
       </div>
   )
