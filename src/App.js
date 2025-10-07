@@ -7,12 +7,12 @@ const App = () => {
   })
   const [updatedTasks, setUpdatedTasks] = useState(tasks)
   const [filter, setFilter] = useState("all")
-  const [editingId ,setEditignId] = useState(null)
+  const [editingId ,setEditingId] = useState(null)
 
   const handleAddTask = (task) => {
     if(editingId){
       setTask(prev => prev.map(t => t.id === editingId ? {...t, ...task} : t))
-      setEditignId(null)
+      setEditingId(null)
     }
     if(!editingId){
       const newTask = {
@@ -29,7 +29,7 @@ const App = () => {
   }
 
   const handleEdit = (id) => {
-    setEditignId(id)
+    setEditingId(id)
   }
 
   const handleDelete = (id) => {
