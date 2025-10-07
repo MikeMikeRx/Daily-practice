@@ -90,7 +90,11 @@ const TaskForm = ({ handleAddTask, editingId, editedTask }) => {
   }
 
   useEffect(()=>{
-    if(editingId){setOneTask({...editedTask})}
+    if(editingId){
+      setOneTask({...editedTask})
+    } else {
+      setOneTask({title:""})
+    }
   },[editingId])
   
   return <div>
