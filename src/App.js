@@ -53,15 +53,24 @@ const App = () => {
   return (
     <div>
       <section className="sec-1">
-        <TaskForm handleAddTask={handleAddTask}/>
+        <TaskForm 
+          handleAddTask={handleAddTask}
+        />
       </section>
 
       <section className="sec-2">
-        <TaskFilter handleFilter={handleFilter}/>
+        <TaskFilter 
+          handleFilter={handleFilter}
+        />
       </section>
 
       <section className="sec-3">
-        <TaskList updatedTasks={updatedTasks} handleToggle={handleToggle} handleEdit={handleEdit} handleDelete={handleDelete}/>
+        <TaskList 
+          updatedTasks={updatedTasks} 
+          handleToggle={handleToggle} 
+          handleEdit={handleEdit} 
+          handleDelete={handleDelete}
+        />
       </section>
       </div>
   )
@@ -104,7 +113,12 @@ const TaskList = ({ updatedTasks, handleToggle, handleEdit, handleDelete }) => {
   {updatedTasks.map(t => (
     <li key={t.id}>
       <h1>{t.title}</h1>
-      <input type="checkbox" id="completed" checked={t.completed} onChange={()=>handleToggle(t.id)}/>
+      <input 
+        type="checkbox" 
+        id="completed" 
+        checked={t.completed} 
+        onChange={()=>handleToggle(t.id)}
+      />
       <button onClick={()=>handleDelete(t.id)}>Delete</button>
       <button onClick={()=>handleEdit(t.id)}>Edit</button>
     </li>
