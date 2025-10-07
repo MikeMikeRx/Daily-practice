@@ -23,6 +23,10 @@ const App = () => {
     setTask(prev => prev.map(t => (t.id === id ? {...t, completed: !t.completed} : t)))
   }
 
+  const handleEdit = (id) => {
+    setEditignId(id)
+  }
+
   const handleDelete = (id) => {
     setTask(prev => prev.filter(t => t.id !== id))
   }
