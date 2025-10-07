@@ -10,13 +10,18 @@ const App = () => {
   const [editingId ,setEditignId] = useState(null)
 
   const handleAddTask = (task) => {
-    const newTask = {
-      ...task,
-      completed: false, 
-      id: new Date().getTime() + Math.random()
+    if(editingId){
+      setTask(prev => prev.map(t => t.id === editingId ? {...t, ...task} : t))
+      setEditignId(null)
     }
-
-    setTask(prev => [...prev, newTask])
+    if(!editingId){
+      const newTask = {
+        ...task,
+        completed: false, 
+        id: new Date().getTime() + Math.random()
+      }
+      setTask(prev => [...prev, newTask])
+    }
   }
 
   const handleToggle = (id) => {
